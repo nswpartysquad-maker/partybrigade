@@ -1,126 +1,95 @@
-export default function EngineNumber9KidsPartyRedesign() { const packages = [ { name: "Blue Package", price: "$490", duration: "Up to 1 hour", ride: "No ride included", blurb: "A great entry package for younger children who want the excitement of the truck arrival, party atmosphere, photos and fire-themed fun.", features: [ "Real fire truck party experience", "Emergency siren and PA system", "Music and kid-friendly party atmosphere", "Photo moments with the truck", "Best for simple home or park parties", ], cta: "Book Blue Package", featured: false, }, { name: "Yellow Package", price: "$540", duration: "Up to 1 hour", ride: "1 x 15 minute ride included", blurb: "Perfect for little fire truck fans who want the full birthday surprise plus a short ride experience.", features: [ "15-minute fire truck ride", "Emergency siren and PA system", "Music, fire bell and fun onboard features", "Great for ages 2–4 and first-time party riders", "Easy package for most backyard parties", ], cta: "Book Yellow Package", featured: true, }, { name: "Orange Package", price: "$650", duration: "Up to 1 hour 15 minutes", ride: "1 x 30 minute or 2 x 15 minute rides", blurb: "A stronger mid-tier option for larger groups wanting more ride time and more wow-factor during the party.", features: [ "Extra ride flexibility", "More time for photos and party moments", "Works well for bigger guest lists", "Interactive onboard features", "Balanced value and experience", ], cta: "Book Orange Package", featured: false, }, { name: "Red Package", price: "$790", duration: "Up to 1.5 hours", ride: "1 x 60 minute, 2 x 30 minute or 4 x 15 minute rides", blurb: "The biggest children’s party package for families who want the longest ride time and the most memorable experience.", features: [ "Maximum ride time options", "Ideal for premium birthday bookings", "Great for larger celebrations", "Flexible party flow for venues and parks", "Best value for the full fire truck adventure", ], cta: "Book Red Package", featured: false, }, ];
+export default function PartyBrigadePremiumSite() { const packages = [ { name: "Blue Package", price: "$490", duration: "Up to 1 hour", ride: "No ride included", description: "A fun, simple party option for younger children who want the excitement of a real fire truck arrival, onboard features, music and photos.", features: [ "Real fire truck party experience", "Emergency siren and PA system", "Touch-screen music with 5,000+ songs", "Disco lighting, bubbles and onboard fun features", "Great for smaller birthdays and home parties", ], featured: false, }, { name: "Yellow Package", price: "$540", duration: "Up to 1 hour", ride: "1 x 15 minute ride included", description: "The easiest crowd-pleaser. Parents get a simple booking option and kids get the excitement of a real ride on Engine Number 9.", features: [ "15-minute ride included", "Emergency siren and PA system", "Music, fire bell and fun honkers onboard", "Authentic fire station radio calls while riding", "Best for high-impact birthday moments", ], featured: true, }, { name: "Orange Package", price: "$650", duration: "Up to 1 hour 15 minutes", ride: "1 x 30 minute or 2 x 15 minute rides", description: "A stronger mid-tier package for larger groups or families wanting more ride time and more flexibility.", features: [ "More ride flexibility", "More time for photos and party flow", "Ideal for bigger guest groups", "Great for parks, venues and larger home parties", "Balanced value and wow-factor", ], featured: false, }, { name: "Red Package", price: "$790", duration: "Up to 1.5 hours", ride: "1 x 60 minute, 2 x 30 minute or 4 x 15 minute rides", description: "The premium party package for families who want the full Engine Number 9 experience with maximum ride time.", features: [ "Longest ride options available", "Best for premium birthdays", "Excellent for larger celebrations", "Flexible flow for different venues", "Maximum fun and strongest value experience", ], featured: false, }, ];
 
-const highlights = [ "Real fire truck party experience", "Sydney children’s birthday parties", "Ages 0–12", "Up to 20 guests", "Flexible packages and extras", "Available 7 days a week", ];
+const included = [ "Emergency siren and PA system", "Touch-screen music video selection with 5,000+ songs", "Professional nightclub sound system", "Nightclub and disco lighting", "Bubble fun", "Children’s fire bell ringer and fun honkers", "Authentic fire station radio calls while riding", "Onboard karaoke and microphone on request", "Onboard surveillance safety cameras", "External LED text signage", ];
 
-const extras = [ "Water blasting with the fire hose", "Authentic fire station radio calls onboard", "Bubble fun and children’s fire bell", "Karaoke and microphone on request", "Frameable fire truck certificates", "Optional entertainment and special party upgrades", ];
+const extras = [ { title: "Birthday Essentials Pack", price: "$290", copy: "A bundled birthday upgrade that includes a special birthday gift, 18 Smoken fire truck show bags, fire hose water blasting, downloadable invitations and LED text signage.", }, { title: "Fire Hose Water Blasting", price: "$67", copy: "Kids get to blast water from Engine Number 9’s fire hose like a real firefighter, with seasonal adjustments to keep the activity safe and fun.", }, { title: "Fireman Dad", price: "FREE", copy: "A surprise family favourite. Dad or another adult secretly boards the truck, gets dressed in authentic fireman gear and arrives as part of the crew.", }, { title: "Fireman Dan", price: "$347/hr", copy: "An interactive children’s entertainer with comedy, games, music, prizes, balloon sculptures and fire-themed fun that complements the truck hire.", }, { title: "Kids Photographer", price: "$275/hr", copy: "Professional event coverage with candid family moments, special requests and digitally enhanced photos delivered after the event.", }, ];
 
-const includedFeatures = [ "Emergency siren and PA system", "Touch-screen music with thousands of songs", "Nightclub-style sound and lighting", "Children’s fun fire honkers and bell ringer", "Photo-friendly truck arrival", "Onboard safety cameras", ];
+const trustPoints = [ "Accredited public passenger vehicle operator", "Accredited and routinely maintained fleet", "Authorised and accredited drivers", "Fully insured with current public liability cover", "Working With Children Check clearance policy for children’s packages", "Fire extinguishers, first aid kits and bottled water onboard", "Onboard surveillance safety cameras", "Special needs and requests catered for", ];
 
-const steps = [ { title: "Choose your package", copy: "Pick Blue, Yellow, Orange or Red based on your budget, guest numbers and how much ride time you want.", }, { title: "Send your event details", copy: "Share your suburb, date, child’s age, venue type and any extras you would like added.", }, { title: "Lock in your booking", copy: "Secure your date with a deposit, then we’ll help finalise timing, pickup and party flow.", }, { title: "Enjoy the big surprise", copy: "Our crew arrives ready to create a birthday moment your child and guests will talk about long after the party ends.", }, ];
+const rules = [ "Open to ages 0 to 12 only", "Maximum of 20 people total, usually 18 children and 2 adults for supervision", "Minimum 2 adult parent supervisors required per ride", "Pick up and drop off from single locations only", "Available 7 days a week", "Drug and alcohol free under-18s event", "No alcohol or smoking onboard", "$250 deposit required to secure booking", "Outer suburbs surcharges may apply", "Toll way usage charge applies", ];
 
-const faqs = [ { q: "What ages are children’s fire truck parties best for?", a: "Engine Number 9 children’s packages are open to ages 0–12, making them ideal for toddlers, preschool birthdays and primary school parties.", }, { q: "How many people can attend?", a: "The current party limit is up to 20 people in total, typically 18 children and 2 supervising adults.", }, { q: "Do you travel across Sydney?", a: "Yes. The business is based around Sydney Olympic Park / Homebush and services Sydney, with outer-suburb surcharges applying in some areas.", }, { q: "Can the party be customised?", a: "Yes. The site notes that packages can be customised, and there are extra options available to tailor the day to your child’s celebration.", }, { q: "How do I secure my booking?", a: "A deposit is required to secure the booking. It is best to book early because popular dates can fill quickly.", }, ];
+const gallery = [ { src: "/images/firetruck-ocean.jpg", alt: "Engine Number 9 fire truck at a kids party" }, { src: "/images/interior-seating.jpg", alt: "Premium seating inside the party fire truck" }, { src: "/images/front-truck.jpg", alt: "Front view of Engine Number 9 fire truck" }, { src: "/images/kids-cheering.jpg", alt: "Kids cheering inside the party fire truck" }, { src: "/images/birthday-ride.jpg", alt: "Children enjoying the fire truck party ride" }, { src: "/images/family-ride.jpg", alt: "Families enjoying a fire truck party ride" }, { src: "/images/fire-hose.jpg", alt: "Fire hose water blasting activity at a kids party" }, { src: "/images/fireman-dad.jpg", alt: "Fireman Dad surprise experience" }, ];
 
-return ( <div className="min-h-screen bg-white text-slate-900"> <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur"> <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"> <div> <p className="text-xs font-bold uppercase tracking-[0.28em] text-red-600">Engine Number 9</p> <p className="text-lg font-black">Children’s Fire Truck Parties</p> </div>
+return ( <div className="min-h-screen bg-white text-slate-900"> <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 text-white backdrop-blur"> <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"> <div> <p className="text-xs font-bold uppercase tracking-[0.28em] text-red-300">Party Brigade</p> <p className="text-lg font-black">Kids Fire Truck Parties Sydney</p> </div>
 
-<nav className="hidden items-center gap-6 text-sm font-medium lg:flex">
-        <a href="#packages" className="transition hover:text-red-600">Packages</a>
-        <a href="#included" className="transition hover:text-red-600">What’s Included</a>
-        <a href="#extras" className="transition hover:text-red-600">Extras</a>
-        <a href="#faq" className="transition hover:text-red-600">FAQ</a>
+<nav className="hidden items-center gap-6 text-sm font-medium xl:flex">
+        <a href="#packages" className="transition hover:text-red-300">Packages</a>
+        <a href="#experience" className="transition hover:text-red-300">Experience</a>
+        <a href="#extras" className="transition hover:text-red-300">Extras</a>
+        <a href="#safety" className="transition hover:text-red-300">Safety</a>
+        <a href="#faq" className="transition hover:text-red-300">FAQ</a>
       </nav>
 
       <div className="flex items-center gap-3">
-        <a href="tel:1300036469" className="hidden rounded-2xl border border-slate-300 px-4 py-2 text-sm font-semibold md:inline-flex">
+        <a href="tel:1300036469" className="hidden rounded-2xl border border-white/20 px-4 py-2 text-sm font-semibold md:inline-flex">
           1300 036 469
         </a>
-        <a href="#enquire" className="rounded-2xl bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:scale-[1.02]">
+        <a href="#contact" className="rounded-2xl bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.02]">
           Check Availability
         </a>
       </div>
     </div>
   </header>
 
-  <section className="relative overflow-hidden">
-    {/* HERO IMAGE */}
+  <section className="relative overflow-hidden bg-slate-950 text-white">
     <div className="absolute inset-0">
-      <img src="/images/firetruck-hero.jpg" alt="Kids fire truck party Sydney" className="h-full w-full object-cover opacity-30" />
+      <img src="/images/firetruck-ocean.jpg" alt="Kids fire truck parties Sydney" className="h-full w-full object-cover opacity-35" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/75 to-slate-950/40" />
     </div>
-    <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-orange-50 to-white" />
-    <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-2 md:py-24 lg:gap-16">
-      <div className="flex flex-col justify-center">
-        <div className="inline-flex w-fit rounded-full border border-red-200 bg-white px-4 py-2 text-sm font-semibold text-red-700 shadow-sm">
-          Sydney kids party fire truck hire
+
+    <div className="relative mx-auto grid min-h-[85vh] max-w-7xl items-center gap-10 px-6 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
+      <div>
+        <div className="inline-flex rounded-full border border-red-300/30 bg-white/10 px-4 py-2 text-sm font-semibold text-red-200 backdrop-blur">
+          Professional, fun and simple to book
         </div>
-
-        <h1 className="mt-6 max-w-2xl text-4xl font-black leading-tight md:text-6xl">
-          Make their birthday unforgettable with a real children’s fire truck party in Sydney.
+        <h1 className="mt-6 max-w-4xl text-5xl font-black leading-[0.95] md:text-7xl">
+          The kids party website should feel as exciting as the fire truck.
         </h1>
-
-        <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-          Give your child the thrill of a real party fire truck, exciting onboard features, interactive fun, optional ride packages and a big surprise arrival that becomes the highlight of the whole birthday.
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
+          Give parents a premium booking experience and give kids the birthday they will never stop talking about. Party Brigade combines a real fire truck, music, lights, ride options, interactive fun and unforgettable family moments across Sydney.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">
-          <a href="#packages" className="rounded-2xl bg-red-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-[1.02]">
+          <a href="#packages" className="rounded-2xl bg-red-600 px-6 py-4 font-semibold text-white shadow-2xl transition hover:scale-[1.02]">
             View Packages
           </a>
-          <a href="#enquire" className="rounded-2xl border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-900 transition hover:border-slate-400">
-            Enquire Now
+          <a href="#gallery" className="rounded-2xl border border-white/20 bg-white/10 px-6 py-4 font-semibold text-white backdrop-blur">
+            See Real Parties
           </a>
         </div>
 
-        <div className="mt-8 grid max-w-2xl grid-cols-2 gap-3 md:grid-cols-3">
-          {highlights.map((item) => (
-            <div key={item} className="rounded-2xl border border-white bg-white p-4 text-sm font-medium shadow-sm">
+        <div className="mt-10 grid max-w-3xl grid-cols-2 gap-4 md:grid-cols-4">
+          {[
+            "Ages 0–12",
+            "Up to 20 guests",
+            "Available 7 days",
+            "Sydney-wide parties",
+          ].map((item) => (
+            <div key={item} className="rounded-2xl border border-white/10 bg-white/10 p-4 text-sm font-semibold backdrop-blur">
               {item}
             </div>
           ))}
         </div>
       </div>
 
-      <div className="relative flex items-center justify-center">
-        <div className="w-full rounded-[2rem] border border-white bg-white p-6 shadow-2xl">
-          <div className="rounded-[1.75rem] bg-slate-950 p-7 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-red-300">Why parents love it</p>
-            <h2 className="mt-4 text-3xl font-black">A birthday entrance kids never forget.</h2>
-            <ul className="mt-6 space-y-4 text-sm leading-7 text-slate-200 md:text-base">
-              <li>• A real fire truck arrives at your home, park or venue</li>
-              <li>• Interactive party atmosphere with music, lights and PA system</li>
-              <li>• Flexible ride inclusions depending on your package</li>
-              <li>• Fire-themed fun designed for children aged 0–12</li>
-              <li>• Clear upgrade path with extras and custom options</li>
-            </ul>
+      <div className="rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl bg-white p-5 text-slate-900">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-600">Most popular</p>
+            <h2 className="mt-3 text-3xl font-black">Yellow Package</h2>
+            <p className="mt-2 text-sm text-slate-600">Up to 1 hour · 15 minute ride included</p>
+            <p className="mt-4 text-sm leading-7 text-slate-700">The easy choice for parents who want the full fire truck wow-factor without overcomplicating the booking.</p>
           </div>
-
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl bg-red-50 p-5">
-              <p className="text-sm font-bold text-red-700">Best for birthdays</p>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
-                Great for backyard parties, park celebrations, school breakups and special family events.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-amber-50 p-5">
-              <p className="text-sm font-bold text-amber-700">Easy for parents</p>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
-                Clear packages, fast enquiry flow and a high-impact experience without needing complicated setup.
-              </p>
-            </div>
+          <div className="rounded-2xl bg-red-600 p-5 text-white">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-100">Trust factor</p>
+            <h2 className="mt-3 text-3xl font-black">Accredited & Insured</h2>
+            <p className="mt-4 text-sm leading-7 text-red-50">Authorised drivers, accredited fleet, public liability cover, safety cameras, first aid kits and Working With Children Check clearance policy for children’s events.</p>
           </div>
+        </div>
+        <div className="mt-4 rounded-2xl bg-slate-950/70 p-5 text-sm leading-7 text-slate-200">
+          "Don’t settle for anything less" becomes a stronger sales message when the site itself feels premium, trustworthy and easy to understand.
         </div>
       </div>
-    </div>
-  </section>
-
-  {/* GALLERY SECTION */}
-  <section className="mx-auto max-w-7xl px-6 py-16">
-    <div className="mb-10 text-center">
-      <h2 className="text-3xl font-black md:text-5xl">Real parties. Real smiles.</h2>
-      <p className="mt-4 text-lg text-slate-600">Show parents exactly what their child’s party will look like.</p>
-    </div>
-
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {[
-        "/images/gallery1.jpg",
-        "/images/gallery2.jpg",
-        "/images/gallery3.jpg",
-        "/images/gallery4.jpg",
-        "/images/gallery5.jpg",
-        "/images/gallery6.jpg",
-      ].map((src) => (
-        <div key={src} className="overflow-hidden rounded-2xl">
-          <img src={src} className="h-full w-full object-cover transition hover:scale-105" />
-        </div>
-      ))}
     </div>
   </section>
 
@@ -128,11 +97,11 @@ return ( <div className="min-h-screen bg-white text-slate-900"> <header classNam
     <div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 md:grid-cols-3 lg:grid-cols-6">
       {[
         "Real fire truck hire",
-        "Children’s birthday parties",
-        "Ride package options",
-        "Interactive fire-themed fun",
-        "Sydney-wide service",
-        "Available 7 days",
+        "Kids birthday parties",
+        "Music, lights and onboard fun",
+        "Ride options included",
+        "Extra party upgrades",
+        "Fast booking flow",
       ].map((item) => (
         <div key={item} className="rounded-2xl bg-white p-4 text-center text-sm font-semibold shadow-sm">
           {item}
@@ -141,33 +110,26 @@ return ( <div className="min-h-screen bg-white text-slate-900"> <header classNam
     </div>
   </section>
 
-  <section id="packages" className="mx-auto max-w-7xl px-6 py-20">
+  <section id="packages" className="mx-auto max-w-7xl px-6 py-24">
     <div className="max-w-3xl">
-      <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Children’s party packages</p>
-      <h2 className="mt-3 text-3xl font-black md:text-5xl">Choose the fire truck party package that fits your child’s big day.</h2>
-      <p className="mt-4 text-lg leading-8 text-slate-600">
-        This redesigned section makes each option easier to compare, so parents can quickly understand price, ride time and who each package suits best.
+      <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Kids party packages</p>
+      <h2 className="mt-3 text-4xl font-black md:text-6xl">Clear package cards that make booking feel easy.</h2>
+      <p className="mt-5 text-lg leading-8 text-slate-600">
+        Instead of making parents search through long pages, this redesign turns the old package information into a clean, premium comparison section that feels simple and high-end.
       </p>
     </div>
 
-    <div className="mt-10 grid gap-6 xl:grid-cols-4">
+    <div className="mt-12 grid gap-6 xl:grid-cols-4">
       {packages.map((pkg) => (
-        <div
-          key={pkg.name}
-          className={`flex h-full flex-col rounded-[2rem] border p-8 shadow-sm ${pkg.featured ? "border-red-600 bg-red-600 text-white shadow-xl" : "border-slate-200 bg-white"}`}
-        >
-          <div className="flex items-start justify-between gap-3">
+        <div key={pkg.name} className={`flex h-full flex-col rounded-[2rem] border p-8 shadow-sm ${pkg.featured ? "border-red-600 bg-red-600 text-white shadow-xl" : "border-slate-200 bg-white"}`}>
+          <div className="flex items-start justify-between gap-4">
             <div>
-              <p className={`text-sm font-bold uppercase tracking-[0.2em] ${pkg.featured ? "text-red-100" : "text-red-600"}`}>
-                {pkg.name}
-              </p>
+              <p className={`text-sm font-bold uppercase tracking-[0.22em] ${pkg.featured ? "text-red-100" : "text-red-600"}`}>{pkg.name}</p>
               <h3 className="mt-3 text-4xl font-black">{pkg.price}</h3>
             </div>
-            {pkg.featured && (
-              <span className="rounded-full bg-white px-3 py-1 text-xs font-black uppercase tracking-[0.15em] text-red-600">
-                Popular
-              </span>
-            )}
+            {pkg.featured ? (
+              <span className="rounded-full bg-white px-3 py-1 text-xs font-black uppercase tracking-[0.15em] text-red-600">Popular</span>
+            ) : null}
           </div>
 
           <div className={`mt-6 rounded-2xl p-4 ${pkg.featured ? "bg-white/10" : "bg-slate-50"}`}>
@@ -175,7 +137,7 @@ return ( <div className="min-h-screen bg-white text-slate-900"> <header classNam
             <p className={`mt-1 text-sm ${pkg.featured ? "text-red-50" : "text-slate-600"}`}>{pkg.ride}</p>
           </div>
 
-          <p className={`mt-6 text-sm leading-7 ${pkg.featured ? "text-white" : "text-slate-700"}`}>{pkg.blurb}</p>
+          <p className={`mt-6 text-sm leading-7 ${pkg.featured ? "text-white" : "text-slate-700"}`}>{pkg.description}</p>
 
           <ul className={`mt-6 space-y-3 text-sm leading-6 ${pkg.featured ? "text-red-50" : "text-slate-600"}`}>
             {pkg.features.map((feature) => (
@@ -183,182 +145,217 @@ return ( <div className="min-h-screen bg-white text-slate-900"> <header classNam
             ))}
           </ul>
 
-          <a
-            href="#enquire"
-            className={`mt-8 inline-flex rounded-2xl px-5 py-3 font-semibold ${pkg.featured ? "bg-white text-red-600" : "bg-slate-950 text-white"}`}
-          >
-            {pkg.cta}
+          <a href="#contact" className={`mt-8 inline-flex rounded-2xl px-5 py-3 font-semibold ${pkg.featured ? "bg-white text-red-600" : "bg-slate-950 text-white"}`}>
+            Enquire About {pkg.name}
           </a>
         </div>
       ))}
     </div>
   </section>
 
-  {/* EXPERIENCE SECTION WITH IMAGE */}
-  <section className="bg-slate-900 text-white">
-    <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2">
+  <section id="gallery" className="bg-slate-950 text-white">
+    <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="max-w-3xl">
+        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-300">Real party gallery</p>
+        <h2 className="mt-3 text-4xl font-black md:text-6xl">Real photos sell the experience better than any paragraph ever will.</h2>
+        <p className="mt-5 text-lg leading-8 text-slate-300">
+          Your uploaded photos are the strongest marketing asset on the whole site. This gallery makes the business look active, trusted and premium from the first scroll.
+        </p>
+      </div>
+
+      <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        {gallery.map((image, index) => (
+          <div key={image.src} className={`overflow-hidden rounded-[1.75rem] ${index % 3 === 0 ? "xl:row-span-2" : ""}`}>
+            <img src={image.src} alt={image.alt} className="h-full min-h-[260px] w-full object-cover transition duration-300 hover:scale-105" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" className="mx-auto max-w-7xl px-6 py-24">
+    <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr]">
       <div className="flex items-center">
-        <img src="/images/interior.jpg" className="rounded-2xl shadow-2xl" />
+        <img src="/images/interior-seating.jpg" alt="Inside Party Brigade fire truck" className="rounded-[2rem] shadow-2xl" />
       </div>
+
       <div>
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-300">Inside the truck</p>
-        <h2 className="mt-3 text-3xl font-black md:text-5xl">Built for fun, comfort and excitement.</h2>
-        <p className="mt-5 text-lg text-slate-300">Premium seating, music, lighting and a full party setup inside the truck.</p>
+        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">What’s included onboard</p>
+        <h2 className="mt-3 text-4xl font-black md:text-6xl">A premium party setup inside a real fire truck.</h2>
+        <p className="mt-5 text-lg leading-8 text-slate-600">
+          The old website had strong features but they were buried. This section turns them into a polished premium sales point that shows just how much fun is packed into every booking.
+        </p>
+
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {included.map((item) => (
+            <div key={item} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <p className="font-medium leading-7">{item}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="included" className="bg-slate-950 text-white">
-    <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2">
-      <div>
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-300">What’s included</p>
-        <h2 className="mt-3 text-3xl font-black md:text-5xl">More than just a ride. It’s a full party experience.</h2>
-        <p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">
-          This section turns a long feature list into a cleaner visual layout that sells the value of the experience faster.
+  <section id="extras" className="bg-slate-50">
+    <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="max-w-3xl">
+        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Add-ons and upgrades</p>
+        <h2 className="mt-3 text-4xl font-black md:text-6xl">Extras that raise the value of every booking.</h2>
+        <p className="mt-5 text-lg leading-8 text-slate-600">
+          The old site had great extras. This redesign gives them space to breathe so parents instantly understand the upgrade options.
         </p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        {includedFeatures.map((feature) => (
-          <div key={feature} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-            <p className="font-medium leading-7">{feature}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="extras" className="mx-auto max-w-7xl px-6 py-20">
-    <div className="grid gap-10 md:grid-cols-2">
-      <div>
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Additional extras</p>
-        <h2 className="mt-3 text-3xl font-black md:text-5xl">Add even more fun to the birthday.</h2>
-        <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">
-          The current site mentions extras, but this layout makes them easier to notice and helps lift average booking value.
-        </p>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="mt-12 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
         {extras.map((extra) => (
-          <div key={extra} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <p className="font-medium leading-7">{extra}</p>
+          <div key={extra.title} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="flex items-start justify-between gap-4">
+              <h3 className="text-2xl font-black">{extra.title}</h3>
+              <span className="rounded-full bg-red-50 px-3 py-1 text-sm font-bold text-red-600">{extra.price}</span>
+            </div>
+            <p className="mt-4 leading-8 text-slate-600">{extra.copy}</p>
           </div>
         ))}
+      </div>
+
+      <div className="mt-12 rounded-[2rem] bg-slate-950 p-8 text-white md:p-10">
+        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-300">Special feature</p>
+        <h3 className="mt-3 text-3xl font-black md:text-5xl">Fireman Dad deserves a premium spotlight.</h3>
+        <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">
+          This is one of your most unique selling points. The new layout makes it a signature feature instead of a hidden extra: dad or another family member secretly joins the truck crew, arrives in authentic fireman gear and gets presented with the official Fireman Dan assistant certificate.
+        </p>
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <img src="/images/fireman-dad.jpg" alt="Fireman Dad surprise experience" className="rounded-[1.5rem] object-cover" />
+          <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-200">Certificate bonus</p>
+            <h4 className="mt-3 text-2xl font-black">Official assistant certificate</h4>
+            <p className="mt-4 leading-8 text-slate-300">Keep a downloadable certificate link here so families can preview it before booking or download it after the event.</p>
+            <a href="https://enginenumber9.com.au/wp-content/uploads/2022/03/FiremanDanAssistantCertificate.pdf" className="mt-6 inline-flex rounded-2xl bg-white px-5 py-3 font-semibold text-slate-950">
+              View Certificate
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  {/* TESTIMONIALS */}
-  <section className="bg-white">
-    <div className="mx-auto max-w-7xl px-6 py-20">
-      <div className="text-center">
-        <h2 className="text-3xl font-black md:text-5xl">Parents love it</h2>
-      </div>
-
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {[
-          "Best party ever – the kids didn’t want to get off!",
-          "So easy to organise and worth every dollar.",
-          "The fire truck arrival was unreal – huge reaction.",
-        ].map((t) => (
-          <div key={t} className="rounded-2xl border p-6 shadow-sm">
-            <p className="text-lg font-medium">\"{t}\"</p>
-          </div>
-        ))}
+  <section id="safety" className="bg-white">
+    <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+        <div>
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Why parents trust you</p>
+          <h2 className="mt-3 text-4xl font-black md:text-6xl">Safety and professionalism should feel obvious.</h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            This section takes the trust content from “Things You Should Know” and turns it into a serious, premium reassurance block that helps parents feel confident before they enquire.
+          </p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {trustPoints.map((item) => (
+            <div key={item} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p className="font-medium leading-7 text-slate-800">{item}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
   <section className="bg-red-600 text-white">
-    <div className="mx-auto max-w-7xl px-6 py-20">
-      <div className="max-w-3xl">
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-100">SEO content section</p>
-        <h2 className="mt-3 text-3xl font-black md:text-5xl">Children’s fire truck parties Sydney families remember.</h2>
+    <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="max-w-4xl">
+        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-100">SEO content block</p>
+        <h2 className="mt-3 text-4xl font-black md:text-6xl">Kids fire truck parties Sydney families remember.</h2>
         <p className="mt-5 text-lg leading-8 text-red-50">
-          If you are searching for children’s fire truck parties in Sydney, Engine Number 9 offers a birthday experience that combines a real fire truck, party fun, music, lights and optional rides for young guests. It is designed for children aged 0–12 and suits birthdays at homes, parks and event venues across Sydney. With multiple package levels, flexible extras and a memorable truck arrival, this page is built to rank more strongly for local search terms while also making the booking decision easier for parents.
+          Party Brigade offers children’s fire truck parties in Sydney with real fire truck rides, onboard music and lights, interactive activities, fire hose fun, family photo moments and tailored extras for birthdays and special events. With package options for different party sizes and budgets, plus upgrades like Fireman Dan, Fireman Dad and birthday essentials, this page is designed to rank better in local search while making the booking journey simpler and more premium.
         </p>
       </div>
     </div>
   </section>
 
-  <section id="how-it-works" className="mx-auto max-w-7xl px-6 py-20">
-    <div className="max-w-2xl">
-      <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">How booking works</p>
-      <h2 className="mt-3 text-3xl font-black md:text-5xl">A clear path from enquiry to party day.</h2>
-    </div>
-
-    <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-      {steps.map((step, i) => (
-        <div key={step.title} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-lg font-black text-white">
-            {i + 1}
-          </div>
-          <h3 className="mt-5 text-xl font-black">{step.title}</h3>
-          <p className="mt-3 text-sm leading-7 text-slate-600">{step.copy}</p>
+  <section className="mx-auto max-w-7xl px-6 py-24">
+    <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
+      <div>
+        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Booking conditions</p>
+        <h2 className="mt-3 text-4xl font-black md:text-6xl">Keep the rules clear without making the page feel heavy.</h2>
+        <div className="mt-8 space-y-4">
+          {rules.map((item) => (
+            <div key={item} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <p className="leading-7 text-slate-700">{item}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </section>
+      </div>
 
-  <section className="bg-slate-50">
-    <div className="mx-auto max-w-7xl px-6 py-20">
-      <div className="grid gap-6 lg:grid-cols-3">
-        {[
-          {
-            title: "Designed to convert",
-            copy: "The new layout uses clearer package comparisons, stronger call-to-action buttons and simpler scanning for busy parents.",
-          },
-          {
-            title: "Built for local SEO",
-            copy: "The copy naturally supports searches for children’s fire truck parties Sydney, kids fire truck birthday party and fire truck hire for kids.",
-          },
-          {
-            title: "Better upsell flow",
-            copy: "Extras are given more visibility so customers can see the full experience and upgrade more confidently.",
-          },
-        ].map((item) => (
-          <div key={item.title} className="rounded-[2rem] bg-white p-8 shadow-sm">
-            <h3 className="text-2xl font-black">{item.title}</h3>
-            <p className="mt-4 text-base leading-8 text-slate-600">{item.copy}</p>
-          </div>
-        ))}
+      <div id="faq">
+        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Frequently asked questions</p>
+        <h2 className="mt-3 text-4xl font-black md:text-6xl">Quick answers for busy parents.</h2>
+        <div className="mt-8 space-y-4">
+          {[
+            {
+              q: "What ages are your kids party packages for?",
+              a: "Children’s packages are for ages 0 to 12.",
+            },
+            {
+              q: "How many people can come?",
+              a: "The standard party maximum is 20 people, usually 18 children and 2 supervising adults.",
+            },
+            {
+              q: "Do you need a deposit?",
+              a: "Yes, a $250 deposit secures the booking.",
+            },
+            {
+              q: "Can packages be customised?",
+              a: "Yes. The business highlights flexibility and willingness to customise packages and extras.",
+            },
+            {
+              q: "Do you offer extra entertainment?",
+              a: "Yes. Add-ons include Fireman Dan, Fireman Dad, fire hose water blasting, birthday essentials and a kids photographer.",
+            },
+          ].map((item) => (
+            <div key={item.q} className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6">
+              <h3 className="text-xl font-black">{item.q}</h3>
+              <p className="mt-3 leading-8 text-slate-600">{item.a}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="faq" className="mx-auto max-w-5xl px-6 py-20">
-    <div className="text-center">
-      <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Frequently asked questions</p>
-      <h2 className="mt-3 text-3xl font-black md:text-5xl">Helpful answers before you book.</h2>
-    </div>
-
-    <div className="mt-10 space-y-4">
-      {faqs.map((item) => (
-        <div key={item.q} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-black">{item.q}</h3>
-          <p className="mt-2 leading-7 text-slate-600">{item.a}</p>
+  <section id="contact" className="px-6 pb-24">
+    <div className="mx-auto max-w-6xl rounded-[2rem] bg-slate-950 p-10 text-white shadow-2xl md:p-14">
+      <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+        <div>
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-300">Ready to book?</p>
+          <h2 className="mt-3 max-w-3xl text-4xl font-black md:text-6xl">Turn your best photos into the best kids party website in your market.</h2>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+            This redesigned site is built to look premium, feel trustworthy and convert more enquiries. Keep this final section simple with strong contact paths and a short enquiry form.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href="tel:1300036469" className="rounded-2xl bg-red-600 px-6 py-4 font-semibold text-white">Call 1300 036 469</a>
+            <a href="mailto:danny@enginenumber9.com.au" className="rounded-2xl border border-white/20 px-6 py-4 font-semibold text-white">Email Danny</a>
+            <a href="https://enginenumber9.com.au/contact-us/" className="rounded-2xl border border-white/20 px-6 py-4 font-semibold text-white">Send Enquiry</a>
+          </div>
         </div>
-      ))}
-    </div>
-  </section>
 
-  <section id="enquire" className="px-6 pb-24">
-    <div className="mx-auto max-w-5xl rounded-[2rem] bg-slate-950 p-10 text-white shadow-2xl md:p-14">
-      <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-300">Ready to book?</p>
-      <h2 className="mt-3 max-w-3xl text-3xl font-black md:text-5xl">Check availability for your child’s fire truck birthday party today.</h2>
-      <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-        Add a simple enquiry form here with parent name, mobile number, suburb, event date, child’s age, estimated guest count and preferred package. That will make this section much more conversion-focused than a generic contact link.
-      </p>
-
-      <div className="mt-8 flex flex-wrap gap-4">
-        <a href="tel:1300036469" className="rounded-2xl bg-red-600 px-6 py-3 font-semibold text-white">
-          Call 1300 036 469
-        </a>
-        <a href="mailto:danny@enginenumber9.com.au" className="rounded-2xl border border-white/20 px-6 py-3 font-semibold text-white">
-          Email Danny
-        </a>
-        <a href="https://enginenumber9.com.au/contact-us/" className="rounded-2xl border border-white/20 px-6 py-3 font-semibold text-white">
-          Send Enquiry
-        </a>
+        <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-200">Suggested enquiry form</p>
+          <div className="mt-6 grid gap-4">
+            {[
+              "Parent name",
+              "Mobile number",
+              "Suburb / venue",
+              "Event date",
+              "Child age",
+              "Preferred package",
+            ].map((field) => (
+              <div key={field} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300">
+                {field}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </section>
