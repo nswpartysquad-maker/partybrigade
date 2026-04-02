@@ -1,364 +1,887 @@
-export default function PartyBrigadePremiumSite() { const packages = [ { name: "Blue Package", price: "$490", duration: "Up to 1 hour", ride: "No ride included", description: "A fun, simple party option for younger children who want the excitement of a real fire truck arrival, onboard features, music and photos.", features: [ "Real fire truck party experience", "Emergency siren and PA system", "Touch-screen music with 5,000+ songs", "Disco lighting, bubbles and onboard fun features", "Great for smaller birthdays and home parties", ], featured: false, }, { name: "Yellow Package", price: "$540", duration: "Up to 1 hour", ride: "1 x 15 minute ride included", description: "The easiest crowd-pleaser. Parents get a simple booking option and kids get the excitement of a real ride on Engine Number 9.", features: [ "15-minute ride included", "Emergency siren and PA system", "Music, fire bell and fun honkers onboard", "Authentic fire station radio calls while riding", "Best for high-impact birthday moments", ], featured: true, }, { name: "Orange Package", price: "$650", duration: "Up to 1 hour 15 minutes", ride: "1 x 30 minute or 2 x 15 minute rides", description: "A stronger mid-tier package for larger groups or families wanting more ride time and more flexibility.", features: [ "More ride flexibility", "More time for photos and party flow", "Ideal for bigger guest groups", "Great for parks, venues and larger home parties", "Balanced value and wow-factor", ], featured: false, }, { name: "Red Package", price: "$790", duration: "Up to 1.5 hours", ride: "1 x 60 minute, 2 x 30 minute or 4 x 15 minute rides", description: "The premium party package for families who want the full Engine Number 9 experience with maximum ride time.", features: [ "Longest ride options available", "Best for premium birthdays", "Excellent for larger celebrations", "Flexible flow for different venues", "Maximum fun and strongest value experience", ], featured: false, }, ];
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Party Brigade | Sydney Children's Fire Truck Experiences</title>
+  <meta name="description" content="Premium kids fire truck parties in Sydney by Engine Number 9 NSW. Real fire truck rides, music, lights, Fireman Dad, Fireman Dan, fun extras and simple parent-friendly booking." />
+  <style>
+    :root {
+      --bg: #fffaf8;
+      --surface: #ffffff;
+      --surface-2: #fff2ed;
+      --text: #171717;
+      --muted: #64646d;
+      --line: #eadfd9;
+      --red: #d92d2d;
+      --red-dark: #af1e1e;
+      --gold: #f0b15d;
+      --dark: #0f1115;
+      --dark-2: #171a20;
+      --shadow: 0 24px 60px rgba(0,0,0,.10);
+      --radius: 30px;
+      --radius-sm: 18px;
+      --max: 1240px;
+    }* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
 
-const included = [ "Emergency siren and PA system", "Touch-screen music video selection with 5,000+ songs", "Professional nightclub sound system", "Nightclub and disco lighting", "Bubble fun", "Children’s fire bell ringer and fun honkers", "Authentic fire station radio calls while riding", "Onboard karaoke and microphone on request", "Onboard surveillance safety cameras", "External LED text signage", ];
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
 
-const extras = [ { title: "Birthday Essentials Pack", price: "$290", copy: "A bundled birthday upgrade that includes a special birthday gift, 18 Smoken fire truck show bags, fire hose water blasting, downloadable invitations and LED text signage.", }, { title: "Fire Hose Water Blasting", price: "$67", copy: "Kids get to blast water from Engine Number 9’s fire hose like a real firefighter, with seasonal adjustments to keep the activity safe and fun.", }, { title: "Fireman Dad", price: "FREE", copy: "A surprise family favourite. Dad or another adult secretly boards the truck, gets dressed in authentic fireman gear and arrives as part of the crew.", }, { title: "Fireman Dan", price: "$347/hr", copy: "An interactive children’s entertainer with comedy, games, music, prizes, balloon sculptures and fire-themed fun that complements the truck hire.", }, { title: "Kids Photographer", price: "$275/hr", copy: "Professional event coverage with candid family moments, special requests and digitally enhanced photos delivered after the event.", }, ];
+.container {
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto;
+}
 
-const trustPoints = [ "Accredited public passenger vehicle operator", "Accredited and routinely maintained fleet", "Authorised and accredited drivers", "Fully insured with current public liability cover", "Working With Children Check clearance policy for children’s packages", "Fire extinguishers, first aid kits and bottled water onboard", "Onboard surveillance safety cameras", "Special needs and requests catered for", ];
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15,17,21,.88);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
 
-const rules = [ "Open to ages 0 to 12 only", "Maximum of 20 people total, usually 18 children and 2 adults for supervision", "Minimum 2 adult parent supervisors required per ride", "Pick up and drop off from single locations only", "Available 7 days a week", "Drug and alcohol free under-18s event", "No alcohol or smoking onboard", "$250 deposit required to secure booking", "Outer suburbs surcharges may apply", "Toll way usage charge applies", ];
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 0;
+}
 
-const gallery = [ { src: "/images/firetruck-ocean.jpg", alt: "Engine Number 9 fire truck at a kids party" }, { src: "/images/interior-seating.jpg", alt: "Premium seating inside the party fire truck" }, { src: "/images/front-truck.jpg", alt: "Front view of Engine Number 9 fire truck" }, { src: "/images/kids-cheering.jpg", alt: "Kids cheering inside the party fire truck" }, { src: "/images/birthday-ride.jpg", alt: "Children enjoying the fire truck party ride" }, { src: "/images/family-ride.jpg", alt: "Families enjoying a fire truck party ride" }, { src: "/images/fire-hose.jpg", alt: "Fire hose water blasting activity at a kids party" }, { src: "/images/fireman-dad.jpg", alt: "Fireman Dad surprise experience" }, ];
+.brand small {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffc9c1;
+  margin-bottom: 3px;
+}
 
-return ( <div className="min-h-screen bg-white text-slate-900"> <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 text-white backdrop-blur"> <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"> <div> <p className="text-xs font-bold uppercase tracking-[0.28em] text-red-300">Party Brigade</p> <p className="text-lg font-black">Kids Fire Truck Parties Sydney</p> </div>
+.brand strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
+}
 
-<nav className="hidden items-center gap-6 text-sm font-medium xl:flex">
-        <a href="#packages" className="transition hover:text-red-300">Packages</a>
-        <a href="#experience" className="transition hover:text-red-300">Experience</a>
-        <a href="#extras" className="transition hover:text-red-300">Extras</a>
-        <a href="#safety" className="transition hover:text-red-300">Safety</a>
-        <a href="#faq" className="transition hover:text-red-300">FAQ</a>
+.brand span {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,.72);
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 14px;
+  color: rgba(255,255,255,.85);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 800;
+  transition: .2s ease;
+  cursor: pointer;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(180deg, #ff4b4b, var(--red));
+  box-shadow: 0 14px 30px rgba(217,45,45,.28);
+}
+
+.btn-secondary {
+  color: #fff;
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.16);
+}
+
+.btn-dark {
+  background: var(--dark);
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(8,9,12,.90), rgba(8,9,12,.72) 48%, rgba(8,9,12,.34)),
+    url('https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+}
+
+.hero-inner {
+  min-height: 88vh;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 28px;
+  align-items: center;
+  padding: 72px 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.12);
+  color: #ffd9d3;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(44px, 7vw, 78px);
+  line-height: .95;
+  letter-spacing: -0.04em;
+}
+
+.hero p.lead {
+  max-width: 760px;
+  margin: 22px 0 0;
+  font-size: 19px;
+  color: rgba(255,255,255,.86);
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.hero-stats {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 760px;
+}
+
+.hero-stat {
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(6px);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hero-card {
+  padding: 26px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+.hero-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.mini-card {
+  border-radius: 22px;
+  padding: 18px;
+  min-height: 150px;
+}
+
+.mini-card.white {
+  background: #fff;
+  color: var(--text);
+}
+
+.mini-card.red {
+  background: linear-gradient(180deg, #ef4646, var(--red));
+  color: #fff;
+}
+
+.mini-card .kicker {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-weight: 800;
+  opacity: .8;
+}
+
+.mini-card h3 {
+  margin: 10px 0 8px;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.mini-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.signature-note {
+  margin-top: 14px;
+  border-radius: 22px;
+  padding: 18px;
+  background: rgba(15,17,21,.55);
+  font-size: 14px;
+  color: rgba(255,255,255,.80);
+}
+
+section { padding: 88px 0; }
+
+.section-head {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.section-head .tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--red);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-weight: 800;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: clamp(34px, 4.8vw, 60px);
+  line-height: .98;
+  letter-spacing: -0.03em;
+}
+
+.section-head p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.strip {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.strip-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+  padding: 26px 0;
+}
+
+.pill {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 16px;
+  text-align: center;
+  border-radius: 18px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0,0,0,.03);
+}
+
+.packages {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.card.featured {
+  background: linear-gradient(180deg, #f23b3b, var(--red));
+  color: #fff;
+  border-color: rgba(0,0,0,0);
+  transform: translateY(-8px);
+}
+
+.badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 800;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.price {
+  margin: 14px 0 8px;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.subline {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.featured .subline,
+.featured .desc,
+.featured li,
+.featured .fireman-note { color: rgba(255,255,255,.92); }
+
+.desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.list li::before {
+  content: "• ";
+  color: var(--red);
+  font-weight: 900;
+}
+
+.featured .list li::before { color: #fff; }
+
+.fireman-note {
+  margin: 16px 0 0;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(0,0,0,.12);
+  font-size: 13px;
+  color: var(--red-dark);
+  font-weight: 700;
+}
+
+.featured .fireman-note { border-top-color: rgba(255,255,255,.24); }
+
+.card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.gallery-wrap {
+  background: var(--dark);
+  color: #fff;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.gallery-grid .item {
+  overflow: hidden;
+  border-radius: 24px;
+  min-height: 260px;
+  background: #23262d;
+}
+
+.gallery-grid .item.tall { grid-row: span 2; min-height: 534px; }
+.gallery-grid .item img { width: 100%; height: 100%; object-fit: cover; }
+
+.split {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.image-card {
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  background: #ddd;
+  min-height: 420px;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-grid,
+.extras-grid,
+.faq-grid,
+.trust-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.feature-grid { grid-template-columns: repeat(2, 1fr); }
+.extras-grid { grid-template-columns: repeat(5, 1fr); }
+.trust-grid { grid-template-columns: repeat(4, 1fr); }
+.faq-grid { grid-template-columns: 1fr 1fr; }
+
+.soft-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.04);
+}
+
+.soft-card h3,
+.soft-card h4 {
+  margin: 0 0 10px;
+}
+
+.soft-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 15px;
+}
+
+.extras {
+  background: var(--surface-2);
+}
+
+.signature {
+  margin-top: 20px;
+  background: var(--dark);
+  color: #fff;
+  border-radius: 30px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 24px;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.signature p { color: rgba(255,255,255,.82); }
+
+.signature-box {
+  border-radius: 24px;
+  padding: 22px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.cta {
+  padding-bottom: 96px;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #11141a, #1a1f28);
+  color: #fff;
+  border-radius: 34px;
+  padding: 42px;
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  gap: 28px;
+  box-shadow: var(--shadow);
+}
+
+.cta p { color: rgba(255,255,255,.8); }
+
+.form-preview {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.field {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.72);
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.footer {
+  padding: 26px 0 50px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 1180px) {
+  .packages { grid-template-columns: repeat(3, 1fr); }
+  .extras-grid { grid-template-columns: repeat(3, 1fr); }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hero-inner,
+  .split,
+  .signature,
+  .cta-box,
+  .faq-grid { grid-template-columns: 1fr; }
+  .hero-stats,
+  .strip-grid,
+  .packages,
+  .feature-grid,
+  .extras-grid,
+  .trust-grid,
+  .gallery-grid,
+  .hero-card-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid .item.tall { grid-row: auto; min-height: 260px; }
+}
+
+@media (max-width: 640px) {
+  section { padding: 72px 0; }
+  .nav-actions .btn-secondary { display: none; }
+  .hero-stats,
+  .strip-grid,
+  .packages,
+  .feature-grid,
+  .extras-grid,
+  .trust-grid,
+  .faq-grid,
+  .gallery-grid,
+  .hero-card-grid { grid-template-columns: 1fr; }
+  .cta-box,
+  .signature,
+  .hero-card,
+  .card,
+  .soft-card { padding: 22px; }
+  h1 { font-size: 44px; }
+  .price { font-size: 36px; }
+}
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <small>Party Brigade</small>
+        <strong>Sydney Children's Fire Truck</strong>
+        <span>By Engine Number 9 NSW</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#packages">Experiences</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#included">What's Included</a>
+        <a href="#extras">Extras</a>
+        <a href="#safety">Safety</a>
+        <a href="#faq">FAQ</a>
       </nav>
-
-      <div className="flex items-center gap-3">
-        <a href="tel:1300036469" className="hidden rounded-2xl border border-white/20 px-4 py-2 text-sm font-semibold md:inline-flex">
-          1300 036 469
-        </a>
-        <a href="#contact" className="rounded-2xl bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.02]">
-          Check Availability
-        </a>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="tel:1300036469">1300 036 469</a>
+        <a class="btn btn-primary" href="#contact">Check Availability</a>
       </div>
     </div>
-  </header>
-
-  <section className="relative overflow-hidden bg-slate-950 text-white">
-    <div className="absolute inset-0">
-      <img src="/images/firetruck-ocean.jpg" alt="Kids fire truck parties Sydney" className="h-full w-full object-cover opacity-35" />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/75 to-slate-950/40" />
-    </div>
-
-    <div className="relative mx-auto grid min-h-[85vh] max-w-7xl items-center gap-10 px-6 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
+  </header>  <section class="hero">
+    <div class="container hero-inner">
       <div>
-        <div className="inline-flex rounded-full border border-red-300/30 bg-white/10 px-4 py-2 text-sm font-semibold text-red-200 backdrop-blur">
-          Professional, fun and simple to book
+        <div class="eyebrow">Professional, fun and simple to book</div>
+        <h1>Sydney's premium fire truck birthday experience for kids.</h1>
+        <p class="lead">Real fire truck rides, lights, music, family photo moments, Fireman Dad, fun extras and a polished booking experience designed just for children’s parties across Sydney.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#packages">View Experiences</a>
+          <a class="btn btn-secondary" href="#gallery">See Real Parties</a>
         </div>
-        <h1 className="mt-6 max-w-4xl text-5xl font-black leading-[0.95] md:text-7xl">
-          The kids party website should feel as exciting as the fire truck.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
-          Give parents a premium booking experience and give kids the birthday they will never stop talking about. Party Brigade combines a real fire truck, music, lights, ride options, interactive fun and unforgettable family moments across Sydney.
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a href="#packages" className="rounded-2xl bg-red-600 px-6 py-4 font-semibold text-white shadow-2xl transition hover:scale-[1.02]">
-            View Packages
-          </a>
-          <a href="#gallery" className="rounded-2xl border border-white/20 bg-white/10 px-6 py-4 font-semibold text-white backdrop-blur">
-            See Real Parties
-          </a>
-        </div>
-
-        <div className="mt-10 grid max-w-3xl grid-cols-2 gap-4 md:grid-cols-4">
-          {[
-            "Ages 0–12",
-            "Up to 20 guests",
-            "Available 7 days",
-            "Sydney-wide parties",
-          ].map((item) => (
-            <div key={item} className="rounded-2xl border border-white/10 bg-white/10 p-4 text-sm font-semibold backdrop-blur">
-              {item}
-            </div>
-          ))}
+        <div class="hero-stats">
+          <div class="hero-stat">Ages 0–12</div>
+          <div class="hero-stat">Up to 20 guests</div>
+          <div class="hero-stat">Available 7 days</div>
+          <div class="hero-stat">Sydney-wide</div>
         </div>
       </div>
-
-      <div className="rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl bg-white p-5 text-slate-900">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-600">Most popular</p>
-            <h2 className="mt-3 text-3xl font-black">Yellow Package</h2>
-            <p className="mt-2 text-sm text-slate-600">Up to 1 hour · 15 minute ride included</p>
-            <p className="mt-4 text-sm leading-7 text-slate-700">The easy choice for parents who want the full fire truck wow-factor without overcomplicating the booking.</p>
+      <div class="hero-card">
+        <div class="hero-card-grid">
+          <div class="mini-card white">
+            <div class="kicker">Most Popular</div>
+            <h3>Premium</h3>
+            <p>Best value mix of ride time, impact and parent-friendly booking simplicity.</p>
           </div>
-          <div className="rounded-2xl bg-red-600 p-5 text-white">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-100">Trust factor</p>
-            <h2 className="mt-3 text-3xl font-black">Accredited & Insured</h2>
-            <p className="mt-4 text-sm leading-7 text-red-50">Authorised drivers, accredited fleet, public liability cover, safety cameras, first aid kits and Working With Children Check clearance policy for children’s events.</p>
+          <div class="mini-card red">
+            <div class="kicker">All Packages</div>
+            <h3>Fireman Dad</h3>
+            <p>Available with every experience so families can add the surprise they love most.</p>
           </div>
         </div>
-        <div className="mt-4 rounded-2xl bg-slate-950/70 p-5 text-sm leading-7 text-slate-200">
-          "Don’t settle for anything less" becomes a stronger sales message when the site itself feels premium, trustworthy and easy to understand.
-        </div>
+        <div class="signature-note">Party Brigade is the children’s booking side of Engine Number 9 NSW — built to feel premium, exciting and easy for parents to use.</div>
       </div>
     </div>
-  </section>
-
-  <section className="border-y border-slate-200 bg-slate-50">
-    <div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 md:grid-cols-3 lg:grid-cols-6">
-      {[
-        "Real fire truck hire",
-        "Kids birthday parties",
-        "Music, lights and onboard fun",
-        "Ride options included",
-        "Extra party upgrades",
-        "Fast booking flow",
-      ].map((item) => (
-        <div key={item} className="rounded-2xl bg-white p-4 text-center text-sm font-semibold shadow-sm">
-          {item}
-        </div>
-      ))}
+  </section>  <section class="strip">
+    <div class="container strip-grid">
+      <div class="pill">Real fire truck hire</div>
+      <div class="pill">Music, lights & sirens</div>
+      <div class="pill">Ride options available</div>
+      <div class="pill">Fireman Dad available</div>
+      <div class="pill">Premium extras</div>
+      <div class="pill">Simple enquiry flow</div>
     </div>
-  </section>
+  </section>  <section id="packages">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Choose your fire truck experience</div>
+        <h2>Clean package names. Premium presentation. Easy decisions for parents.</h2>
+        <p>We renamed the packages to feel more polished and easier to compare. Fireman Dad is available across all experiences, so families can add that signature surprise no matter which option they choose.</p>
+      </div><div class="packages">
+    <article class="card">
+      <h3>Basic</h3>
+      <div class="price">$490</div>
+      <div class="subline">Up to 1 hour · great simple entry option</div>
+      <div class="desc">A fun and easy introduction to the fire truck party experience for smaller birthdays and families who want the wow-factor without extra ride time.</div>
+      <ul class="list">
+        <li>Real fire truck party experience</li>
+        <li>Emergency siren and PA system</li>
+        <li>Music, lights and fun onboard atmosphere</li>
+        <li>Great for simple home parties</li>
+      </ul>
+      <div class="fireman-note">Fireman Dad available with this package.</div>
+      <a class="btn btn-dark" href="#contact">Enquire About Basic</a>
+    </article>
 
-  <section id="packages" className="mx-auto max-w-7xl px-6 py-24">
-    <div className="max-w-3xl">
-      <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Kids party packages</p>
-      <h2 className="mt-3 text-4xl font-black md:text-6xl">Clear package cards that make booking feel easy.</h2>
-      <p className="mt-5 text-lg leading-8 text-slate-600">
-        Instead of making parents search through long pages, this redesign turns the old package information into a clean, premium comparison section that feels simple and high-end.
-      </p>
-    </div>
+    <article class="card">
+      <h3>Standard</h3>
+      <div class="price">$540</div>
+      <div class="subline">Up to 1 hour · 15 minute ride included</div>
+      <div class="desc">The classic entry ride package that gives kids the thrill of a real fire truck ride while keeping the booking nice and simple.</div>
+      <ul class="list">
+        <li>15-minute fire truck ride</li>
+        <li>Music, siren and PA features</li>
+        <li>Perfect for younger children and first-time riders</li>
+        <li>Easy option for backyard birthdays</li>
+      </ul>
+      <div class="fireman-note">Fireman Dad available with this package.</div>
+      <a class="btn btn-dark" href="#contact">Enquire About Standard</a>
+    </article>
 
-    <div className="mt-12 grid gap-6 xl:grid-cols-4">
-      {packages.map((pkg) => (
-        <div key={pkg.name} className={`flex h-full flex-col rounded-[2rem] border p-8 shadow-sm ${pkg.featured ? "border-red-600 bg-red-600 text-white shadow-xl" : "border-slate-200 bg-white"}`}>
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className={`text-sm font-bold uppercase tracking-[0.22em] ${pkg.featured ? "text-red-100" : "text-red-600"}`}>{pkg.name}</p>
-              <h3 className="mt-3 text-4xl font-black">{pkg.price}</h3>
-            </div>
-            {pkg.featured ? (
-              <span className="rounded-full bg-white px-3 py-1 text-xs font-black uppercase tracking-[0.15em] text-red-600">Popular</span>
-            ) : null}
-          </div>
+    <article class="card">
+      <h3>Plus</h3>
+      <div class="price">$650</div>
+      <div class="subline">Up to 1 hour 15 minutes · more ride flexibility</div>
+      <div class="desc">A stronger mid-tier experience for larger groups wanting more time, more flexibility and a fuller birthday feel.</div>
+      <ul class="list">
+        <li>1 x 30 minute or 2 x 15 minute rides</li>
+        <li>More time for photos and interaction</li>
+        <li>Ideal for bigger celebrations</li>
+        <li>Balanced value and fun</li>
+      </ul>
+      <div class="fireman-note">Fireman Dad available with this package.</div>
+      <a class="btn btn-dark" href="#contact">Enquire About Plus</a>
+    </article>
 
-          <div className={`mt-6 rounded-2xl p-4 ${pkg.featured ? "bg-white/10" : "bg-slate-50"}`}>
-            <p className={`text-sm font-semibold ${pkg.featured ? "text-white" : "text-slate-900"}`}>{pkg.duration}</p>
-            <p className={`mt-1 text-sm ${pkg.featured ? "text-red-50" : "text-slate-600"}`}>{pkg.ride}</p>
-          </div>
+    <article class="card featured">
+      <div class="badge">Most Popular</div>
+      <h3>Premium</h3>
+      <div class="price">$790</div>
+      <div class="subline">Up to 1.5 hours · strongest all-round experience</div>
+      <div class="desc">The premium children’s party experience with the longest standard ride options and the biggest overall impact for families wanting the full Party Brigade feel.</div>
+      <ul class="list">
+        <li>1 x 60 minute, 2 x 30 minute or 4 x 15 minute rides</li>
+        <li>Best overall mix of value and wow-factor</li>
+        <li>Works beautifully for larger parties</li>
+        <li>Premium presentation from start to finish</li>
+      </ul>
+      <div class="fireman-note">Fireman Dad available with this package.</div>
+      <a class="btn btn-secondary" href="#contact">Enquire About Premium</a>
+    </article>
 
-          <p className={`mt-6 text-sm leading-7 ${pkg.featured ? "text-white" : "text-slate-700"}`}>{pkg.description}</p>
-
-          <ul className={`mt-6 space-y-3 text-sm leading-6 ${pkg.featured ? "text-red-50" : "text-slate-600"}`}>
-            {pkg.features.map((feature) => (
-              <li key={feature}>• {feature}</li>
-            ))}
-          </ul>
-
-          <a href="#contact" className={`mt-8 inline-flex rounded-2xl px-5 py-3 font-semibold ${pkg.featured ? "bg-white text-red-600" : "bg-slate-950 text-white"}`}>
-            Enquire About {pkg.name}
-          </a>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <section id="gallery" className="bg-slate-950 text-white">
-    <div className="mx-auto max-w-7xl px-6 py-24">
-      <div className="max-w-3xl">
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-300">Real party gallery</p>
-        <h2 className="mt-3 text-4xl font-black md:text-6xl">Real photos sell the experience better than any paragraph ever will.</h2>
-        <p className="mt-5 text-lg leading-8 text-slate-300">
-          Your uploaded photos are the strongest marketing asset on the whole site. This gallery makes the business look active, trusted and premium from the first scroll.
-        </p>
-      </div>
-
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        {gallery.map((image, index) => (
-          <div key={image.src} className={`overflow-hidden rounded-[1.75rem] ${index % 3 === 0 ? "xl:row-span-2" : ""}`}>
-            <img src={image.src} alt={image.alt} className="h-full min-h-[260px] w-full object-cover transition duration-300 hover:scale-105" />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" className="mx-auto max-w-7xl px-6 py-24">
-    <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr]">
-      <div className="flex items-center">
-        <img src="/images/interior-seating.jpg" alt="Inside Party Brigade fire truck" className="rounded-[2rem] shadow-2xl" />
-      </div>
-
-      <div>
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">What’s included onboard</p>
-        <h2 className="mt-3 text-4xl font-black md:text-6xl">A premium party setup inside a real fire truck.</h2>
-        <p className="mt-5 text-lg leading-8 text-slate-600">
-          The old website had strong features but they were buried. This section turns them into a polished premium sales point that shows just how much fun is packed into every booking.
-        </p>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {included.map((item) => (
-            <div key={item} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-              <p className="font-medium leading-7">{item}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="extras" className="bg-slate-50">
-    <div className="mx-auto max-w-7xl px-6 py-24">
-      <div className="max-w-3xl">
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Add-ons and upgrades</p>
-        <h2 className="mt-3 text-4xl font-black md:text-6xl">Extras that raise the value of every booking.</h2>
-        <p className="mt-5 text-lg leading-8 text-slate-600">
-          The old site had great extras. This redesign gives them space to breathe so parents instantly understand the upgrade options.
-        </p>
-      </div>
-
-      <div className="mt-12 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-        {extras.map((extra) => (
-          <div key={extra.title} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-            <div className="flex items-start justify-between gap-4">
-              <h3 className="text-2xl font-black">{extra.title}</h3>
-              <span className="rounded-full bg-red-50 px-3 py-1 text-sm font-bold text-red-600">{extra.price}</span>
-            </div>
-            <p className="mt-4 leading-8 text-slate-600">{extra.copy}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-12 rounded-[2rem] bg-slate-950 p-8 text-white md:p-10">
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-300">Special feature</p>
-        <h3 className="mt-3 text-3xl font-black md:text-5xl">Fireman Dad deserves a premium spotlight.</h3>
-        <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">
-          This is one of your most unique selling points. The new layout makes it a signature feature instead of a hidden extra: dad or another family member secretly joins the truck crew, arrives in authentic fireman gear and gets presented with the official Fireman Dan assistant certificate.
-        </p>
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <img src="/images/fireman-dad.jpg" alt="Fireman Dad surprise experience" className="rounded-[1.5rem] object-cover" />
-          <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-200">Certificate bonus</p>
-            <h4 className="mt-3 text-2xl font-black">Official assistant certificate</h4>
-            <p className="mt-4 leading-8 text-slate-300">Keep a downloadable certificate link here so families can preview it before booking or download it after the event.</p>
-            <a href="https://enginenumber9.com.au/wp-content/uploads/2022/03/FiremanDanAssistantCertificate.pdf" className="mt-6 inline-flex rounded-2xl bg-white px-5 py-3 font-semibold text-slate-950">
-              View Certificate
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="safety" className="bg-white">
-    <div className="mx-auto max-w-7xl px-6 py-24">
-      <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr]">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Why parents trust you</p>
-          <h2 className="mt-3 text-4xl font-black md:text-6xl">Safety and professionalism should feel obvious.</h2>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            This section takes the trust content from “Things You Should Know” and turns it into a serious, premium reassurance block that helps parents feel confident before they enquire.
-          </p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {trustPoints.map((item) => (
-            <div key={item} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-              <p className="font-medium leading-7 text-slate-800">{item}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section className="bg-red-600 text-white">
-    <div className="mx-auto max-w-7xl px-6 py-24">
-      <div className="max-w-4xl">
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-100">SEO content block</p>
-        <h2 className="mt-3 text-4xl font-black md:text-6xl">Kids fire truck parties Sydney families remember.</h2>
-        <p className="mt-5 text-lg leading-8 text-red-50">
-          Party Brigade offers children’s fire truck parties in Sydney with real fire truck rides, onboard music and lights, interactive activities, fire hose fun, family photo moments and tailored extras for birthdays and special events. With package options for different party sizes and budgets, plus upgrades like Fireman Dan, Fireman Dad and birthday essentials, this page is designed to rank better in local search while making the booking journey simpler and more premium.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section className="mx-auto max-w-7xl px-6 py-24">
-    <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
-      <div>
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Booking conditions</p>
-        <h2 className="mt-3 text-4xl font-black md:text-6xl">Keep the rules clear without making the page feel heavy.</h2>
-        <div className="mt-8 space-y-4">
-          {rules.map((item) => (
-            <div key={item} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-              <p className="leading-7 text-slate-700">{item}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div id="faq">
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-600">Frequently asked questions</p>
-        <h2 className="mt-3 text-4xl font-black md:text-6xl">Quick answers for busy parents.</h2>
-        <div className="mt-8 space-y-4">
-          {[
-            {
-              q: "What ages are your kids party packages for?",
-              a: "Children’s packages are for ages 0 to 12.",
-            },
-            {
-              q: "How many people can come?",
-              a: "The standard party maximum is 20 people, usually 18 children and 2 supervising adults.",
-            },
-            {
-              q: "Do you need a deposit?",
-              a: "Yes, a $250 deposit secures the booking.",
-            },
-            {
-              q: "Can packages be customised?",
-              a: "Yes. The business highlights flexibility and willingness to customise packages and extras.",
-            },
-            {
-              q: "Do you offer extra entertainment?",
-              a: "Yes. Add-ons include Fireman Dan, Fireman Dad, fire hose water blasting, birthday essentials and a kids photographer.",
-            },
-          ].map((item) => (
-            <div key={item.q} className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6">
-              <h3 className="text-xl font-black">{item.q}</h3>
-              <p className="mt-3 leading-8 text-slate-600">{item.a}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" className="px-6 pb-24">
-    <div className="mx-auto max-w-6xl rounded-[2rem] bg-slate-950 p-10 text-white shadow-2xl md:p-14">
-      <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-[0.24em] text-red-300">Ready to book?</p>
-          <h2 className="mt-3 max-w-3xl text-4xl font-black md:text-6xl">Turn your best photos into the best kids party website in your market.</h2>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-            This redesigned site is built to look premium, feel trustworthy and convert more enquiries. Keep this final section simple with strong contact paths and a short enquiry form.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href="tel:1300036469" className="rounded-2xl bg-red-600 px-6 py-4 font-semibold text-white">Call 1300 036 469</a>
-            <a href="mailto:danny@enginenumber9.com.au" className="rounded-2xl border border-white/20 px-6 py-4 font-semibold text-white">Email Danny</a>
-            <a href="https://enginenumber9.com.au/contact-us/" className="rounded-2xl border border-white/20 px-6 py-4 font-semibold text-white">Send Enquiry</a>
-          </div>
-        </div>
-
-        <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-200">Suggested enquiry form</p>
-          <div className="mt-6 grid gap-4">
-            {[
-              "Parent name",
-              "Mobile number",
-              "Suburb / venue",
-              "Event date",
-              "Child age",
-              "Preferred package",
-            ].map((field) => (
-              <div key={field} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300">
-                {field}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <article class="card">
+      <h3>Ultimate</h3>
+      <div class="price">Enquire</div>
+      <div class="subline">Custom premium package</div>
+      <div class="desc">A flexible high-end option for families wanting a bigger custom experience with upgraded extras, stronger presentation and a more tailored party flow.</div>
+      <ul class="list">
+        <li>Built around your party vision</li>
+        <li>Best for premium upgrades and add-ons</li>
+        <li>Ideal for standout birthdays and events</li>
+        <li>Tailored planning and inclusions</li>
+      </ul>
+      <div class="fireman-note">Fireman Dad available with this package.</div>
+      <a class="btn btn-dark" href="#contact">Enquire About Ultimate</a>
+    </article>
+  </div>
 </div>
 
-); }
+  </section>  <section id="gallery" class="gallery-wrap">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag" style="color:#ffc3bb;">Real party gallery</div>
+        <h2 style="color:#fff;">A $10,000 website feel starts with real, high-impact images.</h2>
+        <p style="color:rgba(255,255,255,.76);">Replace these placeholder images with your real truck, interior, ride and party photos to instantly make the whole site feel premium and believable.</p>
+      </div><div class="gallery-grid">
+    <div class="item tall"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80" alt="Fire truck exterior"></div>
+    <div class="item"><img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=900&q=80" alt="Kids party moment"></div>
+    <div class="item"><img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80" alt="Family celebration"></div>
+    <div class="item"><img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=80" alt="Party detail"></div>
+    <div class="item"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80" alt="Interior experience"></div>
+    <div class="item tall"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80" alt="Celebration photo"></div>
+  </div>
+</div>
+
+  </section>  <section id="included">
+    <div class="container split">
+      <div class="image-card">
+        <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Inside the party experience">
+      </div>
+      <div>
+        <div class="section-head" style="margin-bottom:20px;">
+          <div class="tag">What's included</div>
+          <h2>More than a ride. It feels like a full event experience.</h2>
+          <p>Take the strongest features from your current children’s pages and present them in a cleaner, more premium way that parents can understand immediately.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="soft-card"><h4>Emergency siren & PA</h4><p>Big excitement from the moment the truck arrives.</p></div>
+          <div class="soft-card"><h4>Music & sound system</h4><p>Touch-screen music with a high-energy party feel.</p></div>
+          <div class="soft-card"><h4>Lights, bubbles & fun features</h4><p>Interactive moments kids remember long after the party.</p></div>
+          <div class="soft-card"><h4>Authentic radio calls</h4><p>Adds realism and makes the whole ride more exciting.</p></div>
+          <div class="soft-card"><h4>Great family photo moments</h4><p>The truck arrival, rides and extras all create shareable memories.</p></div>
+          <div class="soft-card"><h4>Simple parent-friendly flow</h4><p>Clean packages, strong extras and an easy booking path.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>  <section id="extras" class="extras">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Extras and upgrades</div>
+        <h2>High-value add-ons that make the experience feel bigger.</h2>
+        <p>Your extras are one of the strongest money-making parts of the business. Presenting them well makes the site look more premium and lifts average booking value.</p>
+      </div><div class="extras-grid">
+    <div class="soft-card"><h3>Birthday Essentials</h3><p>Bundled birthday upgrades with gifts, show bags, invitations, signage and more.</p></div>
+    <div class="soft-card"><h3>Water Blasting</h3><p>Let kids blast the fire hose for a real firefighter moment.</p></div>
+    <div class="soft-card"><h3>Fireman Dad</h3><p>A signature surprise moment available with all packages.</p></div>
+    <div class="soft-card"><h3>Fireman Dan</h3><p>Interactive entertainment, comedy, games, prizes and party energy.</p></div>
+    <div class="soft-card"><h3>Kids Photographer</h3><p>Professional event coverage for family memories and social-friendly images.</p></div>
+  </div>
+
+  <div class="signature">
+    <div>
+      <div class="tag" style="color:#ffc5be;">Signature feature</div>
+      <h2 style="margin:0 0 16px; font-size: clamp(34px, 4.6vw, 58px); line-height: .98; letter-spacing: -.03em;">Fireman Dad should be a hero feature, not a hidden extra.</h2>
+      <p>Because it’s available across all packages, it becomes one of your strongest emotional sales points. A family member secretly joins the crew, suits up, and becomes part of the surprise in a way people remember and share.</p>
+      <div class="hero-buttons" style="margin-top:24px;">
+        <a class="btn btn-primary" href="#contact">Ask About Fireman Dad</a>
+        <a class="btn btn-secondary" href="https://enginenumber9.com.au/wp-content/uploads/2022/03/FiremanDanAssistantCertificate.pdf">View Certificate</a>
+      </div>
+    </div>
+    <div class="signature-box">
+      <h3 style="margin-top:0; font-size:26px;">Available with every experience</h3>
+      <p>That means you can promote it in the hero, packages, extras and booking form without making families upgrade just to access it.</p>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="safety">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Things parents should know</div>
+        <h2>Professional enough to trust. Fun enough to get remembered.</h2>
+        <p>This section keeps your important safety and booking information, but presents it in a cleaner, more premium way that doesn’t feel heavy or cluttered.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="soft-card"><h4>Accredited operator</h4><p>Backed by Engine Number 9 NSW.</p></div>
+        <div class="soft-card"><h4>Authorised drivers</h4><p>Professional operation and strong presentation.</p></div>
+        <div class="soft-card"><h4>Public liability cover</h4><p>Important reassurance for families and venues.</p></div>
+        <div class="soft-card"><h4>Working With Children policy</h4><p>Built for children’s bookings and parent confidence.</p></div>
+        <div class="soft-card"><h4>Safety equipment onboard</h4><p>First aid kits, extinguishers and operational standards.</p></div>
+        <div class="soft-card"><h4>Maintained fleet</h4><p>Presentation and reliability matter at every event.</p></div>
+        <div class="soft-card"><h4>Ages 0–12</h4><p>Focused on children’s experiences only.</p></div>
+        <div class="soft-card"><h4>Up to 20 guests</h4><p>Clear expectations make booking easier.</p></div>
+      </div>
+    </div>
+  </section>  <section id="faq" class="extras" style="background:#fff;">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">FAQ</div>
+        <h2>Quick answers for busy parents.</h2>
+        <p>Simple answers reduce hesitation and help the page convert more enquiries.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="soft-card"><h3>What ages is this for?</h3><p>Children’s party bookings are designed for ages 0 to 12.</p></div>
+        <div class="soft-card"><h3>How many people can attend?</h3><p>Up to 20 people in total, usually 18 children and 2 adults.</p></div>
+        <div class="soft-card"><h3>Is Fireman Dad only on certain packages?</h3><p>No. Fireman Dad is available for all packages.</p></div>
+        <div class="soft-card"><h3>Do you need a deposit?</h3><p>Yes, a deposit secures the booking date.</p></div>
+        <div class="soft-card"><h3>Can we add Fireman Dan?</h3><p>Yes. Fireman Dan can be added for families wanting more interactive entertainment.</p></div>
+        <div class="soft-card"><h3>Do you travel across Sydney?</h3><p>Yes, with surcharges potentially applying for some outer suburbs.</p></div>
+      </div>
+    </div>
+  </section>  <section id="contact" class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <div class="tag" style="color:#ffb9b0;">Ready to book?</div>
+          <h2 style="margin:0; font-size: clamp(36px, 5vw, 64px); line-height: .98; letter-spacing: -.03em;">Make the kids page feel separate, premium and built to book.</h2>
+          <p style="margin-top:18px; font-size:18px; line-height:1.8;">This is the children’s side of your business — cleaner, more focused and easier for parents to use than mixing kids and adult bookings together.</p>
+          <div class="hero-buttons" style="margin-top:24px;">
+            <a class="btn btn-primary" href="tel:1300036469">Call 1300 036 469</a>
+            <a class="btn btn-secondary" href="mailto:danny@enginenumber9.com.au">Email Danny</a>
+          </div>
+        </div>
+        <div class="form-preview">
+          <h3 style="margin-top:0; font-size:24px;">Suggested enquiry form</h3>
+          <div class="field">Parent name</div>
+          <div class="field">Mobile number</div>
+          <div class="field">Suburb / venue</div>
+          <div class="field">Event date</div>
+          <div class="field">Child age</div>
+          <div class="field">Preferred package + Fireman Dad?</div>
+        </div>
+      </div>
+    </div>
+  </section>  <div class="footer container">
+    Party Brigade · Sydney Children's Fire Truck Experiences · By Engine Number 9 NSW
+  </div>
+</body>
+</html>
