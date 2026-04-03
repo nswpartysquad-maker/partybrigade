@@ -129,6 +129,46 @@ h2{font-size:clamp(32px,5vw,52px)}
 @media (max-width:900px){.desktop-nav{justify-content:flex-start}.nav{grid-template-columns:1fr auto;gap:14px}.desktop-nav{grid-column:1 / -1;order:3;gap:10px;padding-top:4px}.desktop-nav a{font-size:15px;padding:10px 12px}.brand img{width:106px;height:106px}.brand strong{font-size:24px}}
 @media (max-width:640px){.nav{grid-template-columns:1fr auto}.brand img{width:98px;height:98px}.brand strong{font-size:22px}.brand small{font-size:10px}.brand span{font-size:11px}.desktop-nav{display:flex;overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px;scrollbar-width:none}.desktop-nav::-webkit-scrollbar{display:none}.desktop-nav a{font-size:15px;white-space:nowrap;padding:10px 12px}.nav-icon{font-size:22px}}
 
+
+/* stronger headings across all pages */
+h1{
+  font-size: clamp(46px, 7vw, 84px) !important;
+  line-height: .94 !important;
+  letter-spacing: -.04em !important;
+}
+h2{
+  font-size: clamp(42px, 6vw, 72px) !important;
+  line-height: .95 !important;
+  letter-spacing: -.04em !important;
+}
+.tag,
+.section-head .tag{
+  display:inline-block !important;
+  margin-bottom:14px !important;
+  font-size:16px !important;
+  letter-spacing:.18em !important;
+  text-transform:uppercase !important;
+  font-weight:900 !important;
+  color:var(--red) !important;
+}
+.lead,
+.section-head p{
+  font-size:20px !important;
+  line-height:1.85 !important;
+}
+.card h3,
+.soft-card h3,
+.soft-card h4{
+  font-size: clamp(22px, 2.2vw, 30px) !important;
+  line-height:1.08 !important;
+}
+@media (max-width: 640px){
+  h1{font-size:42px !important;}
+  h2{font-size:38px !important;}
+  .lead,.section-head p{font-size:18px !important;}
+  .card h3,.soft-card h3,.soft-card h4{font-size:22px !important;}
+}
+
 </style>
 
 <style>.split{display:grid;grid-template-columns:1fr .9fr;gap:24px;padding:26px 0 80px}.field{margin-top:12px;padding:14px 16px;border-radius:16px;background:#fff7f3;border:1px solid #eadfd7;color:#666;font-size:14px}@media(max-width:900px){.split{grid-template-columns:1fr}}</style></head><body>
