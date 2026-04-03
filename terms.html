@@ -1,426 +1,582 @@
-<section class="hero red-section">
-  <div class="container">
-    <div class="tag">Terms &amp; Conditions</div>
-    <h1>Terms &amp; Conditions</h1>
-    <p class="lead">
-      Please read carefully. By booking, contacting, or boarding, all guests agree to these terms.
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions | NSW Party Brigade</title>
+  <meta name="description" content="Full terms and conditions for NSW Party Brigade and Engine Number 9 NSW." />
+  <style>
+    :root{
+      --bg:#fff5f0;
+      --paper:#ffffff;
+      --text:#162033;
+      --muted:#61707d;
+      --line:#ecd7ca;
+      --red:#e53935;
+      --blue:#2d7dff;
+      --blue-dark:#123a8f;
+      --navy:#102446;
+      --shadow:0 20px 50px rgba(0,0,0,.10);
+      --max:1240px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,Arial,sans-serif;
+      color:var(--text);
+      line-height:1.7;
+      background:radial-gradient(circle at top left,#fffdfb 0%,#fff5f0 42%,#ffece3 100%);
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:linear-gradient(90deg,var(--blue-dark),var(--blue));
+      color:#fff;
+      box-shadow:0 12px 30px rgba(18,58,143,.25);
+      border-bottom:1px solid rgba(255,255,255,.14);
+    }
+    .nav{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:22px;
+      padding:12px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+    .brand img{
+      width:120px;
+      height:120px;
+      object-fit:contain;
+      filter:drop-shadow(0 12px 18px rgba(0,0,0,.28));
+    }
+    .brand-text{min-width:0}
+    .brand small{
+      display:block;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:#dfeaff;
+      font-weight:900;
+      margin-bottom:4px;
+    }
+    .brand strong{
+      display:block;
+      font-size:28px;
+      font-weight:900;
+      color:#fff;
+      line-height:1.05;
+    }
+    .brand span{
+      display:block;
+      font-size:13px;
+      color:#d7e4ff;
+    }
+
+    .desktop-nav{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      min-width:0;
+    }
+    .desktop-nav a{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:#eef4ff;
+      font-size:16px;
+      font-weight:900;
+      padding:12px 14px;
+      border-radius:999px;
+      transition:.22s ease;
+    }
+    .desktop-nav a:hover{
+      background:rgba(255,255,255,.14);
+      transform:translateY(-2px) scale(1.02);
+    }
+    .nav-icon{
+      font-size:24px;
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .desktop-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .phone-pill,.enquire-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border-radius:999px;
+      padding:15px 20px;
+      font-weight:900;
+      font-size:16px;
+      white-space:nowrap;
+    }
+    .phone-pill{
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+    }
+    .enquire-pill{
+      background:linear-gradient(180deg,#ff665e,var(--red));
+      color:#fff;
+      box-shadow:0 12px 24px rgba(229,57,53,.26);
+    }
+
+    .mobile-menu{display:none;position:relative}
+    .mobile-menu summary{
+      list-style:none;
+      cursor:pointer;
+      min-width:160px;
+      height:58px;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      font-size:20px;
+      font-weight:900;
+    }
+    .mobile-menu summary::-webkit-details-marker{display:none}
+    .mobile-panel{
+      position:absolute;
+      right:0;
+      top:68px;
+      width:min(360px,calc(100vw - 24px));
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:0 20px 50px rgba(0,0,0,.14);
+      padding:12px;
+      display:grid;
+      gap:6px;
+    }
+    .mobile-panel a{
+      color:var(--navy);
+      font-weight:900;
+      font-size:17px;
+      padding:14px 16px;
+      border-radius:14px;
+    }
+    .mobile-panel .mobile-phone{
+      background:#eef4ff;
+      color:#123a8f;
+    }
+    .mobile-panel .mobile-enquire{
+      background:linear-gradient(180deg,#ff665e,var(--red));
+      color:#fff;
+    }
+
+    .hero{
+      padding:40px 0 26px;
+      background:linear-gradient(180deg,#fff1eb 0%,#ffe7de 100%);
+    }
+    .tag{
+      display:inline-block;
+      margin-bottom:14px;
+      font-size:16px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:900;
+      color:var(--red);
+    }
+    h1,h2{
+      margin:0;
+      color:var(--navy);
+      letter-spacing:-.04em;
+      line-height:.95;
+    }
+    h1{font-size:clamp(46px,7vw,84px)}
+    h2{font-size:clamp(34px,5vw,58px)}
+    .lead{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:20px;
+      line-height:1.85;
+      max-width:900px;
+    }
+
+    .section{padding:44px 0 80px}
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 12px 28px rgba(0,0,0,.04);
+      margin-bottom:18px;
+    }
+    .card h2{
+      margin-bottom:14px;
+    }
+    .card p{
+      color:var(--muted);
+      line-height:1.85;
+      margin:0 0 14px;
+    }
+    .card ul{
+      margin:0;
+      padding-left:22px;
+      color:var(--muted);
+    }
+    .card li{
+      margin:8px 0;
+      line-height:1.8;
+    }
+
+    .footer{
+      padding:26px 0 50px;
+      font-size:14px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    @media (max-width:1100px){
+      .desktop-actions{display:none}
+      .mobile-menu{display:block}
+      .nav{grid-template-columns:auto 1fr auto}
+    }
+    @media (max-width:900px){
+      .nav{grid-template-columns:1fr auto;gap:14px}
+      .desktop-nav{
+        grid-column:1 / -1;
+        order:3;
+        justify-content:flex-start;
+        gap:10px;
+        padding-top:4px;
+      }
+      .desktop-nav a{font-size:15px;padding:10px 12px}
+      .brand img{width:102px;height:102px}
+      .brand strong{font-size:24px}
+    }
+    @media (max-width:640px){
+      .brand img{width:94px;height:94px}
+      .brand strong{font-size:22px}
+      .brand small{font-size:10px}
+      .brand span{font-size:11px}
+      .desktop-nav{
+        display:flex;
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        padding-bottom:6px;
+        scrollbar-width:none;
+      }
+      .desktop-nav::-webkit-scrollbar{display:none}
+      .desktop-nav a{
+        white-space:nowrap;
+        font-size:15px;
+        padding:10px 12px;
+      }
+      .nav-icon{font-size:22px}
+      h1{font-size:42px}
+      h2{font-size:32px}
+      .lead{font-size:18px}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="images/firetruck-logo.png" alt="NSW Party Brigade logo">
+        <div class="brand-text">
+          <small>NSW Party Brigade</small>
+          <strong>Sydney Children's Fire Truck</strong>
+          <span>By Engine Number 9 NSW</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html"><span class="nav-icon">🏠</span><span>Home</span></a>
+        <a href="packages.html"><span class="nav-icon">🔥</span><span>Packages & Extras</span></a>
+        <a href="gallery.html"><span class="nav-icon">🚒</span><span>Gallery</span></a>
+        <a href="formal.html"><span class="nav-icon">💃</span><span>School Formal</span></a>
+        <a href="older-children.html"><span class="nav-icon">👨‍🚒</span><span>Older Children</span></a>
+        <a href="contact.html"><span class="nav-icon">📢</span><span>Contact</span></a>
+        <a href="terms.html"><span class="nav-icon">🧯</span><span>Terms</span></a>
+      </nav>
+
+      <div class="desktop-actions">
+        <a class="phone-pill" href="tel:1300036469">📞 1300 036 469</a>
+        <a class="enquire-pill" href="contact.html">🚒 Enquire Now</a>
+      </div>
+
+      <details class="mobile-menu">
+        <summary aria-label="Open menu">☰ Menu</summary>
+        <div class="mobile-panel">
+          <a href="index.html">🏠 Home</a>
+          <a href="packages.html">🔥 Packages & Extras</a>
+          <a href="gallery.html">🚒 Gallery</a>
+          <a href="formal.html">💃 School Formal</a>
+          <a href="older-children.html">👨‍🚒 Older Children</a>
+          <a href="contact.html">📢 Contact</a>
+          <a href="terms.html">🧯 Terms</a>
+          <a class="mobile-phone" href="tel:1300036469">📞 1300 036 469</a>
+          <a class="mobile-enquire" href="contact.html">🚒 Enquire Now</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="tag">Terms &amp; Conditions</div>
+      <h1>Terms &amp; Conditions</h1>
+      <p class="lead">Please read carefully. By booking, contacting, or boarding, all guests agree to these terms.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="card">
+        <h2>CHILDREN PARTIES</h2>
+        <p><strong>12 years of age and under</strong></p>
+        <ul>
+          <li>At least 2 supervising adults on board for each ride duration</li>
+          <li>Minimum $250.00 deposit</li>
+          <li>$120.00 per agreed 15 min extra</li>
+          <li>Outer suburbs surcharges = $80.00 (see chart)</li>
+          <li>$250 per hour thereafter out of area for travel</li>
+          <li>Toll way = $25.00 per usage</li>
+          <li>Alcohol may not be consumed by passengers under the age of 18 years. It is the law, and Engine Number 9 NSW PTY LTD will not allow any underage drinking</li>
+          <li>Reduced passenger numbers when hiring on board guest entertainment</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>ADULT PARTIES</h2>
+        <ul>
+          <li>Minimum $500.00 deposit (depending on package)</li>
+          <li>$150.00 per agreed 15 min extra/overtime</li>
+          <li>$350.00 per agreed 30 min extra/overtime</li>
+          <li>$547.75 per agreed 45 min extra/overtime</li>
+          <li>$797.00 per agreed 60 min extra/overtime</li>
+          <li>Outer suburbs surcharges = $80.00 (see chart)</li>
+          <li>$150 per hour thereafter out of area for travel</li>
+          <li>Toll way = $25.00 per usage</li>
+          <li>Passengers must be 12 years of age and above</li>
+          <li>Passengers under the age of 18 years may not consume alcohol.</li>
+          <li>It is the law, and Engine Number 9 NSW PTY LTD will not allow any underage drinking</li>
+          <li>Reduced passenger numbers when hiring on board guest entertainment</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>GENERAL</h2>
+        <ul>
+          <li>Strictly no standing on seats (escorted off bus without further notice and no refund)</li>
+          <li>No standing whilst vehicle is in motion, unless instructed to do so by staff/team</li>
+          <li>Standing permissible only when instructed to do so by staff/team</li>
+          <li>Please remain seated, move to entry/exit point only when instructed to do so by crew</li>
+          <li>No hanging on Truck ladder or Bus handrails</li>
+          <li>No body parts to protrude outside perimeter of vehicle such as arms, hands, heads etc</li>
+          <li>No shouting out offensive profanities and rude gestures to the public</li>
+          <li>No throwing of items outside or inside the vehicle</li>
+          <li>Use of roof covering and or netting to the discretion of staff/crew</li>
+          <li>Any damage, injuries or liquid spillage, crew to be notified immediately</li>
+          <li>Crew to be notified immediately of any public persons illegally boarding vehicle</li>
+          <li>Drunk clients will be refused entry and no refund</li>
+          <li>Management does reserve the right at any time to exit passengers and/or instantly terminate the service with no further notice and no refund</li>
+          <li>Engine Number 9 NSW PTY LTD accepts no responsibility for any lost or damaged luggage, valuables and belongings. Therefore please keep an eye on your luggage/ possessions at all times.</li>
+          <li>Management reserves the right to immediately involve authorities at any time</li>
+          <li>Further and continual instructions from crew must be adhered too</li>
+          <li>Please note you are under camera surveillance (installed for your safety)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>EMERGENCY EXITS</h2>
+        <p><strong>TRUCK TV6509</strong> – Emergency exit (1) via ladder at rear (gate is outward opening and quick release latch)</p>
+        <p>Emergency exit (2) via passenger side cabin door</p>
+        <p><strong>BUS TV399B</strong> – Emergency exit (1) via rear emergency lift hatch</p>
+        <p>Emergency exit (2) via passenger front door</p>
+        <p>Emergency exit (3) via breakable bus windows with red window breaker</p>
+      </div>
+
+      <div class="card">
+        <h2>ONBOARD</h2>
+        <ul>
+          <li>Dancing is allowed only at a pre determined stops and duration- crew will advise</li>
+          <li>Full free access to touch screen music video’s at any time</li>
+          <li>Crew to be notified of toilet stop (4 or more passengers)</li>
+          <li>Trash bin and paper towels located front of cabin, cigarette bins also provided</li>
+          <li>Crew can be contacted at any time during event via intercom or cabin slide window</li>
+          <li>ALL TERMS AND CONDITIONS MUST BE AGREED TO</li>
+          <li>Reduced passenger numbers when hiring on board guest entertainment</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>THE RESPONSIBILITY OF THE HIRER</h2>
+        <p><strong>THE HIRER</strong> – The Hiring person is the person responsible for the booking/payment of the hire.</p>
+      </div>
+
+      <div class="card">
+        <h2>DEPOSIT</h2>
+        <p>Deposits and/ or any money withheld by Engine Number 9 NSW PTY LTD bank accounts, as down payment prior to booking date is the responsibility of the hirer. Deposits and/ or any money withheld by Engine Number 9 NSW PTY LTD bank accounts as down payment prior to booking date is wholly known as the deposit.</p>
+        <p>In the case that multiple parties have deposited money into Engine Number 9 NSW PTY LTD accounts Engine Number 9 NSW PTY LTD reserves the right to only speak to the hirer and treat the money withheld as one (1) sum of money only.</p>
+        <p>A minimum deposit is required and specified in accordance with each package. The hire date/ time/ package can only be officially confirmed/ reserved when Engine Number 9 NSW PTY LTD has sited, proof or evidence of any related transaction.</p>
+        <p>Official booking confirmation is issued to hirer via email, however booking remains at all times subject to availability of fire truck, for example, but not limited to, unforeseen circumstances, safety issues and weather.</p>
+        <p>Full and final payment MUST be received a minimum 2 weeks prior to your event. All payments must be made in FULL prior to boarding otherwise management will refuse all right of entry.</p>
+      </div>
+
+      <div class="card">
+        <h2>PARKING SPACE</h2>
+        <p>Engine Number 9 NSW PTY LTD requests in all cases sufficient legal parking space provided by hirer on date and time of booking. Parking space should be provided/made available upon arrival, between rides and where applicable upon drop off.</p>
+        <p>Failure to do so requires extra time and possible travel. In the event that the hirer has not provided sufficient parking, time required to safely park the fire truck/s will be a deduction off your hire time and/ or at additional cost and Engine Number 9 NSW PTY LTD will not be accountable/liable at any time.</p>
+        <p>Fire truck requires a clear 7 meters legal parking space for length Fire truck is 3 meters wide, Bus requires a clear 11 meters legal parking space for length Bus is 3 meters wide.</p>
+        <p>NOTE: In most cases the hirer parks private vehicles in space where they would like the fire truck or bus to park and remove the private vehicles upon arrival of the fire truck or bus allowing free parking space. Another method can be a provision of witches’ hats/ “A” frame signage marking a “No Park” area allowing fire truck free parking space.</p>
+        <p>At all times parking shall remain the sole discretion of staff crew in attendance on the day of hire.</p>
+      </div>
+
+      <div class="card">
+        <h2>LIABILITIES</h2>
+        <p>Any human being/man/women/individual/organisation/government body interfering with the daily running’s of the business Engine Number 9 NSW Pty Ltd, it’s owner/operator, its clients, its agents, employees, instructors, and/or personnel, will be served a fine of $6000.</p>
+        <p>Anybody/individual/organisation/government body who makes false claims/unprovoked claims/ stereotypes towards the business Engine Number 9 NSW Pty Ltd it’s owner/operator, its clients, its agents, employees, instructors, and/or personnel, will be served a fine of $6000.</p>
+        <p>It is the responsibility of the hirer that all guests within their group who board Engine Number 9 NSW Pty Ltd (during the duration of their hire) have also read these Terms and Conditions and have made no objection and therefore agree to all responsibilities and instruction given in these Terms and Conditions.</p>
+        <p>These Terms and Conditions automatically apply to any person/individuals/organisations/business entities and sovereigns whether you have read them or not are bound by the following:</p>
+        <ul>
+          <li>Agreeing to the Terms and Condition’s</li>
+          <li>Boarding the fire truck or bus</li>
+          <li>Making any contact with Engine Number 9 NSW Pty Ltd ie. Verbal, written, email, text, by phone or any other form of communication</li>
+        </ul>
+        <p>Engine Number 9 NSW Pty Ltd reserves the right to call their business vehicle International Acco TV6509 and 1991 Mca Bus TV399B to soley be known as a mobile event venue and must never be know as or categorised as a party bus.</p>
+        <p>By agreeing to these Terms and conditions you automatically give up all your rights to your commercial liability therefore any breeches to these Terms and Conditions allow company Engine Number 9 NSW Pty Ltd to sue/deal with any human being/man/women/sovereign/corporate entity/business entity in a court of law.</p>
+        <p>You as an individual hereby give up your full commercial liability and therefore are open for the business/company known as Engine Number 9 NSW Pty Ltd to personally deal with you in a court of law.</p>
+        <p>The hirer warrants that he/she and their guests does not suffer from any Medical Condition/s and/or incapacity which may impair the Participants ability to participate in Engine Number 9 NSW PTY LTD event and further, that the Participant/s do not suffer from any Heart Condition, Epilepsy or other Medical Condition which may result in the Participant potentially placing himself/herself in a position of risk, by undertaking events booked through Engine Number 9 NSW PTY LTD.</p>
+        <p>Pregnant guests (whether knowingly or un-knowingly) participate in an Engine Number 9 NSW PTY LTD event at their own risk and or discretion, Engine Number 9 NSW PTY LTD accepts no responsibility or liability.</p>
+        <p>The hirer holds the company, its agents or employees harmless of any liability for any personal or material damages arising from all conduct of his/ her party.</p>
+        <p>The hirer fully indemnify Engine Number 9 NSW PTY LTD and all its servants, agent’s, clients and employees against any injury, damage or accident that may be sustained by the Participant, whilst participating in any Engine Number 9 NSW PTY LTD package, event, activity or other or the Entities and Groups who offer various services Engine Number 9 NSW PTY LTD.</p>
+        <p>The company, its agents or employees shall not be held liable or responsible for any articles left/forgotten in the vehicle and the hirer specifically indemnifies the company, its agents or employees from any such responsibility and undertakes to advise all other persons in his or her party.</p>
+        <p>The consumption of food is not permitted in any of the vehicles unless specific agreement has been made to the contrary at the time of the booking and agreed in writing. Drinks must be consumed in the vehicle and may not be removed for any reason whatsoever. The company does not permit the consumption/use of illicit drugs whilst in the vehicle. Failure to comply will result in the termination of hire. Irresponsible behaviour that causes damage to the vehicle or endangers the safety of public and other passengers will not be condoned.</p>
+        <p>This includes, but is not restricted to; sitting on the exterior of the vehicle, hanging out of the vehicle, shouting abuse, rudeness or intolerance with the chauffeur or host, arguing with the chauffeur or host, misuse of the equipment, fixtures or consumables in the vehicle and wilful damage to the interior generally.</p>
+        <p>Also, use of the emergency exit in a non emergency, is forbidden. This is for emergencies only, and fines will apply if not adhered to. Such behaviour may, at the discretion of the chauffeur and or staff, and Engine Number 9 NSW PTY LTD, will result in the immediate termination of the hire without compensation.</p>
+        <p>In addition, the hirer shall be held liable and responsible for any loss, or injuries howsoever caused, by the behaviour of his or her party.</p>
+        <p>The hirer accepts that the DVD, lighting and effects and music equipment is provided as a courtesy. In the event that the equipment fitted to the vehicle malfunctions prior to or during the hire, Engine Number 9 NSW PTY LTD accepts no liability whatsoever and no compensation shall be provided, nor will the company provide a refund.</p>
+        <p>In the event that a vehicle is involved in an accident or suffers from mechanical failure, is no longer safe to drive or Engine Number 9 NSW PTY LTD fail to provide a service in any way Engine Number 9 NSW PTY LTD may at its entire discretion determine the method of onward travel, if any.</p>
+        <p>The hirer specifically accepts that the hire is based on best endeavours of Engine Number 9 NSW PTY LTD, and we will do anything in our power to assist where appropriate. There can be no specific guarantees in terms of drop off and pick up time due to reliability of the vehicle ,the chauffeur or the company and events out of our direct control.</p>
+        <p>The Participant/s pledges that no legal action will be initiated by it against Engine Number 9 NSW PTY LTD, its clients, its agents, employees, instructors, and/or personnel, due to any accident or injury or monetary lose sustained during the course of undertaking an event /package.</p>
+      </div>
+
+      <div class="card">
+        <h2>DRIVEWAYS/ THOROUGHFARES/ PRIVATE PROPERTY</h2>
+        <p>It is the policy of Engine Number 9 NSW PTY LTD that the fire truck or bus do not enter private driveways as we are aware that the fire truck may break, crack, stress or fracture private driveways, walkways and thoroughfares.</p>
+        <p>If prior arrangements to do so have been made with management in writing Engine Number 9 NSW PTY LTD is not held liable in any way for any breaks, cracks, stresses or fractures.</p>
+        <p>Further to Engine Number 9 NSW PTY LTD entering private property, Engine Number 9 NSW PTY LTD is not liable for any damaged caused by fire truck or bus to private property i.e. Letterboxes, dwellings, fences, gates etc.</p>
+      </div>
+
+      <div class="card">
+        <h2>OFFENSIVE GUESTS & DAMAGES</h2>
+        <p>Don’t arrive drunk or under the influence of drugs of any kind or you will be refused entry. We reserve the right to exclude any person(s) from Engine Number 9 NSW PTY LTD (truck/bus) if they become socially offensive and/or cause offence or inconvenience to others.</p>
+        <p>We reserve the right to give your contact details to any person(s) making a complaint about any of your guests.</p>
+        <p>The hirer shall be responsible for the behaviour of all passengers and shall be primarily responsible for any damage or loss caused to the vehicle whatsoever.</p>
+        <p>The hirer agrees to undertake the responsibility to inform all attending the event of rules and terms and conditions.</p>
+        <p>Any abuse or misuse of equipment e.g. microphones, speakers and remotes will result in use of such items and service being terminated immediately.</p>
+        <p>This includes swearing into microphones, shouting abuse and or directing abuse from vehicle so it can be heard outside. This and any other behaviour deemed to be inappropriate by the sole discretion of the chauffeur will result in loss of service immediately.</p>
+        <p>Damaged and or lost microphone/s or remotes are the responsibility of the hirer and will incur a charge. Microphone $200 per item. Remote $200 per item Speakers $800 per item.</p>
+      </div>
+
+      <div class="card">
+        <h2>TRUCK/BUS CLEANING AND/OR DAMAGE</h2>
+        <p>If the truck or bus requires cleaning beyond what would be normally expected (such as removing excessive spilt drink, party poppers, chewing gum, confetti, vomit etc) additional cleaning fees will apply starting from but not limited to $120.00.</p>
+        <p>If the vehicle requires repairs as a result of your group’s actions, you will be responsible for the cost of these repairs.</p>
+        <p>The hirer shall be fully responsible and liable for any damage caused both inside and outside the vehicle by the hirer or a member of his or her party.</p>
+        <p>This includes irrational behaviour resulting in damage to the vehicle or its contents by a third party.</p>
+        <p>The hirer must fully agree to be held liable for the retail cost of any repair as a consequence of any damage caused.</p>
+        <p>The hirer must fully agree to be held liable for any time/lose of business to Engine Number 9 NSW PTY LTD, until repairs have been made.</p>
+        <p>The hirer further agrees that the company may at its entire discretion determine the repairer that will fix the damage to the vehicles.</p>
+        <p>In addition, the hirer shall be responsible for payment of a fixed rate, which shall be determined by the company, at its sole discretion for the period during which the vehicle cannot be used as a consequence of said damage and repairs.</p>
+        <p>That notwithstanding, the hirer shall also be responsible for any further losses which are incurred as a result of lost bookings and credibility.</p>
+        <p>Engine Number 9 NSW PTY LTD can and will recover any money for loss of Engine Number 9 NSW PTY LTD property that is provided in the Fire Truck or Bus. This includes, but is not limited to; glassware, cushions, fire man helmets, fire man clothing, bar equipment, DVD’s, CD’s.</p>
+      </div>
+
+      <div class="card">
+        <h2>UNFORESEEABLE EVENTS</h2>
+        <p>Traffic, street access and other conditions/reasons are unpredictable and may hamper itinerary times.</p>
+        <p>Contractors and external hired entertainment may at times be delayed such as adult entertainment, Fire Man Clown, photographer etc where Engine Number 9 NSW PTY LTD accepts no responsibility and will not be held liable.</p>
+        <p>Engine Number 9 NSW PTY LTD accepts no liability or responsibility for any delayed or cancelled flights.</p>
+        <p>Engine Number 9 NSW PTY LTD will not be held responsible for any bookings not confirmed by our office.</p>
+        <p>Engine Number 9 NSW PTY LTD will not be held responsible for any bookings not confirmed by the hirer.</p>
+        <p>Engine Number 9 NSW PTY LTD reserves the right to cancel a booking at any time in the event of adverse weather conditions, equipment failure or other reasonable and unforeseen circumstances. In such an event, an alternative date will be arranged with the Participant. No refund will be available.</p>
+      </div>
+
+      <div class="card">
+        <h2>CANCELLATIONS, REFUNDS AND OR CREDITS</h2>
+        <p>Any deposits and/ or any money withheld by Engine Number 9 NSW PTY LTD as down payment prior to booking date is the responsibility of the hirer. Deposits and or any money withheld by Engine Number 9 NSW PTY LTD as down payment prior to booking date are wholly known as the deposit. This includes standard deposit amount and any amount greater than standard package deposit amount, as a total.</p>
+        <p>Bookings made with Engine Number 9 NSW PTY LTD are strictly non-refundable in whole or in part.</p>
+        <p>Any money deposited into Engine Number 9 NSW PTY LTD account or accumulated by any other means remains the property of Engine Number 9 NSW PTY LTD however Engine Number 9 NSW PTY LTD is fully flexible and in most cases may exchange monies received to be used as credit in its entirety towards another Engine Number 9 NSW PTY LTD package for up to six (6) months from cancellation notification date (verbal or in writing).</p>
+        <p>In the case that multiple parties have deposited money into Engine Number 9 NSW PTY LTD accounts, Engine Number 9 NSW PTY LTD reserves the right to only speak to the hirer and treat the money withheld as one (1) sum of money only. A minimum deposit is required and specified in accordance with each package. The hire date/time/package can only be officially confirmed / reserved when Engine Number 9 NSW PTY LTD has sited, proof or evidence of any related transaction.</p>
+        <p>If you fail to show at/on the booked time/day of your package, Engine Number 9 NSW PTY LTD will not offer a refund or credit.</p>
+        <p>Any cancellations made within a 48 hour period prior to booking date, Engine Number 9 NSW PTY LTD will not offer a refund or credit.</p>
+        <p>In the event that a re-booking is made due to an initial cancellation and deposit withheld, the new booking may only be made with a total of a new package as down payment/deposit. This means payment in full of new package, which includes money already withheld.</p>
+        <p>In the event the booking is cancelled or postponed for any reason prior to 48 hours before booking, the hirer agrees to reschedule another date or, where possible, exchange for another package. Bookings made through Engine Number 9 NSW PTY LTD are non-refundable in whole or in part.</p>
+        <p>In the event that a vehicle is involved in an accident or suffers from mechanical failure, cancellation of event or booking, or is no longer safe to drive or we fail to provide a service in any way; The hirer specifically accepts unconditionally that the hire is based on best endeavours of Engine Number 9 NSW PTY LTD, and therefore agrees that in such cases Engine Number 9 NSW PTY LTD claims lost business in all cases, therefore no refund of any kind applies.</p>
+        <p>The Participant/s pledges that no legal action will be initiated by it against Engine Number 9 NSW PTY LTD, its clients, its agents, employees, instructors, and/or personnel, due to any accident or injury or monetary loss sustained during the course of undertaking an event /package.</p>
+      </div>
+
+      <div class="card">
+        <h2>BOOKING AMENDMENTS & DOWNGRADES</h2>
+        <p>In the event a booking is downgraded (including, but not limited to, the cancellation of entertainment, staff, or a reduction in booking duration), and such changes impact Engine Number 9 NSW’s business operations, an alteration fee will apply. This fee will be a minimum of $150 and may increase depending on the extent of the changes.</p>
+      </div>
+
+      <div class="card">
+        <h2>ADDITIONAL TIME PENALTY</h2>
+        <p>Additional time should be planned. Unscheduled additional time that is a result of your group’s actions will be charged (see above).</p>
+      </div>
+
+      <div class="card">
+        <h2>EXTERNAL ENTERTAINMENT / CONTRACTORS HIRED BY GUESTS</h2>
+        <p>Any guests wishing to include in their package such performers/entertainers of their choice/hire can do so at an incurring venue fee of $170.</p>
+        <p>The primary requirement is that the guest entertainer must carry their own public liability and insurance, proof of which is to be sent to Engine Number 9 NSW PTY LTD no less than 14 days prior to the arranged booking date. Fail to do so will result in refusal of boarding to the guest entertainer.</p>
+      </div>
+
+      <div class="card">
+        <h2>PHOTOS</h2>
+        <p>Sometimes Engine Number 9 NSW PTY LTD has a professional host and/ or photographer on the fire engine or bus who takes photos. These photos are published on our web site.</p>
+        <p>You are welcome to copy these photos if you wish.</p>
+        <p>If you do not want these photos to be published on our web site please advise us prior to the event or during the event.</p>
+        <p>If you do not like any or all of your photos that are published, let us know and they will be removed.</p>
+      </div>
+
+      <div class="card">
+        <h2>ELECTIRICTY / POWER SUPPLY</h2>
+        <p>Engine Number 9 NSW PTY LTD can supply 240 Volt outlet on board as we use the latest pure sign wave inverter which is cleaner power than most household outlets.</p>
+        <p>Engine Number 9 NSW PTY LTD accepts no responsibility for any damage, miss-use to any equipment plugged into our power outlets.</p>
+        <p>In the case that a fire truck or bus is to enter an enclosed dwelling the use of motor generator is forbidden. The hirer bares the cost and responsibility to supply mains power to fire truck.</p>
+      </div>
+
+      <div class="card">
+        <h2>FINAL TERMS</h2>
+        <p>Engine Number 9 NSW PTY LTD reserves the right to alter/change/amend, any/all terms and conditions at any time without notice.</p>
+        <p>You (not limited to)/ any human being/man/women/individual/organisation/government body etc who agrees to Engine Number 9 NSW Pty Ltd Terms and Conditions are bound by them till the end of time.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer container">
+    NSW Party Brigade · Terms & Conditions
   </div>
-</section>
-
-<section class="section">
-  <div class="container">
-
-    <div class="card">
-      <h2>CHILDREN PARTIES</h2>
-      <p><strong>12 years of age and under</strong></p>
-      <ul>
-        <li>At least 2 supervising adults on board for each ride duration</li>
-        <li>Minimum $250.00 deposit</li>
-        <li>$120.00 per agreed 15 min extra</li>
-        <li>Outer suburbs surcharges = $80.00 (see chart)</li>
-        <li>$250 per hour thereafter out of area for travel</li>
-        <li>Toll way = $25.00 per usage</li>
-        <li>Alcohol may not be consumed by passengers under the age of 18 years. It is the law, and Engine Number 9 NSW PTY LTD will not allow any underage drinking</li>
-        <li>Reduced passenger numbers when hiring on board guest entertainment</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>ADULT PARTIES</h2>
-      <ul>
-        <li>Minimum $500.00 deposit (depending on package)</li>
-        <li>$150.00 per agreed 15 min extra/overtime</li>
-        <li>$350.00 per agreed 30 min extra/overtime</li>
-        <li>$547.75 per agreed 45 min extra/overtime</li>
-        <li>$797.00 per agreed 60 min extra/overtime</li>
-        <li>Outer suburbs surcharges = $80.00 (see chart)</li>
-        <li>$150 per hour thereafter out of area for travel</li>
-        <li>Toll way = $25.00 per usage</li>
-        <li>Passengers must be 12 years of age and above</li>
-        <li>Passengers under the age of 18 years may not consume alcohol</li>
-        <li>It is the law, and Engine Number 9 NSW PTY LTD will not allow any underage drinking</li>
-        <li>Reduced passenger numbers when hiring on board guest entertainment</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>GENERAL</h2>
-      <ul>
-        <li>Strictly no standing on seats (escorted off bus without further notice and no refund)</li>
-        <li>No standing whilst vehicle is in motion, unless instructed to do so by staff/team</li>
-        <li>Standing permissible only when instructed to do so by staff/team</li>
-        <li>Please remain seated, move to entry/exit point only when instructed to do so by crew</li>
-        <li>No hanging on Truck ladder or Bus handrails</li>
-        <li>No body parts to protrude outside perimeter of vehicle such as arms, hands, heads etc</li>
-        <li>No shouting out offensive profanities and rude gestures to the public</li>
-        <li>No throwing of items outside or inside the vehicle</li>
-        <li>Use of roof covering and or netting to the discretion of staff/crew</li>
-        <li>Any damage, injuries or liquid spillage, crew to be notified immediately</li>
-        <li>Crew to be notified immediately of any public persons illegally boarding vehicle</li>
-        <li>Drunk clients will be refused entry and no refund</li>
-        <li>Management does reserve the right at any time to exit passengers and/or instantly terminate the service with no further notice and no refund</li>
-        <li>Engine Number 9 NSW PTY LTD accepts no responsibility for any lost or damaged luggage, valuables and belongings. Therefore please keep an eye on your luggage/possessions at all times.</li>
-        <li>Management reserves the right to immediately involve authorities at any time</li>
-        <li>Further and continual instructions from crew must be adhered to</li>
-        <li>Please note you are under camera surveillance (installed for your safety)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>EMERGENCY EXITS</h2>
-      <p><strong>TRUCK TV6509</strong></p>
-      <ul>
-        <li>Emergency exit (1) via ladder at rear (gate is outward opening and quick release latch)</li>
-        <li>Emergency exit (2) via passenger side cabin door</li>
-      </ul>
-
-      <p><strong>BUS TV399B</strong></p>
-      <ul>
-        <li>Emergency exit (1) via rear emergency lift hatch</li>
-        <li>Emergency exit (2) via passenger front door</li>
-        <li>Emergency exit (3) via breakable bus windows with red window breaker</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>ONBOARD RULES &amp; FACILITIES</h2>
-      <ul>
-        <li>Dancing is allowed only at pre-determined stops and duration – crew will advise</li>
-        <li>Full free access to touch screen music videos at any time</li>
-        <li>Crew to be notified of toilet stop (4 or more passengers)</li>
-        <li>Trash bin and paper towels located front of cabin, cigarette bins also provided</li>
-        <li>Crew can be contacted at any time during event via intercom or cabin slide window</li>
-        <li>All terms and conditions must be agreed to</li>
-        <li>Reduced passenger numbers when hiring on board guest entertainment</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>THE RESPONSIBILITY OF THE HIRER</h2>
-      <p><strong>THE HIRER</strong> – The Hiring person is the person responsible for the booking/payment of the hire.</p>
-    </div>
-
-    <div class="card">
-      <h2>DEPOSIT</h2>
-      <p>
-        Deposits and/or any money withheld by Engine Number 9 NSW PTY LTD bank accounts, as down payment prior to booking date is the responsibility of the hirer. Deposits and/or any money withheld by Engine Number 9 NSW PTY LTD bank accounts as down payment prior to booking date is wholly known as the deposit.
-      </p>
-      <p>
-        In the case that multiple parties have deposited money into Engine Number 9 NSW PTY LTD accounts, Engine Number 9 NSW PTY LTD reserves the right to only speak to the hirer and treat the money withheld as one (1) sum of money only.
-      </p>
-      <p>
-        A minimum deposit is required and specified in accordance with each package. The hire date/time/package can only be officially confirmed/reserved when Engine Number 9 NSW PTY LTD has sighted proof or evidence of any related transaction.
-      </p>
-      <p>
-        Official booking confirmation is issued to hirer via email, however booking remains at all times subject to availability of fire truck, for example, but not limited to, unforeseen circumstances, safety issues and weather.
-      </p>
-      <p>
-        Full and final payment MUST be received a minimum 2 weeks prior to your event. All payments must be made in FULL prior to boarding otherwise management will refuse all right of entry.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>PARKING SPACE</h2>
-      <p>
-        Engine Number 9 NSW PTY LTD requests in all cases sufficient legal parking space provided by hirer on date and time of booking. Parking space should be provided/made available upon arrival, between rides and where applicable upon drop off.
-      </p>
-      <p>
-        Failure to do so requires extra time and possible travel. In the event that the hirer has not provided sufficient parking, time required to safely park the fire truck/s will be a deduction off your hire time and/or at additional cost and Engine Number 9 NSW PTY LTD will not be accountable/liable at any time.
-      </p>
-      <p>
-        Fire truck requires a clear 7 meters legal parking space for length. Fire truck is 3 meters wide. Bus requires a clear 11 meters legal parking space for length. Bus is 3 meters wide.
-      </p>
-      <p>
-        NOTE: In most cases the hirer parks private vehicles in space where they would like the fire truck or bus to park and remove the private vehicles upon arrival of the fire truck or bus allowing free parking space. Another method can be a provision of witches’ hats/“A” frame signage marking a “No Park” area allowing fire truck free parking space.
-      </p>
-      <p>
-        At all times parking shall remain the sole discretion of staff crew in attendance on the day of hire.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>LIABILITIES</h2>
-      <p>
-        Any human being/man/women/individual/organisation/government body interfering with the daily running’s of the business Engine Number 9 NSW Pty Ltd, it’s owner/operator, its clients, its agents, employees, instructors, and/or personnel, will be served a fine of $6000.
-      </p>
-      <p>
-        Anybody/individual/organisation/government body who makes false claims/unprovoked claims/stereotypes towards the business Engine Number 9 NSW Pty Ltd it’s owner/operator, its clients, its agents, employees, instructors, and/or personnel, will be served a fine of $6000.
-      </p>
-      <p>
-        It is the responsibility of the hirer that all guests within their group who board Engine Number 9 NSW Pty Ltd (during the duration of their hire) have also read these Terms and Conditions and have made no objection and therefore agree to all responsibilities and instruction given in these Terms and Conditions.
-      </p>
-      <p>
-        These Terms and Conditions automatically apply to any person/individuals/organisations/business entities and sovereigns whether you have read them or not are bound by the following:
-      </p>
-      <ul>
-        <li>Agreeing to the Terms and Condition’s</li>
-        <li>Boarding the fire truck or bus</li>
-        <li>Making any contact with Engine Number 9 NSW Pty Ltd ie. verbal, written, email, text, by phone or any other form of communication</li>
-      </ul>
-      <p>
-        Engine Number 9 NSW Pty Ltd reserves the right to call their business vehicle International Acco TV6509 and 1991 Mca Bus TV399B to solely be known as a mobile event venue and must never be known as or categorised as a party bus.
-      </p>
-      <p>
-        By agreeing to these Terms and conditions you automatically give up all your rights to your commercial liability therefore any breaches to these Terms and Conditions allow company Engine Number 9 NSW Pty Ltd to sue/deal with any human being/man/women/sovereign/corporate entity/business entity in a court of law.
-      </p>
-      <p>
-        You as an individual hereby give up your full commercial liability and therefore are open for the business/company known as Engine Number 9 NSW Pty Ltd to personally deal with you in a court of law.
-      </p>
-      <p>
-        The hirer warrants that he/she and their guests does not suffer from any Medical Condition/s and/or incapacity which may impair the Participants ability to participate in Engine Number 9 NSW PTY LTD event and further, that the Participant/s do not suffer from any Heart Condition, Epilepsy or other Medical Condition which may result in the Participant potentially placing himself/herself in a position of risk, by undertaking events booked through Engine Number 9 NSW PTY LTD.
-      </p>
-      <p>
-        Pregnant guests (whether knowingly or un-knowingly) participate in an Engine Number 9 NSW PTY LTD event at their own risk and/or discretion, Engine Number 9 NSW PTY LTD accepts no responsibility or liability.
-      </p>
-      <p>
-        The hirer holds the company, its agents or employees harmless of any liability for any personal or material damages arising from all conduct of his/her party.
-      </p>
-      <p>
-        The hirer fully indemnify Engine Number 9 NSW PTY LTD and all its servants, agent’s, clients and employees against any injury, damage or accident that may be sustained by the Participant, whilst participating in any Engine Number 9 NSW PTY LTD package, event, activity or other or the Entities and Groups who offer various services Engine Number 9 NSW PTY LTD.
-      </p>
-      <p>
-        The company, its agents or employees shall not be held liable or responsible for any articles left/forgotten in the vehicle and the hirer specifically indemnifies the company, its agents or employees from any such responsibility and undertakes to advise all other persons in his or her party.
-      </p>
-      <p>
-        The consumption of food is not permitted in any of the vehicles unless specific agreement has been made to the contrary at the time of the booking and agreed in writing. Drinks must be consumed in the vehicle and may not be removed for any reason whatsoever.
-      </p>
-      <p>
-        The company does not permit the consumption/use of illicit drugs whilst in the vehicle. Failure to comply will result in the termination of hire.
-      </p>
-      <p>
-        Irresponsible behaviour that causes damage to the vehicle or endangers the safety of public and other passengers will not be condoned. This includes, but is not restricted to; sitting on the exterior of the vehicle, hanging out of the vehicle, shouting abuse, rudeness or intolerance with the chauffeur or host, arguing with the chauffeur or host, misuse of the equipment, fixtures or consumables in the vehicle and wilful damage to the interior generally.
-      </p>
-      <p>
-        Also, use of the emergency exit in a non emergency, is forbidden. This is for emergencies only, and fines will apply if not adhered to. Such behaviour may, at the discretion of the chauffeur and/or staff, and Engine Number 9 NSW PTY LTD, will result in the immediate termination of the hire without compensation.
-      </p>
-      <p>
-        In addition, the hirer shall be held liable and responsible for any loss, or injuries howsoever caused, by the behaviour of his or her party.
-      </p>
-      <p>
-        The hirer accepts that the DVD, lighting and effects and music equipment is provided as a courtesy. In the event that the equipment fitted to the vehicle malfunctions prior to or during the hire, Engine Number 9 NSW PTY LTD accepts no liability whatsoever and no compensation shall be provided, nor will the company provide a refund.
-      </p>
-      <p>
-        In the event that a vehicle is involved in an accident or suffers from mechanical failure, is no longer safe to drive or Engine Number 9 NSW PTY LTD fail to provide a service in any way Engine Number 9 NSW PTY LTD may at its entire discretion determine the method of onward travel, if any.
-      </p>
-      <p>
-        The hirer specifically accepts that the hire is based on best endeavours of Engine Number 9 NSW PTY LTD, and we will do anything in our power to assist where appropriate. There can be no specific guarantees in terms of drop off and pick up time due to reliability of the vehicle, the chauffeur or the company and events out of our direct control.
-      </p>
-      <p>
-        The Participant/s pledges that no legal action will be initiated by it against Engine Number 9 NSW PTY LTD, its clients, its agents, employees, instructors, and/or personnel, due to any accident or injury or monetary lose sustained during the course of undertaking an event/package.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>DRIVEWAYS / THOROUGHFARES / PRIVATE PROPERTY</h2>
-      <p>
-        It is the policy of Engine Number 9 NSW PTY LTD that the fire truck or bus do not enter private driveways as we are aware that the fire truck may break, crack, stress or fracture private driveways, walkways and thoroughfares.
-      </p>
-      <p>
-        If prior arrangements to do so have been made with management in writing Engine Number 9 NSW PTY LTD is not held liable in any way for any breaks, cracks, stresses or fractures.
-      </p>
-      <p>
-        Further to Engine Number 9 NSW PTY LTD entering private property, Engine Number 9 NSW PTY LTD is not liable for any damaged caused by fire truck or bus to private property i.e. letterboxes, dwellings, fences, gates etc.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>OFFENSIVE GUESTS &amp; DAMAGES</h2>
-      <p>
-        Don’t arrive drunk or under the influence of drugs of any kind or you will be refused entry.
-      </p>
-      <p>
-        We reserve the right to exclude any person(s) from Engine Number 9 NSW PTY LTD (truck/bus) if they become socially offensive and/or cause offence or inconvenience to others.
-      </p>
-      <p>
-        We reserve the right to give your contact details to any person(s) making a complaint about any of your guests.
-      </p>
-      <p>
-        The hirer shall be responsible for the behaviour of all passengers and shall be primarily responsible for any damage or loss caused to the vehicle whatsoever.
-      </p>
-      <p>
-        The hirer agrees to undertake the responsibility to inform all attending the event of rules and terms and conditions.
-      </p>
-      <p>
-        Any abuse or misuse of equipment e.g. microphones, speakers and remotes will result in use of such items and service being terminated immediately. This includes swearing into microphones, shouting abuse and/or directing abuse from vehicle so it can be heard outside.
-      </p>
-      <p>
-        This and any other behaviour deemed to be inappropriate by the sole discretion of the chauffeur will result in loss of service immediately.
-      </p>
-      <p>
-        Damaged and/or lost microphone/s or remotes are the responsibility of the hirer and will incur a charge:
-      </p>
-      <ul>
-        <li>Microphone $200 per item</li>
-        <li>Remote $200 per item</li>
-        <li>Speakers $800 per item</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>TRUCK / BUS CLEANING AND/OR DAMAGE</h2>
-      <p>
-        If the truck or bus requires cleaning beyond what would be normally expected (such as removing excessive spilt drink, party poppers, chewing gum, confetti, vomit etc) additional cleaning fees will apply starting from but not limited to $120.00.
-      </p>
-      <p>
-        If the vehicle requires repairs as a result of your group’s actions, you will be responsible for the cost of these repairs.
-      </p>
-      <p>
-        The hirer shall be fully responsible and liable for any damage caused both inside and outside the vehicle by the hirer or a member of his or her party.
-      </p>
-      <p>
-        This includes irrational behaviour resulting in damage to the vehicle or its contents by a third party.
-      </p>
-      <p>
-        The hirer must fully agree to be held liable for the retail cost of any repair as a consequence of any damage caused.
-      </p>
-      <p>
-        The hirer must fully agree to be held liable for any time/loss of business to Engine Number 9 NSW PTY LTD, until repairs have been made.
-      </p>
-      <p>
-        The hirer further agrees that the company may at its entire discretion determine the repairer that will fix the damage to the vehicles.
-      </p>
-      <p>
-        In addition, the hirer shall be responsible for payment of a fixed rate, which shall be determined by the company, at its sole discretion for the period during which the vehicle cannot be used as a consequence of said damage and repairs.
-      </p>
-      <p>
-        That notwithstanding, the hirer shall also be responsible for any further losses which are incurred as a result of lost bookings and credibility.
-      </p>
-      <p>
-        Engine Number 9 NSW PTY LTD can and will recover any money for loss of Engine Number 9 NSW PTY LTD property that is provided in the Fire Truck or Bus. This includes, but is not limited to; glassware, cushions, fire man helmets, fire man clothing, bar equipment, DVD’s, CD’s.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>UNFORESEEABLE EVENTS</h2>
-      <p>
-        Traffic, street access and other conditions/reasons are unpredictable and may hamper itinerary times.
-      </p>
-      <p>
-        Contractors and external hired entertainment may at times be delayed such as adult entertainment, Fire Man Clown, photographer etc where Engine Number 9 NSW PTY LTD accepts no responsibility and will not be held liable.
-      </p>
-      <p>
-        Engine Number 9 NSW PTY LTD accepts no liability or responsibility for any delayed or cancelled flights.
-      </p>
-      <p>
-        Engine Number 9 NSW PTY LTD will not be held responsible for any bookings not confirmed by our office.
-      </p>
-      <p>
-        Engine Number 9 NSW PTY LTD will not be held responsible for any bookings not confirmed by the hirer.
-      </p>
-      <p>
-        Engine Number 9 NSW PTY LTD reserves the right to cancel a booking at any time in the event of adverse weather conditions, equipment failure or other reasonable and unforeseen circumstances. In such an event, an alternative date will be arranged with the Participant. No refund will be available.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>CANCELLATIONS, REFUNDS AND/OR CREDITS</h2>
-      <p>
-        Any deposits and/or any money withheld by Engine Number 9 NSW PTY LTD as down payment prior to booking date is the responsibility of the hirer.
-      </p>
-      <p>
-        Deposits and/or any money withheld by Engine Number 9 NSW PTY LTD as down payment prior to booking date are wholly known as the deposit. This includes standard deposit amount and any amount greater than standard package deposit amount, as a total.
-      </p>
-      <p>
-        Bookings made with Engine Number 9 NSW PTY LTD are strictly non-refundable in whole or in part.
-      </p>
-      <p>
-        Any money deposited into Engine Number 9 NSW PTY LTD account or accumulated by any other means remains the property of Engine Number 9 NSW PTY LTD however Engine Number 9 NSW PTY LTD is fully flexible and in most cases may exchange monies received to be used as credit in its entirety towards another Engine Number 9 NSW PTY LTD package for up to six (6) months from cancellation notification date (verbal or in writing).
-      </p>
-      <p>
-        In the case that multiple parties have deposited money into Engine Number 9 NSW PTY LTD accounts, Engine Number 9 NSW PTY LTD reserves the right to only speak to the hirer and treat the money withheld as one (1) sum of money only.
-      </p>
-      <p>
-        A minimum deposit is required and specified in accordance with each package. The hire date/time/package can only be officially confirmed/reserved when Engine Number 9 NSW PTY LTD has sited, proof or evidence of any related transaction.
-      </p>
-      <p>
-        If you fail to show at/on the booked time/day of your package, Engine Number 9 NSW PTY LTD will not offer a refund or credit.
-      </p>
-      <p>
-        Any cancellations made within a 48 hour period prior to booking date, Engine Number 9 NSW PTY LTD will not offer a refund or credit.
-      </p>
-      <p>
-        In the event that a re-booking is made due to an initial cancellation and deposit withheld, the new booking may only be made with a total of a new package as down payment/deposit. This means payment in full of new package, which includes money already withheld.
-      </p>
-      <p>
-        In the event the booking is cancelled or postponed for any reason prior to 48 hours before booking, the hirer agrees to reschedule another date or, where possible, exchange for another package.
-      </p>
-      <p>
-        Bookings made through Engine Number 9 NSW PTY LTD are non-refundable in whole or in part.
-      </p>
-      <p>
-        In the event that a vehicle is involved in an accident or suffers from mechanical failure, cancellation of event or booking, or is no longer safe to drive or we fail to provide a service in any way; The hirer specifically accepts unconditionally that the hire is based on best endeavours of Engine Number 9 NSW PTY LTD, and therefore agrees that in such cases Engine Number 9 NSW PTY LTD claims lost business in all cases, therefore no refund of any kind applies.
-      </p>
-      <p>
-        The Participant/s pledges that no legal action will be initiated by it against Engine Number 9 NSW PTY LTD, its clients, its agents, employees, instructors, and/or personnel, due to any accident or injury or monetary loss sustained during the course of undertaking an event/package.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>BOOKING AMENDMENTS &amp; DOWNGRADES</h2>
-      <p>
-        In the event a booking is downgraded (including, but not limited to, the cancellation of entertainment, staff, or a reduction in booking duration), and such changes impact Engine Number 9 NSW’s business operations, an alteration fee will apply.
-      </p>
-      <p>
-        This fee will be a minimum of $150 and may increase depending on the extent of the changes.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>ADDITIONAL TIME PENALTY</h2>
-      <p>
-        Additional time should be planned. Unscheduled additional time that is a result of your group’s actions will be charged (see above).
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>EXTERNAL ENTERTAINMENT / CONTRACTORS HIRED BY GUESTS</h2>
-      <p>
-        Any guests wishing to include in their package such performers/entertainers of their choice/hire can do so at an incurring venue fee of $170.
-      </p>
-      <p>
-        The primary requirement is that the guest entertainer must carry their own public liability and insurance, proof of which is to be sent to Engine Number 9 NSW PTY LTD no less than 14 days prior to the arranged booking date. Fail to do so will result in refusal of boarding to the guest entertainer.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>PHOTOS</h2>
-      <p>
-        Sometimes Engine Number 9 NSW PTY LTD has a professional host and/or photographer on the fire engine or bus who takes photos. These photos are published on our web site.
-      </p>
-      <p>
-        You are welcome to copy these photos if you wish.
-      </p>
-      <p>
-        If you do not want these photos to be published on our web site please advise us prior to the event or during the event.
-      </p>
-      <p>
-        If you do not like any or all of your photos that are published, let us know and they will be removed.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>ELECTRICITY / POWER SUPPLY</h2>
-      <p>
-        Engine Number 9 NSW PTY LTD can supply 240 Volt outlet on board as we use the latest pure sign wave inverter which is cleaner power than most household outlets.
-      </p>
-      <p>
-        Engine Number 9 NSW PTY LTD accepts no responsibility for any damage, misuse to any equipment plugged into our power outlets.
-      </p>
-      <p>
-        In the case that a fire truck or bus is to enter an enclosed dwelling the use of motor generator is forbidden. The hirer bears the cost and responsibility to supply mains power to fire truck.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>FINAL TERMS</h2>
-      <p>
-        Engine Number 9 NSW PTY LTD reserves the right to alter/change/amend any/all terms and conditions at any time without notice.
-      </p>
-      <p>
-        You (not limited to)/any human being/man/women/individual/organisation/government body etc who agrees to Engine Number 9 NSW Pty Ltd Terms and Conditions are bound by them till the end of time.
-      </p>
-    </div>
-
-  </div>
-</section>
+</body>
+</html>
