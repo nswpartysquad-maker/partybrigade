@@ -176,7 +176,7 @@
     }
 
     .fire-nav a::after,
-    .social-circle::after,
+    .social-logo::after,
     .phone-pill::after,
     .enquire-pill::after,
     .btn::after,
@@ -191,7 +191,7 @@
     }
 
     .fire-nav a:hover::after,
-    .social-circle:hover::after,
+    .social-logo:hover::after,
     .phone-pill:hover::after,
     .enquire-pill:hover::after,
     .btn:hover::after,
@@ -199,8 +199,7 @@
       opacity:1;
     }
 
-    .nav-icon,
-    .social-icon{
+    .nav-icon{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -229,34 +228,37 @@
       gap:10px;
     }
 
-    .social-circle{
-      width:52px;
-      height:52px;
-      border-radius:999px;
+    .social-logo{
+      width:56px;
+      height:56px;
+      border-radius:16px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.16);
       box-shadow:0 10px 22px rgba(0,0,0,.10);
       position:relative;
       overflow:hidden;
       transition:.22s ease;
       color:#fff;
+      border:1px solid rgba(255,255,255,.18);
     }
 
-    .social-circle:hover{
+    .social-logo img{
+      width:32px;
+      height:32px;
+      object-fit:contain;
+      display:block;
+    }
+
+    .social-logo:hover{
       transform:translateY(-3px) scale(1.06);
-      background:rgba(255,255,255,.20);
       box-shadow:0 0 24px rgba(255,255,255,.16), 0 14px 30px rgba(0,0,0,.12);
     }
 
-    .social-circle .social-icon{
-      font-size:24px;
-    }
-
-    .header-socials a:nth-child(2) .social-icon{animation-delay:.2s}
-    .header-socials a:nth-child(3) .social-icon{animation-delay:.4s}
+    .social-facebook{background:#1877f2;}
+    .social-instagram{background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);}
+    .social-tiktok{background:#111;}
+    .social-youtube{background:#ff0000;}
 
     .desktop-actions{
       display:flex;
@@ -370,6 +372,12 @@
 
     .mobile-firebar .nav-icon{
       font-size:22px;
+    }
+
+    .mobile-socials{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
     }
 
     h1{
@@ -729,11 +737,11 @@
       .brand-text small{font-size:10px}
       .brand-text span{font-size:11px}
       .mobile-firebar .nav-icon{font-size:22px}
-      h1{font-size:46px}
-      h2{font-size:38px}
       .lead,.section-head p{font-size:18px}
       .priority-actions{flex-direction:column;align-items:flex-start}
       .hero-photo-card img{animation:truckDriveMobile 4.5s ease-in-out infinite}
+      .social-logo{width:50px;height:50px}
+      .social-logo img{width:28px;height:28px}
     }
 
     @keyframes truckDriveMobile{
@@ -767,14 +775,17 @@
       </nav>
 
       <div class="header-socials" aria-label="Social links">
-        <a class="social-circle" href="https://www.facebook.com/share/1GxjUow7gE/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <span class="social-icon">📘</span>
+        <a class="social-logo social-facebook" href="https://www.facebook.com/share/1GxjUow7gE/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="images/facebook-logo.png" alt="Facebook">
         </a>
-        <a class="social-circle" href="https://www.instagram.com/sydney_childrens_firetruck_?igsh=NTc1czdpMmZ5M2l4" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <span class="social-icon">📸</span>
+        <a class="social-logo social-instagram" href="https://www.instagram.com/sydney_childrens_firetruck_?igsh=NTc1czdpMmZ5M2l4" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="images/instagram-logo.png" alt="Instagram">
         </a>
-        <a class="social-circle" href="https://www.tiktok.com/@sydneychildrenfiretruck?_r=1&_t=ZS-95GEIfDF4YH" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <span class="social-icon">🎵</span>
+        <a class="social-logo social-tiktok" href="https://www.tiktok.com/@sydneychildrenfiretruck?_r=1&_t=ZS-95GEIfDF4YH" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <img src="images/tiktok-logo.png" alt="TikTok">
+        </a>
+        <a class="social-logo social-youtube" href="#" aria-label="YouTube">
+          <img src="images/youtube-logo.png" alt="YouTube">
         </a>
       </div>
 
@@ -799,10 +810,22 @@
         <a href="formal.html"><span class="nav-icon">💃</span><span>Formal</span></a>
         <a href="older-children.html"><span class="nav-icon">👨‍🚒</span><span>Older</span></a>
         <a href="terms.html"><span class="nav-icon">🧯</span><span>Know</span></a>
-        <a href="https://www.facebook.com/share/1GxjUow7gE/" target="_blank" rel="noopener noreferrer"><span class="nav-icon">📘</span><span>Facebook</span></a>
-        <a href="https://www.instagram.com/sydney_childrens_firetruck_?igsh=NTc1czdpMmZ5M2l4" target="_blank" rel="noopener noreferrer"><span class="nav-icon">📸</span><span>Instagram</span></a>
-        <a href="https://www.tiktok.com/@sydneychildrenfiretruck?_r=1&_t=ZS-95GEIfDF4YH" target="_blank" rel="noopener noreferrer"><span class="nav-icon">🎵</span><span>TikTok</span></a>
       </nav>
+
+      <div class="mobile-socials" aria-label="Mobile social links">
+        <a class="social-logo social-facebook" href="https://www.facebook.com/share/1GxjUow7gE/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="images/facebook-logo.png" alt="Facebook">
+        </a>
+        <a class="social-logo social-instagram" href="https://www.instagram.com/sydney_childrens_firetruck_?igsh=NTc1czdpMmZ5M2l4" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="images/instagram-logo.png" alt="Instagram">
+        </a>
+        <a class="social-logo social-tiktok" href="https://www.tiktok.com/@sydneychildrenfiretruck?_r=1&_t=ZS-95GEIfDF4YH" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <img src="images/tiktok-logo.png" alt="TikTok">
+        </a>
+        <a class="social-logo social-youtube" href="#" aria-label="YouTube">
+          <img src="images/youtube-logo.png" alt="YouTube">
+        </a>
+      </div>
     </div>
   </div>
 </header>
