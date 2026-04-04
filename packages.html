@@ -169,51 +169,44 @@ h2{
   .card h3,.soft-card h3,.soft-card h4{font-size:22px !important;}
 }
 
+.topbar{position:sticky;top:0;background:linear-gradient(90deg,#123a8f,#2d7dff);color:#fff;padding:10px 0}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.desktop-nav{display:flex;gap:12px;overflow-x:auto}
+.desktop-nav a{padding:10px;font-weight:bold;color:#fff;white-space:nowrap}
+.desktop-actions a{margin-left:10px;padding:10px;border-radius:20px;background:#e53935;color:#fff}
 </style>
 
-<style>.packages{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:30px 0 70px}.package{position:relative;background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column}.package:before{content:"";position:absolute;left:0;right:0;top:0;height:12px;border-radius:28px 28px 0 0}.blue:before{background:var(--blue)}.yellow:before{background:var(--yellow)}.orange:before{background:var(--orange)}.redpkg:before{background:var(--red)}.package h3{margin:8px 0 0;font-size:24px;color:var(--navy)}.price{margin:12px 0 8px;font-size:42px;font-weight:900;color:var(--navy)}.subline,.desc{color:var(--muted);font-size:14px}.desc{line-height:1.78;margin-bottom:14px}.list{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:14px}.list li:before{content:"• ";color:var(--red);font-weight:900}.fireman-note{margin-top:16px;padding-top:16px;border-top:1px dashed rgba(0,0,0,.12);font-size:13px;color:#bf211c;font-weight:900}.package .btn{margin-top:auto;align-self:flex-start}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}@media(max-width:1180px){.packages{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.packages,.grid3{grid-template-columns:1fr}}</style></head><body>
+<style>.packages{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:30px 0 70px}.package{position:relative;background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column}.package:before{content:"";position:absolute;left:0;right:0;top:0;height:12px;border-radius:28px 28px 0 0}.blue:before{background:var(--blue)}.yellow:before{background:var(--yellow)}.orange:before{background:var(--orange)}.redpkg:before{background:var(--red)}.package h3{margin:8px 0 0;font-size:24px;color:var(--navy)}.price{margin:12px 0 8px;font-size:42px;font-weight:900;color:var(--navy)}.subline,.desc{color:var(--muted);font-size:14px}.desc{line-height:1.78;margin-bottom:14px}.list{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:14px}.list li:before{content:"• ";color:var(--red);font-weight:900}.fireman-note{margin-top:16px;padding-top:16px;border-top:1px dashed rgba(0,0,0,.12);font-size:13px;color:#bf211c;font-weight:900}.package .btn{margin-top:auto;align-self:flex-start}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}@media(max-width:1180px){.packages{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.packages,.grid3{grid-template-columns:1fr}}.topbar{position:sticky;top:0;background:linear-gradient(90deg,#123a8f,#2d7dff);color:#fff;padding:10px 0}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.desktop-nav{display:flex;gap:12px;overflow-x:auto}
+.desktop-nav a{padding:10px;font-weight:bold;color:#fff;white-space:nowrap}
+.desktop-actions a{margin-left:10px;padding:10px;border-radius:20px;background:#e53935;color:#fff}
+</style></head><body>
 
 <header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <img src="images/firetruck-logo.png" alt="NSW Party Brigade logo">
-      <div class="brand-text">
-        <small>NSW Party Brigade</small>
-        <strong>Sydney Children's Fire Truck</strong>
-        <span>By Engine Number 9 NSW</span>
-      </div>
-    </a>
+<div class="container nav">
+<a class="brand" href="index.html">
+<img src="images/firetruck-logo.png">
+<div class="brand-text">
+<small>NSW Party Brigade</small>
+<strong>Sydney Children's Fire Truck</strong>
+<span>By Engine Number 9 NSW</span>
+</div></a>
 
-    <nav class="nav-links desktop-nav">
-      <a href="index.html"><span class="nav-icon">🏠</span><span>Home</span></a>
-      <a href="packages.html"><span class="nav-icon">🔥</span><span>Packages & Extras</span></a>
-      <a href="gallery.html"><span class="nav-icon">🚒</span><span>Gallery</span></a>
-      <a href="formal.html"><span class="nav-icon">💃</span><span>School Formal</span></a>
-      <a href="older-children.html"><span class="nav-icon">👨‍🚒</span><span>Older Children</span></a>
-      <a href="contact.html"><span class="nav-icon">📢</span><span>Contact</span></a>
-      <a href="terms.html"><span class="nav-icon">🧯</span><span>Terms</span></a>
-    </nav>
+<nav class="desktop-nav">
+<a href="index.html">🏠 Home</a>
+<a href="packages.html">🔥 Packages</a>
+<a href="gallery.html">🚒 Gallery</a>
+<a href="formal.html">💃 Formal</a>
+<a href="older-children.html">👨‍🚒 Older</a>
+<a href="contact.html">📢 Contact</a>
+<a href="terms.html">🧯 Terms</a>
+</nav>
 
-    <div class="nav-actions desktop-actions">
-      <a class="phone-pill" href="tel:1300036469"><span class="action-icon">📞</span><span>1300 036 469</span></a>
-      <a class="enquire-pill" href="contact.html"><span class="action-icon">🚒</span><span>Enquire Now</span></a>
-    </div>
-
-    <details class="mobile-menu">
-      <summary aria-label="Open menu">☰ Menu</summary>
-      <div class="mobile-panel">
-        <a href="index.html">🏠 Home</a>
-        <a href="packages.html">🔥 Packages & Extras</a>
-        <a href="gallery.html">🚒 Gallery</a>
-        <a href="formal.html">💃 School Formal</a>
-        <a href="older-children.html">👨‍🚒 Older Children</a>
-        <a href="contact.html">📢 Contact</a>
-        <a href="terms.html">🧯 Terms</a>
-        <a class="mobile-phone" href="tel:1300036469">📞 1300 036 469</a>
-        <a class="mobile-enquire" href="contact.html">🚒 Enquire Now</a>
-      </div>
-    </details>
-  </div>
-</header>
+<div class="desktop-actions">
+<a class="phone-pill" href="tel:1300036469">📞 1300 036 469</a>
+<a class="enquire-pill" href="contact.html">🚒 Enquire</a>
+</div>
+</div></header>
 
 <section class="hero red-section"><div class="container"><div class="tag">Packages & extras</div><h1>Blue, Yellow, Orange and Red kept clear and simple.</h1><p class="lead">The package colours stay exactly the same. Yellow, Orange and Red have a small price lift so they still feel accessible rather than expensive: Yellow from <strong>$559</strong>, Orange from <strong>$679</strong>, and Red from <strong>$819</strong>.</p><div class="hero-buttons"><a class="btn btn-primary" href="contact.html">Enquire Now 🚒</a><a class="btn btn-blue" href="gallery.html">See Gallery</a></div></div></section><div class="container packages"><article class="package blue"><h3>Blue Fire Truck Dance Party</h3><div class="price">$490</div><div class="subline">Up to 1 hour · Nil ride · stationary only</div><div class="desc">A no mess, no fuss warm addition to your child’s party. Engine Number 9 stays parked at your venue while the children enjoy the truck and all the onboard fun.</div><ul class="list"><li>Up to 1 hour party</li><li>Open to ages 0 to 12</li><li>Official certificate presentation and group photos</li><li>20 official assistant certificates</li><li>Real firefighter helmets and props</li><li>Emergency lights and siren</li><li>Touch-screen music with over 5,000 songs</li><li>Professional nightclub sound system</li><li>Fire bell ringer and fun honkers</li><li>2 x ice bar on request</li><li>Fire pole dance party fun</li></ul><div class="fireman-note">Fireman Dad available with Blue.</div><a class="btn btn-blue" href="contact.html">Enquire About Blue</a></article><article class="package yellow"><h3>Yellow Fire Truck Party & Ride</h3><div class="price">From $559</div><div class="subline">Up to 1 hour · 15 minute ride</div><div class="desc">Recommended for children aged 2 to 4 years. A 15 minute ride is ideal for captivating this age group’s attention span while still packing in all the fire truck fun.</div><ul class="list"><li>Up to 1 hour party</li><li>15 minute ride</li><li>Open to ages 0 to 12</li><li>Maximum 20 persons per ride</li><li>Minimum 2 adult parent supervisors per ride</li><li>Official certificate presentation and group photos</li><li>20 assistant certificates</li><li>Authentic fire station radio calls during ride</li><li>PA system interactions during ride</li><li>Lights, siren, music, bell, honkers and fire pole fun</li></ul><div class="fireman-note">Fireman Dad available with Yellow.</div><a class="btn btn-primary" href="contact.html">Enquire About Yellow</a></article><article class="package orange"><h3>Orange Fire Truck Party & Ride</h3><div class="price">From $679</div><div class="subline">Up to 1 hour 15 minutes · 30 minute ride</div><div class="desc">Designed for bigger groups wanting more ride time and flexibility, with the option to split the ride into 2 x 15 minute durations.</div><ul class="list"><li>Up to 1 hour 15 minute party</li><li>1 x 30 minute ride or 2 x 15 minute rides</li><li>Maximum 20 passengers with minimum 2 adults onboard</li><li>Open air convertible fire engine experience</li><li>Music, bubbles, bells, flashing lights and special effects</li><li>Nightclub lighting and active disco lighting</li><li>Touch-screen music and nightclub sound system</li><li>Fire bell ringer and honkers on request</li><li>2 x ice bar on request</li><li>Fire pole dance party fun</li></ul><div class="fireman-note">Fireman Dad available with Orange.</div><a class="btn btn-primary" href="contact.html">Enquire About Orange</a></article><article class="package redpkg"><h3>Red Fire Truck Party & Ride</h3><div class="price">From $819</div><div class="subline">Up to 1.5 hours · Full 1 hour ride</div><div class="desc">The biggest standard children’s party package, ideal for older kids and tweens, with flexible ride splits and the strongest overall fire truck impact.</div><ul class="list"><li>Up to 1.5 hour party</li><li>1 x 60 minute ride, 2 x 30 minute rides or 4 x 15 minute rides</li><li>Great for tweens and larger groups</li><li>Loud music, videos and nightclub / disco special effects</li><li>Emergency lights and siren</li><li>2 x dual action water squirting fire hose fun</li><li>Fire hose prop</li><li>Ice can be supplied in onboard drink bins</li></ul><div class="fireman-note">Fireman Dad available with Red.</div><a class="btn btn-primary" href="contact.html">Enquire About Red</a></article></div><section class="section" style="background:linear-gradient(180deg,#fffaf7,#fff0e7)"><div class="container"><div class="tag">Extras</div><h2>Popular extras and add-ons.</h2><div class="grid3" style="margin-top:26px"><div class="card"><h3>Birthday Essentials Pack</h3><p><strong>$290</strong>. Includes birthday gift, show bags, fire hose water blasting where permitted, downloadable invitations and LED text signage on the truck.</p></div><div class="card"><h3>Fire Hose Water Blasting</h3><p><strong>$67</strong>. Water pressure is regulated to a minimum safe level for children and can be stopped at staff discretion.</p></div><div class="card"><h3>Fireman Dad</h3><p><strong>Free</strong>. Dad or another family member can secretly board early, suit up and arrive as part of the official crew.</p></div><div class="card"><h3>Fireman Dan</h3><p><strong>$347/hr incl GST</strong>. Children’s entertainer with music, games, balloons, fun prizes, fire safety and more.</p></div><div class="card"><h3>Kids Photographer</h3><p>Professional event coverage add-on for your special moments.</p></div><div class="card"><h3>LED Text Signage</h3><p><strong>$55 incl GST</strong>. Personalised 2 metre LED message mounted on the side of the truck.</p></div></div></div></section><div class="footer container">NSW Party Brigade · Packages & Extras</div></body></html>
