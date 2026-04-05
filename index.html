@@ -169,9 +169,10 @@
 
     .desktop-chooser .chooser-icon,
     .mobile-firebar-label .chooser-icon{
-      color:var(--blue);
+      color:#66b2ff;
       font-size:16px;
       line-height:1;
+      filter:drop-shadow(0 0 6px rgba(102,178,255,.45));
     }
 
     .header-socials{
@@ -193,28 +194,33 @@
       position:relative;
       overflow:hidden;
       transition:.25s ease;
-      color:#fff;
       border:1px solid rgba(255,255,255,.20);
-      padding:0;
+      padding:6px;
+      background:rgba(255,255,255,.10);
+      backdrop-filter:blur(6px);
     }
 
     .social-logo img{
       width:100%;
       height:100%;
-      object-fit:cover;
+      object-fit:contain;
       display:block;
-      border-radius:14px;
+      border-radius:10px;
+      background:transparent;
     }
 
     .social-logo:hover{
       transform:translateY(-4px) scale(1.08);
       box-shadow:0 0 25px rgba(255,255,255,.25), 0 16px 30px rgba(0,0,0,.18);
+      background:rgba(255,255,255,.16);
     }
 
-    .social-facebook{background:#1877f2;}
-    .social-instagram{background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);}
-    .social-tiktok{background:#111;}
-    .social-youtube{background:#ff0000;}
+    .social-facebook,
+    .social-instagram,
+    .social-tiktok,
+    .social-youtube{
+      background:rgba(255,255,255,.10);
+    }
 
     .fire-nav{
       display:flex;
@@ -949,11 +955,12 @@
       .lead,.section-head p{font-size:18px}
       .priority-actions{flex-direction:column;align-items:flex-start}
       .hero-photo-card img{animation:truckDriveMobile 4.5s ease-in-out infinite}
-      .social-logo{width:44px;height:44px}
+      .social-logo{width:44px;height:44px;padding:5px}
       .social-logo img{
         width:100%;
         height:100%;
-        border-radius:12px;
+        border-radius:10px;
+        object-fit:contain;
       }
       .lightbox{
         padding:18px;
