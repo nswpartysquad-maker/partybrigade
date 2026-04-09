@@ -38,391 +38,6 @@
     img{max-width:100%;display:block}
     .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
 
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:linear-gradient(135deg,#17378e 0%,#2972ff 45%,#1f4dc9 100%);
-      color:#fff;
-      box-shadow:0 12px 30px rgba(18,58,143,.25);
-      border-bottom:1px solid rgba(255,255,255,.14);
-      backdrop-filter:blur(10px);
-      overflow:hidden;
-    }
-
-    .topbar::before,
-    .topbar::after{
-      content:"";
-      position:absolute;
-      top:50%;
-      width:200px;
-      height:200px;
-      border-radius:999px;
-      filter:blur(46px);
-      transform:translateY(-50%);
-      pointer-events:none;
-      opacity:.18;
-      z-index:0;
-    }
-
-    .topbar::before{
-      left:-50px;
-      background:rgba(229,57,53,.95);
-      animation:headerSirenRed 3.2s ease-in-out infinite;
-    }
-
-    .topbar::after{
-      right:-50px;
-      background:rgba(45,125,255,.95);
-      animation:headerSirenBlue 3.2s ease-in-out infinite;
-    }
-
-    @keyframes headerSirenRed{
-      0%,100%{opacity:.10;transform:translateY(-50%) scale(1)}
-      50%{opacity:.24;transform:translateY(-50%) scale(1.15)}
-    }
-
-    @keyframes headerSirenBlue{
-      0%,100%{opacity:.22;transform:translateY(-50%) scale(1.12)}
-      50%{opacity:.10;transform:translateY(-50%) scale(1)}
-    }
-
-    .nav-shell{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns:auto 1fr;
-      gap:28px;
-      align-items:center;
-      padding:16px 0 12px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      min-width:0;
-    }
-
-    .brand img{
-      width:155px;
-      height:155px;
-      object-fit:contain;
-      filter:drop-shadow(0 14px 22px rgba(0,0,0,.35));
-    }
-
-    .brand-text small{
-      display:block;
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.26em;
-      color:#dfeaff;
-      font-weight:900;
-      margin-bottom:6px;
-    }
-
-    .brand-text strong{
-      display:block;
-      font-size:32px;
-      font-weight:900;
-      color:#fff;
-      line-height:1.03;
-    }
-
-    .brand-text span{
-      display:block;
-      font-size:13px;
-      color:#d7e4ff;
-      margin-top:4px;
-    }
-
-    .nav-right{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-end;
-      gap:12px;
-    }
-
-    .header-top-row{
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .desktop-chooser{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 14px;
-      border-radius:999px;
-      background:var(--red);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.16);
-      box-shadow:0 8px 18px rgba(0,0,0,.22);
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:.06em;
-    }
-
-    .desktop-chooser .chooser-icon,
-    .mobile-firebar-label .chooser-icon{
-      color:#66b2ff;
-      font-size:16px;
-      line-height:1;
-      filter:drop-shadow(0 0 6px rgba(102,178,255,.45));
-    }
-
-    .header-socials{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      gap:10px;
-      align-items:center;
-    }
-
-    .social-logo{
-      width:48px;
-      height:48px;
-      border-radius:14px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      overflow:hidden;
-      transition:.25s ease;
-      border:1px solid rgba(255,255,255,.18);
-      padding:4px;
-      background:transparent;
-      box-shadow:none;
-      backdrop-filter:none;
-    }
-
-    .social-logo img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      display:block;
-      border-radius:10px;
-      background:transparent;
-    }
-
-    .social-logo:hover{
-      transform:translateY(-3px) scale(1.06);
-      background:rgba(255,255,255,.08);
-      box-shadow:0 10px 24px rgba(0,0,0,.12);
-    }
-
-    .social-facebook,
-    .social-instagram,
-    .social-tiktok,
-    .social-youtube{
-      background:transparent;
-    }
-
-    .fire-nav{
-      display:flex;
-      justify-content:flex-end;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .fire-nav a{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:999px;
-      color:#eef4ff;
-      font-size:16px;
-      font-weight:900;
-      white-space:nowrap;
-      position:relative;
-      transition:.22s ease;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
-      overflow:hidden;
-    }
-
-    .fire-nav a:hover{
-      transform:translateY(-2px) scale(1.02);
-      background:rgba(255,255,255,.16);
-      box-shadow:0 0 22px rgba(255,255,255,.10);
-    }
-
-    .fire-nav a::after,
-    .social-logo::after,
-    .phone-pill::after,
-    .enquire-pill::after,
-    .btn::after,
-    .mobile-firebar a::after{
-      content:"";
-      position:absolute;
-      inset:-40%;
-      background:radial-gradient(circle, rgba(255,255,255,.24) 0%, transparent 55%);
-      opacity:0;
-      transition:opacity .25s ease;
-      pointer-events:none;
-    }
-
-    .fire-nav a:hover::after,
-    .social-logo:hover::after,
-    .phone-pill:hover::after,
-    .enquire-pill:hover::after,
-    .btn:hover::after,
-    .mobile-firebar a:hover::after{
-      opacity:1;
-    }
-
-    .nav-icon{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-size:24px;
-      line-height:1;
-      animation:fireNavBounce 1.8s ease-in-out infinite;
-      transform-origin:center;
-    }
-
-    .fire-nav a:nth-child(2) .nav-icon{animation-delay:.10s}
-    .fire-nav a:nth-child(3) .nav-icon{animation-delay:.20s}
-    .fire-nav a:nth-child(4) .nav-icon{animation-delay:.30s}
-    .fire-nav a:nth-child(5) .nav-icon{animation-delay:.40s}
-    .fire-nav a:nth-child(6) .nav-icon{animation-delay:.50s}
-    .fire-nav a:nth-child(7) .nav-icon{animation-delay:.60s}
-
-    @keyframes fireNavBounce{
-      0%,100%{transform:translateY(0) scale(1)}
-      50%{transform:translateY(-3px) scale(1.12) rotate(-4deg)}
-    }
-
-    .desktop-actions{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .phone-pill,
-    .enquire-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      border-radius:999px;
-      padding:15px 20px;
-      font-weight:900;
-      font-size:16px;
-      white-space:nowrap;
-      position:relative;
-      overflow:hidden;
-      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
-    }
-
-    .phone-pill{
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.18);
-      color:#fff;
-    }
-
-    .phone-pill:hover{
-      background:rgba(255,255,255,.22);
-      transform:translateY(-1px);
-      box-shadow:0 0 18px rgba(255,255,255,.16);
-    }
-
-    .enquire-pill{
-      background:linear-gradient(180deg,#ff665e,var(--red));
-      color:#fff;
-      box-shadow:0 12px 24px rgba(229,57,53,.26);
-    }
-
-    .enquire-pill:hover{
-      transform:translateY(-2px);
-      box-shadow:0 0 28px rgba(229,57,53,.36),0 18px 34px rgba(229,57,53,.28);
-    }
-
-    .action-icon{font-size:22px;line-height:1}
-
-    .mobile-firebar-wrap{
-      display:none;
-      position:relative;
-      z-index:1;
-      padding:0 0 14px;
-    }
-
-    .mobile-firebar-label{
-      display:flex;
-      justify-content:flex-start;
-      margin-bottom:8px;
-    }
-
-    .mobile-firebar-label span{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:var(--red);
-      border:1px solid rgba(255,255,255,.20);
-      color:#fff;
-      font-size:11px;
-      font-weight:900;
-      letter-spacing:.08em;
-      box-shadow:0 6px 14px rgba(0,0,0,.35);
-    }
-
-    .mobile-firebar{
-      display:flex;
-      gap:10px;
-      overflow-x:auto;
-      overflow-y:hidden;
-      padding:2px 4px 2px 0;
-      scrollbar-width:none;
-      -webkit-overflow-scrolling:touch;
-    }
-
-    .mobile-firebar::-webkit-scrollbar{
-      display:none;
-    }
-
-    .mobile-firebar a{
-      flex:0 0 auto;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:999px;
-      color:#eef4ff;
-      font-size:15px;
-      font-weight:900;
-      white-space:nowrap;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.12);
-      transition:.22s ease;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .mobile-firebar a:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.18);
-    }
-
-    .mobile-firebar .nav-icon{
-      font-size:22px;
-    }
-
-    .mobile-socials{
-      display:flex;
-      gap:8px;
-      margin-top:10px;
-      justify-content:flex-end;
-      flex-wrap:wrap;
-    }
-
     h1{
       font-size:clamp(54px,7vw,96px);
       line-height:.92;
@@ -520,6 +135,20 @@
 
     .btn:hover{
       transform:translateY(-2px) scale(1.02);
+    }
+
+    .btn::after{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:radial-gradient(circle, rgba(255,255,255,.24) 0%, transparent 55%);
+      opacity:0;
+      transition:opacity .25s ease;
+      pointer-events:none;
+    }
+
+    .btn:hover::after{
+      opacity:1;
     }
 
     .btn-primary{
@@ -868,13 +497,8 @@
       z-index:2;
     }
 
-    .lightbox-prev{
-      left:24px;
-    }
-
-    .lightbox-next{
-      right:24px;
-    }
+    .lightbox-prev{left:24px}
+    .lightbox-next{right:24px}
 
     .lightbox-close:hover,
     .lightbox-arrow:hover{
@@ -885,48 +509,7 @@
       transform:scale(1.05);
     }
 
-    .footer{
-      padding:26px 0 50px;
-      font-size:14px;
-      color:var(--muted);
-      text-align:center;
-    }
-
-    @media (min-width:1101px){
-      .mobile-firebar-wrap{
-        display:none !important;
-      }
-
-      .mobile-firebar-label{
-        display:none !important;
-      }
-    }
-
-    @media (max-width:1280px){
-      .brand img{width:138px;height:138px}
-      .brand-text strong{font-size:28px}
-      .fire-nav a{font-size:15px;padding:10px 14px}
-    }
-
     @media (max-width:1100px){
-      .nav-shell{
-        grid-template-columns:1fr;
-        gap:10px;
-        padding-bottom:8px;
-      }
-
-      .nav-right{
-        display:none;
-      }
-
-      .mobile-firebar-wrap{
-        display:block;
-      }
-
-      .brand{
-        justify-content:flex-start;
-      }
-
       .priority-strip,
       .quick-link-grid,
       .brief-grid,
@@ -947,21 +530,9 @@
     }
 
     @media (max-width:640px){
-      .brand img{width:118px;height:118px}
-      .brand-text strong{font-size:24px}
-      .brand-text small{font-size:10px}
-      .brand-text span{font-size:11px}
-      .mobile-firebar .nav-icon{font-size:22px}
       .lead,.section-head p{font-size:18px}
       .priority-actions{flex-direction:column;align-items:flex-start}
       .hero-photo-card img{animation:truckDriveMobile 4.5s ease-in-out infinite}
-      .social-logo{width:44px;height:44px;padding:4px}
-      .social-logo img{
-        width:100%;
-        height:100%;
-        border-radius:10px;
-        object-fit:contain;
-      }
       .lightbox{
         padding:18px;
       }
@@ -984,12 +555,8 @@
         top:auto;
         transform:none;
       }
-      .lightbox-prev{
-        left:14px;
-      }
-      .lightbox-next{
-        right:14px;
-      }
+      .lightbox-prev{left:14px}
+      .lightbox-next{right:14px}
       .lightbox-arrow:hover{
         transform:scale(1.04);
       }
@@ -1003,380 +570,311 @@
 </head>
 <body>
 
-<header class="topbar">
-  <div class="container nav-shell">
-    <a class="brand" href="index.html">
-      <img src="images/firetruck-logo.png" alt="NSW Party Brigade logo">
-      <div class="brand-text">
-        <small>NSW Party Brigade</small>
-        <strong>Sydney Children's Fire Truck</strong>
-        <span>By Engine Number 9 NSW</span>
-      </div>
-    </a>
+  <div id="header"></div>
 
-    <div class="nav-right">
-      <div class="header-top-row">
-        <div class="desktop-chooser">
-          <span class="chooser-icon">🚨</span>
-          <span>Choose from the options</span>
-        </div>
-
-        <div class="header-socials" aria-label="Social links">
-          <a class="social-logo social-facebook" href="https://www.facebook.com/share/1GxjUow7gE/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <img src="images/facebook-logo.png" alt="Facebook">
-          </a>
-          <a class="social-logo social-instagram" href="https://www.instagram.com/sydney_childrens_firetruck_?igsh=NTc1czdpMmZ5M2l4" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <img src="images/instagram-logo.png" alt="Instagram">
-          </a>
-          <a class="social-logo social-tiktok" href="https://www.tiktok.com/@sydneychildrenfiretruck?_r=1&_t=ZS-95GEIfDF4YH" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-            <img src="images/tiktok-logo.png" alt="TikTok">
-          </a>
-          <a class="social-logo social-youtube" href="#" aria-label="YouTube">
-            <img src="images/youtube-logo.png" alt="YouTube">
-          </a>
-        </div>
-      </div>
-
-      <nav class="fire-nav" aria-label="Main menu">
-        <a href="index.html"><span class="nav-icon">🏠</span><span>Home</span></a>
-        <a href="packages.html"><span class="nav-icon">🔥</span><span>Packages & Extras</span></a>
-        <a href="contact.html"><span class="nav-icon">📢</span><span>Enquire Now</span></a>
-        <a href="gallery.html"><span class="nav-icon">🚒</span><span>Gallery</span></a>
-        <a href="formal.html"><span class="nav-icon">💃</span><span>School Formal</span></a>
-        <a href="older-children.html"><span class="nav-icon">👨‍🚒</span><span>Older Children</span></a>
-        <a href="terms.html"><span class="nav-icon">🧯</span><span>Things You Should Know</span></a>
-      </nav>
-
-      <div class="desktop-actions">
-        <a class="phone-pill" href="tel:1300036469"><span class="action-icon">📞</span><span>1300 036 469</span></a>
-        <a class="enquire-pill" href="contact.html"><span class="action-icon">🚒</span><span>Enquire Now</span></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="mobile-firebar-wrap">
+  <section class="hero-priority">
     <div class="container">
-      <div class="mobile-firebar-label">
-        <span><span class="chooser-icon">🚨</span><span>Swipe left</span></span>
+      <div class="hero-top-photo">
+        <div class="hero-photo-card">
+          <img src="images/hero-child-truck.jpg" alt="Child enjoying NSW Party Brigade fire truck">
+        </div>
       </div>
 
-      <nav class="mobile-firebar" aria-label="Mobile menu">
-        <a href="index.html"><span class="nav-icon">🏠</span><span>Home</span></a>
-        <a href="packages.html"><span class="nav-icon">🔥</span><span>Packages</span></a>
-        <a href="contact.html"><span class="nav-icon">📢</span><span>Enquire</span></a>
-        <a href="gallery.html"><span class="nav-icon">🚒</span><span>Gallery</span></a>
-        <a href="formal.html"><span class="nav-icon">💃</span><span>Formal</span></a>
-        <a href="older-children.html"><span class="nav-icon">👨‍🚒</span><span>Older</span></a>
-        <a href="terms.html"><span class="nav-icon">🧯</span><span>Know</span></a>
-      </nav>
+      <div class="hero-priority-grid">
+        <div class="hero-copy">
+          <div class="tag">🚒 Sydney Children’s Fire Truck Parties</div>
+          <h1>Book the real fire truck experience fast.</h1>
+          <p class="lead">
+            Real fire truck rides, water blasting, music, lights, party energy and the unforgettable Fireman Dad surprise — built for kids parties across Sydney.
+          </p>
 
-      <div class="mobile-socials" aria-label="Mobile social links">
-        <a class="social-logo social-facebook" href="https://www.facebook.com/share/1GxjUow7gE/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <img src="images/facebook-logo.png" alt="Facebook">
+          <div class="priority-actions">
+            <a class="btn btn-primary" href="packages.html">🔥 View Packages</a>
+            <a class="btn btn-blue" href="contact.html">📢 Enquire Now</a>
+            <a class="btn btn-light" href="tel:1300036469">📞 1300 036 469</a>
+          </div>
+
+          <div class="priority-pills">
+            <div>Blue • Yellow • Orange • Red</div>
+            <div>Available 7 days</div>
+            <div>Sydney-wide</div>
+            <div>Ages 0–12</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section priority-strip-wrap">
+    <div class="container">
+      <div class="priority-strip">
+        <a class="priority-card priority-red" href="packages.html">
+          <span class="priority-icon">🔥</span>
+          <div>
+            <strong>Packages & Extras</strong>
+            <p>See Blue, Yellow, Orange and Red packages first.</p>
+          </div>
         </a>
-        <a class="social-logo social-instagram" href="https://www.instagram.com/sydney_childrens_firetruck_?igsh=NTc1czdpMmZ5M2l4" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <img src="images/instagram-logo.png" alt="Instagram">
+
+        <a class="priority-card priority-blue" href="contact.html">
+          <span class="priority-icon">📢</span>
+          <div>
+            <strong>Enquire Now</strong>
+            <p>Fast booking enquiry for parties, formals and more.</p>
+          </div>
         </a>
-        <a class="social-logo social-tiktok" href="https://www.tiktok.com/@sydneychildrenfiretruck?_r=1&_t=ZS-95GEIfDF4YH" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <img src="images/tiktok-logo.png" alt="TikTok">
+
+        <a class="priority-card priority-gold" href="tel:1300036469">
+          <span class="priority-icon">📞</span>
+          <div>
+            <strong>Call 1300 036 469</strong>
+            <p>Talk to us directly about dates, packages and suburbs.</p>
+          </div>
         </a>
-        <a class="social-logo social-youtube" href="#" aria-label="YouTube">
-          <img src="images/youtube-logo.png" alt="YouTube">
+      </div>
+    </div>
+  </section>
+
+  <section class="section quick-links-premium">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Quick page links</div>
+        <h2>Everything important has its own page.</h2>
+        <p>Keep the homepage clean, then let parents jump straight to the page they need.</p>
+      </div>
+
+      <div class="quick-link-grid">
+        <a class="quick-link-card quick-red" href="packages.html">
+          <div class="quick-top">
+            <span class="quick-emoji">🔥</span>
+            <span class="quick-label">Most important</span>
+          </div>
+          <h3>Packages & Extras</h3>
+          <p>See package colours, inclusions, prices and party extras.</p>
+        </a>
+
+        <a class="quick-link-card quick-blue" href="gallery.html">
+          <div class="quick-top">
+            <span class="quick-emoji">🚒</span>
+            <span class="quick-label">Real photos</span>
+          </div>
+          <h3>Gallery</h3>
+          <p>See the truck, the inside setup, family parties and fire hose fun.</p>
+        </a>
+
+        <a class="quick-link-card quick-orange" href="formal.html">
+          <div class="quick-top">
+            <span class="quick-emoji">💃</span>
+            <span class="quick-label">Older bookings</span>
+          </div>
+          <h3>School Formal</h3>
+          <p>Formal transport with a unique fire truck experience.</p>
+        </a>
+
+        <a class="quick-link-card quick-navy" href="older-children.html">
+          <div class="quick-top">
+            <span class="quick-emoji">👨‍🚒</span>
+            <span class="quick-label">Age 10–17</span>
+          </div>
+          <h3>Older Children</h3>
+          <p>Recommended for ages 10 to 17 with supervised adult onboard if needed.</p>
+        </a>
+
+        <a class="quick-link-card quick-red" href="terms.html">
+          <div class="quick-top">
+            <span class="quick-emoji">🧯</span>
+            <span class="quick-label">Important info</span>
+          </div>
+          <h3>Things You Should Know</h3>
+          <p>Accreditation, safety, fine print and important terms in one place.</p>
+        </a>
+
+        <a class="quick-link-card quick-blue" href="contact.html">
+          <div class="quick-top">
+            <span class="quick-emoji">📢</span>
+            <span class="quick-label">Fast contact</span>
+          </div>
+          <h3>Contact</h3>
+          <p>Send an enquiry quickly with your suburb, date and package type.</p>
         </a>
       </div>
     </div>
-  </div>
-</header>
+  </section>
 
-<section class="hero-priority">
-  <div class="container">
-    <div class="hero-top-photo">
-      <div class="hero-photo-card">
-        <img src="images/hero-child-truck.jpg" alt="Child enjoying NSW Party Brigade fire truck">
-      </div>
-    </div>
-
-    <div class="hero-priority-grid">
-      <div class="hero-copy">
-        <div class="tag">🚒 Sydney Children’s Fire Truck Parties</div>
-        <h1>Book the real fire truck experience fast.</h1>
-        <p class="lead">
-          Real fire truck rides, water blasting, music, lights, party energy and the unforgettable Fireman Dad surprise — built for kids parties across Sydney.
-        </p>
-
-        <div class="priority-actions">
-          <a class="btn btn-primary" href="packages.html">🔥 View Packages</a>
-          <a class="btn btn-blue" href="contact.html">📢 Enquire Now</a>
-          <a class="btn btn-light" href="tel:1300036469">📞 1300 036 469</a>
-        </div>
-
-        <div class="priority-pills">
-          <div>Blue • Yellow • Orange • Red</div>
-          <div>Available 7 days</div>
-          <div>Sydney-wide</div>
-          <div>Ages 0–12</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section priority-strip-wrap">
-  <div class="container">
-    <div class="priority-strip">
-      <a class="priority-card priority-red" href="packages.html">
-        <span class="priority-icon">🔥</span>
-        <div>
-          <strong>Packages & Extras</strong>
-          <p>See Blue, Yellow, Orange and Red packages first.</p>
-        </div>
-      </a>
-
-      <a class="priority-card priority-blue" href="contact.html">
-        <span class="priority-icon">📢</span>
-        <div>
-          <strong>Enquire Now</strong>
-          <p>Fast booking enquiry for parties, formals and more.</p>
-        </div>
-      </a>
-
-      <a class="priority-card priority-gold" href="tel:1300036469">
-        <span class="priority-icon">📞</span>
-        <div>
-          <strong>Call 1300 036 469</strong>
-          <p>Talk to us directly about dates, packages and suburbs.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section quick-links-premium">
-  <div class="container">
-    <div class="section-head">
-      <div class="tag">Quick page links</div>
-      <h2>Everything important has its own page.</h2>
-      <p>Keep the homepage clean, then let parents jump straight to the page they need.</p>
-    </div>
-
-    <div class="quick-link-grid">
-      <a class="quick-link-card quick-red" href="packages.html">
-        <div class="quick-top">
-          <span class="quick-emoji">🔥</span>
-          <span class="quick-label">Most important</span>
-        </div>
-        <h3>Packages & Extras</h3>
-        <p>See package colours, inclusions, prices and party extras.</p>
-      </a>
-
-      <a class="quick-link-card quick-blue" href="gallery.html">
-        <div class="quick-top">
-          <span class="quick-emoji">🚒</span>
-          <span class="quick-label">Real photos</span>
-        </div>
-        <h3>Gallery</h3>
-        <p>See the truck, the inside setup, family parties and fire hose fun.</p>
-      </a>
-
-      <a class="quick-link-card quick-orange" href="formal.html">
-        <div class="quick-top">
-          <span class="quick-emoji">💃</span>
-          <span class="quick-label">Older bookings</span>
-        </div>
-        <h3>School Formal</h3>
-        <p>Formal transport with a unique fire truck experience.</p>
-      </a>
-
-      <a class="quick-link-card quick-navy" href="older-children.html">
-        <div class="quick-top">
-          <span class="quick-emoji">👨‍🚒</span>
-          <span class="quick-label">Age 10–17</span>
-        </div>
-        <h3>Older Children</h3>
-        <p>Recommended for ages 10 to 17 with supervised adult onboard if needed.</p>
-      </a>
-
-      <a class="quick-link-card quick-red" href="terms.html">
-        <div class="quick-top">
-          <span class="quick-emoji">🧯</span>
-          <span class="quick-label">Important info</span>
-        </div>
-        <h3>Things You Should Know</h3>
-        <p>Accreditation, safety, fine print and important terms in one place.</p>
-      </a>
-
-      <a class="quick-link-card quick-blue" href="contact.html">
-        <div class="quick-top">
-          <span class="quick-emoji">📢</span>
-          <span class="quick-label">Fast contact</span>
-        </div>
-        <h3>Contact</h3>
-        <p>Send an enquiry quickly with your suburb, date and package type.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section brief-home-info">
-  <div class="container">
-    <div class="section-head">
-      <div class="tag">Brief information</div>
-      <h2>Why families choose NSW Party Brigade.</h2>
-    </div>
-
-    <div class="brief-grid">
-      <div class="brief-box brief-red">
-        <h3>Real fire truck experience</h3>
-        <p>Not just a theme — a real fire truck with lights, music, bells and excitement.</p>
+  <section class="section brief-home-info">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Brief information</div>
+        <h2>Why families choose NSW Party Brigade.</h2>
       </div>
 
-      <div class="brief-box brief-blue">
-        <h3>Professional and accredited</h3>
-        <p>Engine Number 9 NSW PTY LTD operates with a strong focus on accreditation, safety and proper compliance.</p>
-      </div>
+      <div class="brief-grid">
+        <div class="brief-box brief-red">
+          <h3>Real fire truck experience</h3>
+          <p>Not just a theme — a real fire truck with lights, music, bells and excitement.</p>
+        </div>
 
-      <div class="brief-box brief-gold">
-        <h3>Fun built for children</h3>
-        <p>Packages are designed around children’s party fun, with music, bubble fun, fire honkers and memorable moments.</p>
-      </div>
+        <div class="brief-box brief-blue">
+          <h3>Professional and accredited</h3>
+          <p>Engine Number 9 NSW PTY LTD operates with a strong focus on accreditation, safety and proper compliance.</p>
+        </div>
 
-      <div class="brief-box brief-orange">
-        <h3>Simple booking path</h3>
-        <p>Pick your package, send an enquiry, and we help guide the booking from there.</p>
+        <div class="brief-box brief-gold">
+          <h3>Fun built for children</h3>
+          <p>Packages are designed around children’s party fun, with music, bubble fun, fire honkers and memorable moments.</p>
+        </div>
+
+        <div class="brief-box brief-orange">
+          <h3>Simple booking path</h3>
+          <p>Pick your package, send an enquiry, and we help guide the booking from there.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div class="tag">More party photos</div>
-      <h2>See more of the fire truck fun.</h2>
-      <p>Tap any photo to enlarge and browse through the gallery.</p>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">More party photos</div>
+        <h2>See more of the fire truck fun.</h2>
+        <p>Tap any photo to enlarge and browse through the gallery.</p>
+      </div>
+
+      <div class="photo-grid photo-grid-premium">
+        <button class="photo photo-tall" type="button" onclick="openLightbox(0)">
+          <img src="images/truck-front.jpg" alt="Fire truck front">
+        </button>
+
+        <button class="photo" type="button" onclick="openLightbox(1)">
+          <img src="images/truck-side.jpg" alt="Fire truck side">
+        </button>
+
+        <button class="photo" type="button" onclick="openLightbox(2)">
+          <img src="images/interior-seating.jpg" alt="Fire truck interior seating">
+        </button>
+
+        <button class="photo photo-wide" type="button" onclick="openLightbox(3)">
+          <img src="images/fire-hose-fun.jpg" alt="Fire hose fun">
+        </button>
+
+        <button class="photo" type="button" onclick="openLightbox(4)">
+          <img src="images/photo-5.jpg" alt="Kids party fire truck photo 5">
+        </button>
+
+        <button class="photo" type="button" onclick="openLightbox(5)">
+          <img src="images/photo-6.jpg" alt="Kids party fire truck photo 6">
+        </button>
+
+        <button class="photo photo-wide" type="button" onclick="openLightbox(6)">
+          <img src="images/photo-7.jpg" alt="Kids party fire truck photo 7">
+        </button>
+
+        <button class="photo" type="button" onclick="openLightbox(7)">
+          <img src="images/photo-8.jpg" alt="Kids party fire truck photo 8">
+        </button>
+
+        <button class="photo" type="button" onclick="openLightbox(8)">
+          <img src="images/photo-9.jpg" alt="Kids party fire truck photo 9">
+        </button>
+
+        <button class="photo photo-tall" type="button" onclick="openLightbox(9)">
+          <img src="images/photo-10.jpg" alt="Kids party fire truck photo 10">
+        </button>
+
+        <button class="photo" type="button" onclick="openLightbox(10)">
+          <img src="images/photo-11.jpg" alt="Kids party fire truck photo 11">
+        </button>
+
+        <button class="photo" type="button" onclick="openLightbox(11)">
+          <img src="images/photo-12.jpg" alt="Kids party fire truck photo 12">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close gallery" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Previous photo" onclick="changeSlide(-1)">❮</button>
+
+    <div class="lightbox-stage">
+      <img id="lightbox-image" src="" alt="Expanded gallery image">
     </div>
 
-    <div class="photo-grid photo-grid-premium">
-      <button class="photo photo-tall" type="button" onclick="openLightbox(0)">
-        <img src="images/truck-front.jpg" alt="Fire truck front">
-      </button>
-
-      <button class="photo" type="button" onclick="openLightbox(1)">
-        <img src="images/truck-side.jpg" alt="Fire truck side">
-      </button>
-
-      <button class="photo" type="button" onclick="openLightbox(2)">
-        <img src="images/interior-seating.jpg" alt="Fire truck interior seating">
-      </button>
-
-      <button class="photo photo-wide" type="button" onclick="openLightbox(3)">
-        <img src="images/fire-hose-fun.jpg" alt="Fire hose fun">
-      </button>
-
-      <button class="photo" type="button" onclick="openLightbox(4)">
-        <img src="images/photo-5.jpg" alt="Kids party fire truck photo 5">
-      </button>
-
-      <button class="photo" type="button" onclick="openLightbox(5)">
-        <img src="images/photo-6.jpg" alt="Kids party fire truck photo 6">
-      </button>
-
-      <button class="photo photo-wide" type="button" onclick="openLightbox(6)">
-        <img src="images/photo-7.jpg" alt="Kids party fire truck photo 7">
-      </button>
-
-      <button class="photo" type="button" onclick="openLightbox(7)">
-        <img src="images/photo-8.jpg" alt="Kids party fire truck photo 8">
-      </button>
-
-      <button class="photo" type="button" onclick="openLightbox(8)">
-        <img src="images/photo-9.jpg" alt="Kids party fire truck photo 9">
-      </button>
-
-      <button class="photo photo-tall" type="button" onclick="openLightbox(9)">
-        <img src="images/photo-10.jpg" alt="Kids party fire truck photo 10">
-      </button>
-
-      <button class="photo" type="button" onclick="openLightbox(10)">
-        <img src="images/photo-11.jpg" alt="Kids party fire truck photo 11">
-      </button>
-
-      <button class="photo" type="button" onclick="openLightbox(11)">
-        <img src="images/photo-12.jpg" alt="Kids party fire truck photo 12">
-      </button>
-    </div>
-  </div>
-</section>
-
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="Close gallery" onclick="closeLightbox()">✕</button>
-  <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Previous photo" onclick="changeSlide(-1)">❮</button>
-
-  <div class="lightbox-stage">
-    <img id="lightbox-image" src="" alt="Expanded gallery image">
+    <button class="lightbox-arrow lightbox-next" type="button" aria-label="Next photo" onclick="changeSlide(1)">❯</button>
   </div>
 
-  <button class="lightbox-arrow lightbox-next" type="button" aria-label="Next photo" onclick="changeSlide(1)">❯</button>
-</div>
+  <div id="footer"></div>
 
-<div class="footer container">
-  NSW Party Brigade · Sydney Children's Fire Truck · By Engine Number 9 NSW
-</div>
+  <script>
+    const galleryImages = [
+      "images/truck-front.jpg",
+      "images/truck-side.jpg",
+      "images/interior-seating.jpg",
+      "images/fire-hose-fun.jpg",
+      "images/photo-5.jpg",
+      "images/photo-6.jpg",
+      "images/photo-7.jpg",
+      "images/photo-8.jpg",
+      "images/photo-9.jpg",
+      "images/photo-10.jpg",
+      "images/photo-11.jpg",
+      "images/photo-12.jpg"
+    ];
 
-<script>
-  const galleryImages = [
-    "images/truck-front.jpg",
-    "images/truck-side.jpg",
-    "images/interior-seating.jpg",
-    "images/fire-hose-fun.jpg",
-    "images/photo-5.jpg",
-    "images/photo-6.jpg",
-    "images/photo-7.jpg",
-    "images/photo-8.jpg",
-    "images/photo-9.jpg",
-    "images/photo-10.jpg",
-    "images/photo-11.jpg",
-    "images/photo-12.jpg"
-  ];
+    let currentSlide = 0;
 
-  let currentSlide = 0;
-
-  function openLightbox(index) {
-    currentSlide = index;
-    const lightbox = document.getElementById("lightbox");
-    const image = document.getElementById("lightbox-image");
-    image.src = galleryImages[currentSlide];
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeLightbox() {
-    const lightbox = document.getElementById("lightbox");
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  }
-
-  function changeSlide(direction) {
-    currentSlide = (currentSlide + direction + galleryImages.length) % galleryImages.length;
-    document.getElementById("lightbox-image").src = galleryImages[currentSlide];
-  }
-
-  document.addEventListener("keydown", function(event) {
-    const lightboxOpen = document.getElementById("lightbox").classList.contains("is-open");
-    if (!lightboxOpen) return;
-
-    if (event.key === "Escape") closeLightbox();
-    if (event.key === "ArrowRight") changeSlide(1);
-    if (event.key === "ArrowLeft") changeSlide(-1);
-  });
-
-  document.getElementById("lightbox").addEventListener("click", function(event) {
-    if (event.target.id === "lightbox") {
-      closeLightbox();
+    function openLightbox(index) {
+      currentSlide = index;
+      const lightbox = document.getElementById("lightbox");
+      const image = document.getElementById("lightbox-image");
+      image.src = galleryImages[currentSlide];
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
     }
-  });
-</script>
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("lightbox");
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function changeSlide(direction) {
+      currentSlide = (currentSlide + direction + galleryImages.length) % galleryImages.length;
+      document.getElementById("lightbox-image").src = galleryImages[currentSlide];
+    }
+
+    document.addEventListener("keydown", function(event) {
+      const lightboxOpen = document.getElementById("lightbox").classList.contains("is-open");
+      if (!lightboxOpen) return;
+
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowRight") changeSlide(1);
+      if (event.key === "ArrowLeft") changeSlide(-1);
+    });
+
+    document.getElementById("lightbox").addEventListener("click", function(event) {
+      if (event.target.id === "lightbox") {
+        closeLightbox();
+      }
+    });
+
+    function loadComponent(id, file) {
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(id).innerHTML = data;
+        })
+        .catch(error => {
+          console.error("Error loading component:", error);
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      loadComponent("header", "/partials/header.html");
+      loadComponent("footer", "/partials/footer.html");
+    });
+  </script>
 </body>
 </html>
