@@ -1,6 +1,11 @@
 function loadComponent(id, file) {
   fetch(file)
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("File not found: " + file);
+      }
+      return response.text();
+    })
     .then(data => {
       document.getElementById(id).innerHTML = data;
     })
@@ -10,6 +15,6 @@ function loadComponent(id, file) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  loadComponent("header", "/partials/header.html");
-  loadComponent("footer", "/partials/footer.html");
+  loadComponent("header", "partials/header.html");
+  loadComponent("footer", "partials/footer.html");
 });
