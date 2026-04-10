@@ -1,1 +1,142 @@
+/* =========================
+RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  background: #0b1220;
+  color: #fff;
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+/* =========================
+CONTAINER
+========================= */
+.container {
+  width: min(1240px, calc(100% - 32px));
+  margin: auto;
+}
+
+/* =========================
+HEADER GLOBAL FIX
+========================= */
+.site-header {
+  backdrop-filter: blur(12px);
+}
+
+/* =========================
+NAV BUTTONS
+========================= */
+.site-header nav a {
+  transition: all 0.25s ease;
+}
+
+.site-header nav a:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-2px);
+}
+
+/* =========================
+PRIMARY BUTTONS
+========================= */
+.btn,
+.site-header a[href*="contact"] {
+  transition: all 0.25s ease;
+}
+
+.btn:hover,
+.site-header a[href*="contact"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+}
+
+/* =========================
+PHONE BUTTON
+========================= */
+a[href^="tel"] {
+  transition: all 0.25s ease;
+}
+
+a[href^="tel"]:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* =========================
+SOCIAL ICONS (FIX YOUR ISSUE 🔥)
+========================= */
+.site-header img[alt="Facebook"],
+.site-header img[alt="Instagram"],
+.site-header img[alt="TikTok"],
+.site-header img[alt="YouTube"] {
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+  transition: all 0.25s ease;
+}
+
+.site-header img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));
+}
+
+/* =========================
+SECTIONS
+========================= */
+section {
+  padding: 60px 0;
+}
+
+/* =========================
+HEADINGS
+========================= */
+h1, h2, h3 {
+  font-weight: 900;
+}
+
+/* =========================
+CARDS / GLASS EFFECT
+========================= */
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+FOOTER
+========================= */
+footer {
+  background: #05070d;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 40px 0;
+  text-align: center;
+  color: #aaa;
+}
+
+/* =========================
+MOBILE OPTIMISATION
+========================= */
+@media (max-width: 768px) {
+
+  .site-header img {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .site-header h1 {
+    font-size: 22px !important;
+  }
+
+  nav {
+    justify-content: center !important;
+  }
+
+}
