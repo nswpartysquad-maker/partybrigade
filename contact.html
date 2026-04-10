@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enquire Now | NSW Party Brigade</title>
   <meta name="description" content="Send your NSW Party Brigade booking enquiry for Sydney children's fire truck parties, older children parties, school events and private bookings." />
+  <link rel="stylesheet" href="assets/css/main.css" />
   <style>
     :root{
       --bg:#fff5f0;
@@ -233,6 +234,44 @@
       font-size:13px;
       color:var(--muted);
       margin-top:4px;
+    }
+
+    .extras-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .check-pill{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      background:#fff8f4;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px 16px;
+      cursor:pointer;
+      transition:all .2s ease;
+    }
+
+    .check-pill:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 22px rgba(0,0,0,.05);
+      border-color:#dcb8a3;
+    }
+
+    .check-pill input[type="checkbox"]{
+      margin-top:3px;
+      transform:scale(1.15);
+      accent-color:var(--red);
+      flex:0 0 auto;
+    }
+
+    .check-pill span{
+      font-size:14px;
+      line-height:1.5;
+      color:var(--navy);
+      font-weight:800;
     }
 
     .terms-row{
@@ -532,7 +571,8 @@
         grid-template-columns:1fr;
       }
 
-      .captcha-box{
+      .captcha-box,
+      .extras-grid{
         grid-template-columns:1fr;
       }
     }
@@ -675,21 +715,21 @@
                 <input type="number" id="birthdayAge" name="Birthday Child Age" min="0" max="17">
               </div>
 
-              <div class="form-group">
-                <label for="extra">Most Requested Extras</label>
-                <select id="extra" name="Most Requested Extra">
-                  <option value="">Select extra</option>
-                  <option>FREE Fire Man Dad Surprise</option>
-                  <option>Fire Hose Water Blasting</option>
-                  <option>LED Text Message Display</option>
-                  <option>Custom Made Cup</option>
-                  <option>Custom Made Shirts</option>
-                  <option>Birthday Essentials (see what's incl link)</option>
-                  <option>Fire Man Dan (Children's Entertainer)</option>
-                  <option>Smoken Fire Truck Show Bag/s</option>
-                  <option>Red Carpet Arrival</option>
-                  <option>Professional Photographer</option>
-                </select>
+              <div class="form-group form-group-full">
+                <label>Most Requested Extras</label>
+                <div class="extras-grid">
+                  <label class="check-pill"><input type="checkbox" name="Most Requested Extras[]" value="FREE Fire Man Dad Surprise"> <span>FREE Fire Man Dad Surprise</span></label>
+                  <label class="check-pill"><input type="checkbox" name="Most Requested Extras[]" value="Fire Hose Water Blasting"> <span>Fire Hose Water Blasting</span></label>
+                  <label class="check-pill"><input type="checkbox" name="Most Requested Extras[]" value="LED Text Message Display"> <span>LED Text Message Display</span></label>
+                  <label class="check-pill"><input type="checkbox" name="Most Requested Extras[]" value="Custom Made Cup"> <span>Custom Made Cup</span></label>
+                  <label class="check-pill"><input type="checkbox" name="Most Requested Extras[]" value="Custom Made Shirts"> <span>Custom Made Shirts</span></label>
+                  <label class="check-pill"><input type="checkbox" name="Most Requested Extras[]" value="Birthday Essentials"> <span>Birthday Essentials</span></label>
+                  <label class="check-pill"><input type="checkbox" name="Most Requested Extras[]" value="Fire Man Dan (Children's Entertainer)"> <span>Fire Man Dan (Children's Entertainer)</span></label>
+                  <label class="check-pill"><input type="checkbox" name="Most Requested Extras[]" value="Smoken Fire Truck Show Bag/s"> <span>Smoken Fire Truck Show Bag/s</span></label>
+                  <label class="check-pill"><input type="checkbox" name="Most Requested Extras[]" value="Red Carpet Arrival"> <span>Red Carpet Arrival</span></label>
+                  <label class="check-pill"><input type="checkbox" name="Most Requested Extras[]" value="Professional Photographer"> <span>Professional Photographer</span></label>
+                </div>
+                <div class="helper-text">Clients can choose more than 1 option.</div>
               </div>
 
               <div class="form-group form-group-full">
@@ -760,7 +800,7 @@
                 <div class="icon">🔥</div>
                 <div>
                   <strong>Extras</strong>
-                  <span>Add your most requested extra so we know what experience you want most.</span>
+                  <span>Add your most requested extras so we know what experience you want most.</span>
                 </div>
               </div>
             </div>
@@ -799,22 +839,6 @@
   <div id="footer"></div>
 
   <script>
-    function loadComponent(id, file) {
-      fetch(file)
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById(id).innerHTML = data;
-        })
-        .catch(error => {
-          console.error("Error loading component:", error);
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      loadComponent("header", "/partials/header.html");
-      loadComponent("footer", "/partials/footer.html");
-    });
-
     const occasionSelect = document.getElementById("occasion");
     const packageWrap = document.getElementById("packageWrap");
     const packageSelect = document.getElementById("package");
@@ -922,5 +946,7 @@
       }
     });
   </script>
+
+  <script src="assets/js/include.js"></script>
 </body>
 </html>
