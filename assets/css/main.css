@@ -163,53 +163,52 @@ PREMIUM HEADER
 .site-socials{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:18px;
   flex-wrap:wrap;
   margin-top:18px;
 }
 
 .social-link{
-  width:48px;
-  height:48px;
-  border-radius:14px;
+  width:74px;
+  height:74px;
+  border-radius:999px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.16);
-  box-shadow:
-    0 10px 22px rgba(0,0,0,.12),
-    inset 0 1px 0 rgba(255,255,255,.10);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
-  overflow:hidden;
+  text-decoration:none;
+  box-shadow:0 14px 28px rgba(0,0,0,.18);
+  transition:transform .22s ease, box-shadow .22s ease, filter .22s ease, background .22s ease;
+  flex:0 0 auto;
   padding:0;
 }
 
 .social-link:hover{
-  transform:translateY(-2px) scale(1.05);
-  box-shadow:
-    0 16px 30px rgba(0,0,0,.18),
-    0 0 24px rgba(255,255,255,.08);
+  transform:translateY(-3px) scale(1.06);
+  box-shadow:0 20px 36px rgba(0,0,0,.24);
 }
 
-.social-link img{
-  width:22px;
-  height:22px;
-  object-fit:contain;
+.social-link svg{
+  width:34px;
+  height:34px;
+  fill:#fff;
   display:block;
-  background:transparent !important;
-  border:none !important;
-  box-shadow:none !important;
-  border-radius:0 !important;
-  filter:none !important;
 }
 
-.social-facebook:hover{background:rgba(24,119,242,.18)}
-.social-instagram:hover{background:rgba(221,42,123,.18)}
-.social-tiktok:hover{background:rgba(255,255,255,.16)}
-.social-youtube:hover{background:rgba(255,0,0,.18)}
+.social-facebook{
+  background:linear-gradient(180deg,#2f80ed,#1b66d1);
+}
+
+.social-instagram{
+  background:linear-gradient(135deg,#f9ce34 0%,#ee2a7b 48%,#6228d7 100%);
+}
+
+.social-tiktok{
+  background:#111111;
+}
+
+.social-youtube{
+  background:linear-gradient(180deg,#ff2d20,#e10000);
+}
 
 .site-nav-wrap{
   margin-top:18px;
@@ -825,18 +824,18 @@ RESPONSIVE
   }
 
   .site-socials{
+    gap:14px;
     margin-top:16px;
-    gap:10px;
   }
 
   .social-link{
-    width:44px;
-    height:44px;
+    width:62px;
+    height:62px;
   }
 
-  .social-link img{
-    width:20px;
-    height:20px;
+  .social-link svg{
+    width:28px;
+    height:28px;
   }
 
   .site-nav{
