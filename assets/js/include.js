@@ -7,7 +7,10 @@ function loadComponent(id, file) {
       return response.text();
     })
     .then(data => {
-      document.getElementById(id).innerHTML = data;
+      const el = document.getElementById(id);
+      if (el) {
+        el.innerHTML = data;
+      }
     })
     .catch(error => {
       console.error("Error loading component:", error);
@@ -15,6 +18,9 @@ function loadComponent(id, file) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  loadComponent("header", "partials/header.html");
-  loadComponent("footer", "partials/footer.html");
+
+  // Load header + footer
+  loadComponent("header", "/partials/header.html");
+  loadComponent("footer", "/partials/footer.html");
+
 });
