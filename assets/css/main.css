@@ -118,6 +118,13 @@ PREMIUM HEADER
   padding:10px 0 10px;
 }
 
+.site-header-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+}
+
 .site-brand-row{
   display:flex;
   align-items:center;
@@ -127,18 +134,18 @@ PREMIUM HEADER
 .site-brand{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:18px;
   color:#fff;
   text-decoration:none;
   min-width:0;
 }
 
 .logo-main{
-  width:100px;
-  height:100px;
+  width:150px;
+  height:150px;
   object-fit:contain;
   flex:0 0 auto;
-  filter:drop-shadow(0 10px 20px rgba(0,0,0,.18));
+  filter:drop-shadow(0 14px 26px rgba(0,0,0,.20));
   transition:
     width .28s ease,
     height .28s ease,
@@ -148,12 +155,12 @@ PREMIUM HEADER
 
 .site-brand:hover .logo-main{
   transform:scale(1.03);
-  filter:drop-shadow(0 14px 26px rgba(0,0,0,.22));
+  filter:drop-shadow(0 18px 30px rgba(0,0,0,.24));
 }
 
 .site-header.is-shrunk .logo-main{
-  width:74px;
-  height:74px;
+  width:110px;
+  height:110px;
 }
 
 .site-brand-text{
@@ -161,28 +168,28 @@ PREMIUM HEADER
 }
 
 .site-brand-kicker{
-  font-size:11px;
-  letter-spacing:.30em;
+  font-size:12px;
+  letter-spacing:.32em;
   text-transform:uppercase;
   font-weight:900;
-  color:#dfeaff;
-  margin-bottom:6px;
-  opacity:.95;
+  color:#ffffffd1;
+  margin-bottom:8px;
 }
 
 .brand-title{
-  font-size:clamp(26px,3vw,38px);
+  font-size:clamp(34px,4vw,48px);
   line-height:1.02;
   font-weight:900;
   color:#fff;
   text-wrap:balance;
-  text-shadow:0 2px 10px rgba(0,0,0,.10);
+  text-shadow:0 6px 20px rgba(0,0,0,.25);
 }
 
 .brand-subtitle{
-  font-size:14px;
-  color:#d7e4ff;
-  margin-top:6px;
+  font-size:15px;
+  font-weight:700;
+  color:#dfeaff;
+  margin-top:7px;
 }
 
 /* =========================
@@ -191,9 +198,11 @@ SOCIAL ICONS
 .site-socials{
   display:flex;
   align-items:center;
+  justify-content:flex-end;
   gap:12px;
   flex-wrap:wrap;
-  margin-top:16px;
+  margin-top:0;
+  flex:0 0 auto;
 }
 
 .social-link{
@@ -289,7 +298,7 @@ SOCIAL ICONS
 NAV
 ========================= */
 .site-nav-wrap{
-  margin-top:16px;
+  margin-top:18px;
   overflow-x:auto;
   overflow-y:hidden;
   scrollbar-width:none;
@@ -875,6 +884,12 @@ RESPONSIVE
 }
 
 @media (max-width:768px){
+  .site-header-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+  }
+
   .site-header-inner{
     padding:12px 0 12px;
   }
@@ -889,13 +904,13 @@ RESPONSIVE
   }
 
   .logo-main{
-    width:82px;
-    height:82px;
+    width:110px;
+    height:110px;
   }
 
   .site-header.is-shrunk .logo-main{
-    width:60px;
-    height:60px;
+    width:80px;
+    height:80px;
   }
 
   .site-brand-kicker{
@@ -905,7 +920,7 @@ RESPONSIVE
   }
 
   .brand-title{
-    font-size:22px;
+    font-size:24px;
     line-height:1.03;
   }
 
@@ -915,8 +930,10 @@ RESPONSIVE
   }
 
   .site-socials{
+    width:100%;
+    justify-content:flex-start;
     gap:10px;
-    margin-top:14px;
+    margin-top:0;
   }
 
   .social-link{
