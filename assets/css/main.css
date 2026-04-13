@@ -49,9 +49,7 @@ h2{
   color:var(--navy);
 }
 
-h3{
-  font-weight:900;
-}
+h3{font-weight:900}
 
 .lead{
   font-size:22px;
@@ -86,10 +84,7 @@ PREMIUM HEADER
     0 1px 0 rgba(255,255,255,.06) inset;
   backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
-  transition:
-    box-shadow .28s ease,
-    background .28s ease,
-    transform .28s ease;
+  transition:box-shadow .28s ease, background .28s ease, transform .28s ease;
 }
 
 .site-header::before{
@@ -129,6 +124,7 @@ PREMIUM HEADER
   display:flex;
   align-items:center;
   justify-content:flex-start;
+  min-width:0;
 }
 
 .site-brand{
@@ -141,16 +137,12 @@ PREMIUM HEADER
 }
 
 .logo-main{
-  width:250px;
-  height:250px;
+  width:150px;
+  height:150px;
   object-fit:contain;
   flex:0 0 auto;
   filter:drop-shadow(0 14px 26px rgba(0,0,0,.20));
-  transition:
-    width .28s ease,
-    height .28s ease,
-    transform .22s ease,
-    filter .22s ease;
+  transition:width .28s ease,height .28s ease,transform .22s ease,filter .22s ease;
 }
 
 .site-brand:hover .logo-main{
@@ -159,8 +151,8 @@ PREMIUM HEADER
 }
 
 .site-header.is-shrunk .logo-main{
-  width:250px;
-  height:250px;
+  width:110px;
+  height:110px;
 }
 
 .site-brand-text{
@@ -200,7 +192,7 @@ SOCIAL ICONS
   align-items:center;
   justify-content:flex-end;
   gap:12px;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
   margin-top:0;
   flex:0 0 auto;
 }
@@ -218,11 +210,7 @@ SOCIAL ICONS
   box-shadow:
     0 12px 24px rgba(0,0,0,.18),
     0 0 0 1px rgba(255,255,255,.08) inset;
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    filter .22s ease,
-    background .22s ease;
+  transition:transform .22s ease, box-shadow .22s ease, filter .22s ease, background .22s ease;
   position:relative;
   overflow:hidden;
 }
@@ -333,11 +321,7 @@ NAV
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.08),
     0 10px 20px rgba(0,0,0,.07);
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    background .22s ease,
-    border-color .22s ease;
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease;
 }
 
 .site-nav a:hover{
@@ -371,11 +355,7 @@ HEADER ACTIONS
   font-size:16px;
   color:#fff;
   text-decoration:none;
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    background .22s ease,
-    border-color .22s ease;
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease;
 }
 
 .header-btn:hover{
@@ -885,9 +865,42 @@ RESPONSIVE
 
 @media (max-width:768px){
   .site-header-top{
-    flex-direction:column;
+    display:grid;
+    grid-template-columns:1fr auto;
+    grid-template-areas:
+      "brand socials"
+      "nav nav"
+      "actions actions";
+    align-items:start;
+    gap:14px 12px;
+  }
+
+  .site-brand-row{
+    grid-area:brand;
+    min-width:0;
+  }
+
+  .site-socials{
+    grid-area:socials;
+    width:auto;
+    justify-content:flex-end;
     align-items:flex-start;
-    gap:14px;
+    gap:8px;
+    margin-top:4px;
+    flex-wrap:nowrap;
+  }
+
+  .site-nav-wrap{
+    grid-area:nav;
+    margin-top:4px;
+  }
+
+  .site-header-actions{
+    grid-area:actions;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:4px;
   }
 
   .site-header-inner{
@@ -900,40 +913,33 @@ RESPONSIVE
 
   .site-brand{
     align-items:flex-start;
-    gap:12px;
+    gap:14px;
   }
 
   .logo-main{
-    width:110px;
-    height:110px;
+    width:150px;
+    height:150px;
   }
 
   .site-header.is-shrunk .logo-main{
-    width:80px;
-    height:80px;
+    width:110px;
+    height:110px;
   }
 
   .site-brand-kicker{
     font-size:10px;
     letter-spacing:.20em;
-    margin-bottom:4px;
+    margin-bottom:6px;
   }
 
   .brand-title{
     font-size:24px;
-    line-height:1.03;
+    line-height:1.02;
   }
 
   .brand-subtitle{
     font-size:12px;
     margin-top:4px;
-  }
-
-  .site-socials{
-    width:100%;
-    justify-content:flex-start;
-    gap:10px;
-    margin-top:0;
   }
 
   .social-link{
@@ -955,16 +961,44 @@ RESPONSIVE
     padding:11px 16px;
   }
 
-  .site-header-actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
-
   .header-btn{
     width:100%;
     padding:14px 14px;
     font-size:15px;
+  }
+}
+
+@media (max-width:560px){
+  .site-header-top{
+    gap:12px 10px;
+  }
+
+  .logo-main{
+    width:135px;
+    height:135px;
+  }
+
+  .site-header.is-shrunk .logo-main{
+    width:98px;
+    height:98px;
+  }
+
+  .brand-title{
+    font-size:21px;
+  }
+
+  .site-socials{
+    gap:7px;
+  }
+
+  .social-link{
+    width:38px;
+    height:38px;
+  }
+
+  .social-link svg{
+    width:17px;
+    height:17px;
   }
 }
 
@@ -1018,12 +1052,17 @@ RESPONSIVE
 }
 
 @media (max-width:480px){
-  .brand-title{
-    font-size:20px;
-  }
-
   .site-header-actions{
     grid-template-columns:1fr;
+  }
+
+  .logo-main{
+    width:128px;
+    height:128px;
+  }
+
+  .brand-title{
+    font-size:20px;
   }
 }
 
