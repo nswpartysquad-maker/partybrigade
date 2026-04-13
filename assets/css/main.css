@@ -174,8 +174,8 @@ ULTRA PREMIUM HEADER
 }
 
 .logo-main{
-  width:165px;
-  height:165px;
+  width:230px;
+  height:auto;
   object-fit:contain;
   filter:drop-shadow(0 16px 30px rgba(0,0,0,.22));
   transition:width .28s ease,height .28s ease,transform .22s ease,filter .22s ease;
