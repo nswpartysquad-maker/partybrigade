@@ -78,21 +78,39 @@ PREMIUM HEADER
   top:0;
   z-index:1000;
   background:
-    radial-gradient(circle at top left, rgba(255,255,255,.14), transparent 28%),
-    linear-gradient(135deg,#14327e 0%, #2c76ff 46%, #1a4fd1 100%);
-  border-bottom:1px solid rgba(255,255,255,.16);
-  box-shadow:0 16px 36px rgba(18,58,143,.20);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  transition:box-shadow .28s ease, background .28s ease;
+    radial-gradient(circle at top left, rgba(255,255,255,.16), transparent 28%),
+    linear-gradient(135deg,#12307a 0%, #2e77ff 45%, #1b50d4 100%);
+  border-bottom:1px solid rgba(255,255,255,.14);
+  box-shadow:
+    0 16px 36px rgba(18,58,143,.18),
+    0 1px 0 rgba(255,255,255,.06) inset;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  transition:
+    box-shadow .28s ease,
+    background .28s ease,
+    transform .28s ease;
+}
+
+.site-header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0));
+  opacity:.7;
 }
 
 .site-header.is-shrunk{
-  box-shadow:0 10px 24px rgba(18,58,143,.16);
+  box-shadow:
+    0 10px 24px rgba(18,58,143,.14),
+    0 1px 0 rgba(255,255,255,.06) inset;
 }
 
 .site-header-inner{
-  padding:18px 0 16px;
+  position:relative;
+  z-index:1;
+  padding:16px 0 14px;
   transition:padding .28s ease;
 }
 
@@ -109,28 +127,33 @@ PREMIUM HEADER
 .site-brand{
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:14px;
   color:#fff;
   text-decoration:none;
   min-width:0;
 }
 
 .logo-main{
-  width:110px;
-  height:110px;
+  width:100px;
+  height:100px;
   object-fit:contain;
   flex:0 0 auto;
   filter:drop-shadow(0 10px 20px rgba(0,0,0,.18));
-  transition:width .28s ease,height .28s ease,transform .22s ease;
+  transition:
+    width .28s ease,
+    height .28s ease,
+    transform .22s ease,
+    filter .22s ease;
 }
 
 .site-brand:hover .logo-main{
   transform:scale(1.03);
+  filter:drop-shadow(0 14px 26px rgba(0,0,0,.22));
 }
 
 .site-header.is-shrunk .logo-main{
-  width:82px;
-  height:82px;
+  width:74px;
+  height:74px;
 }
 
 .site-brand-text{
@@ -144,14 +167,16 @@ PREMIUM HEADER
   font-weight:900;
   color:#dfeaff;
   margin-bottom:6px;
+  opacity:.95;
 }
 
 .brand-title{
-  font-size:clamp(28px,3.2vw,40px);
+  font-size:clamp(26px,3vw,38px);
   line-height:1.02;
   font-weight:900;
   color:#fff;
   text-wrap:balance;
+  text-shadow:0 2px 10px rgba(0,0,0,.10);
 }
 
 .brand-subtitle{
@@ -160,62 +185,116 @@ PREMIUM HEADER
   margin-top:6px;
 }
 
+/* =========================
+SOCIAL ICONS
+========================= */
 .site-socials{
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:12px;
   flex-wrap:wrap;
-  margin-top:18px;
+  margin-top:16px;
 }
 
 .social-link{
-  width:74px;
-  height:74px;
+  width:53px;
+  height:53px;
   border-radius:999px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   text-decoration:none;
-  box-shadow:0 14px 28px rgba(0,0,0,.18);
-  transition:transform .22s ease, box-shadow .22s ease, filter .22s ease, background .22s ease;
   flex:0 0 auto;
   padding:0;
+  box-shadow:
+    0 12px 24px rgba(0,0,0,.18),
+    0 0 0 1px rgba(255,255,255,.08) inset;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    filter .22s ease,
+    background .22s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.social-link::after{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background:radial-gradient(circle, rgba(255,255,255,.20), transparent 58%);
+  opacity:0;
+  transition:opacity .22s ease;
+  pointer-events:none;
 }
 
 .social-link:hover{
-  transform:translateY(-3px) scale(1.06);
-  box-shadow:0 20px 36px rgba(0,0,0,.24);
+  transform:translateY(-2px) scale(1.05);
+}
+
+.social-link:hover::after{
+  opacity:1;
 }
 
 .social-link svg{
-  width:34px;
-  height:34px;
+  width:22px;
+  height:22px;
   fill:#fff;
   display:block;
+  position:relative;
+  z-index:1;
 }
 
 .social-facebook{
-  background:linear-gradient(180deg,#2f80ed,#1b66d1);
+  background:linear-gradient(180deg,#3e7df0,#225fd0);
+}
+
+.social-facebook:hover{
+  box-shadow:
+    0 16px 28px rgba(20,60,180,.32),
+    0 0 20px rgba(80,140,255,.22);
 }
 
 .social-instagram{
-  background:linear-gradient(135deg,#f9ce34 0%,#ee2a7b 48%,#6228d7 100%);
+  background:linear-gradient(135deg,#f9ce34 0%,#ee2a7b 52%,#6228d7 100%);
+}
+
+.social-instagram:hover{
+  box-shadow:
+    0 16px 28px rgba(194,45,135,.30),
+    0 0 20px rgba(255,120,180,.24);
 }
 
 .social-tiktok{
-  background:#111111;
+  background:linear-gradient(180deg,#111111,#000000);
+}
+
+.social-tiktok:hover{
+  box-shadow:
+    0 16px 28px rgba(0,0,0,.34),
+    0 0 20px rgba(255,255,255,.12);
 }
 
 .social-youtube{
-  background:linear-gradient(180deg,#ff2d20,#e10000);
+  background:linear-gradient(180deg,#ff3b30,#e10000);
 }
 
+.social-youtube:hover{
+  box-shadow:
+    0 16px 28px rgba(225,0,0,.30),
+    0 0 20px rgba(255,90,90,.22);
+}
+
+/* =========================
+NAV
+========================= */
 .site-nav-wrap{
-  margin-top:18px;
+  margin-top:16px;
   overflow-x:auto;
   overflow-y:hidden;
   scrollbar-width:none;
   -ms-overflow-style:none;
+  scroll-behavior:smooth;
 }
 
 .site-nav-wrap::-webkit-scrollbar{
@@ -224,7 +303,7 @@ PREMIUM HEADER
 
 .site-nav{
   display:flex;
-  gap:12px;
+  gap:10px;
   flex-wrap:nowrap;
   min-width:max-content;
   padding-bottom:4px;
@@ -234,34 +313,42 @@ PREMIUM HEADER
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:13px 18px;
+  padding:12px 16px;
   border-radius:999px;
   color:#eef4ff;
   font-size:15px;
   font-weight:900;
-  background:rgba(255,255,255,.08);
+  background:rgba(255,255,255,.09);
   border:1px solid rgba(255,255,255,.12);
   white-space:nowrap;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.08),
-    0 10px 20px rgba(0,0,0,.08);
-  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+    0 10px 20px rgba(0,0,0,.07);
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    background .22s ease,
+    border-color .22s ease;
 }
 
 .site-nav a:hover{
   transform:translateY(-2px);
-  background:rgba(255,255,255,.16);
+  background:rgba(255,255,255,.17);
+  border-color:rgba(255,255,255,.22);
   box-shadow:
-    0 14px 28px rgba(0,0,0,.16),
+    0 14px 28px rgba(0,0,0,.14),
     0 0 22px rgba(120,180,255,.14);
 }
 
+/* =========================
+HEADER ACTIONS
+========================= */
 .site-header-actions{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
   flex-wrap:wrap;
-  margin-top:18px;
+  margin-top:16px;
 }
 
 .header-btn{
@@ -270,12 +357,16 @@ PREMIUM HEADER
   justify-content:center;
   gap:10px;
   border-radius:999px;
-  padding:15px 22px;
+  padding:14px 20px;
   font-weight:900;
   font-size:16px;
   color:#fff;
   text-decoration:none;
-  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    background .22s ease,
+    border-color .22s ease;
 }
 
 .header-btn:hover{
@@ -298,7 +389,7 @@ PREMIUM HEADER
 }
 
 .enquire-btn{
-  background:linear-gradient(180deg,#ff6d63,#e53935);
+  background:linear-gradient(180deg,#ff7066,#e53935);
   box-shadow:
     0 14px 26px rgba(229,57,53,.24),
     inset 0 1px 0 rgba(255,255,255,.14);
@@ -785,7 +876,7 @@ RESPONSIVE
 
 @media (max-width:768px){
   .site-header-inner{
-    padding:14px 0 14px;
+    padding:12px 0 12px;
   }
 
   .site-header.is-shrunk .site-header-inner{
@@ -803,8 +894,8 @@ RESPONSIVE
   }
 
   .site-header.is-shrunk .logo-main{
-    width:62px;
-    height:62px;
+    width:60px;
+    height:60px;
   }
 
   .site-brand-kicker{
@@ -824,18 +915,18 @@ RESPONSIVE
   }
 
   .site-socials{
-    gap:14px;
-    margin-top:16px;
+    gap:10px;
+    margin-top:14px;
   }
 
   .social-link{
-    width:62px;
-    height:62px;
+    width:40px;
+    height:40px;
   }
 
   .social-link svg{
-    width:28px;
-    height:28px;
+    width:18px;
+    height:18px;
   }
 
   .site-nav{
