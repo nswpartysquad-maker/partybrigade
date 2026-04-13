@@ -1,73 +1,3 @@
-:root{
-  --bg:#fff5f0;
-  --paper:#ffffff;
-  --paper-soft:#fff0e8;
-  --text:#162033;
-  --muted:#61707d;
-  --line:#ecd7ca;
-  --red:#e53935;
-  --red-dark:#b91f1b;
-  --blue:#2d7dff;
-  --blue-dark:#123a8f;
-  --yellow:#ffd84f;
-  --orange:#ff9d42;
-  --navy:#102446;
-  --shadow:0 20px 50px rgba(0,0,0,.10);
-  --max:1240px;
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  font-family:Inter,Arial,sans-serif;
-  color:var(--text);
-  line-height:1.6;
-  background:radial-gradient(circle at top left,#fffdfb 0%,#fff5f0 42%,#ffece3 100%);
-}
-
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
-
-h1{
-  font-size:clamp(54px,7vw,96px);
-  line-height:.92;
-  letter-spacing:-.04em;
-  font-weight:900;
-  margin:0;
-  color:var(--navy);
-}
-
-h2{
-  font-size:clamp(44px,6vw,72px);
-  line-height:.95;
-  letter-spacing:-.04em;
-  font-weight:900;
-  margin:0;
-  color:var(--navy);
-}
-
-h3{font-weight:900}
-
-.lead{
-  font-size:22px;
-  line-height:1.9;
-  color:var(--muted);
-  margin-top:18px;
-}
-
-.tag{
-  display:inline-block;
-  margin-bottom:14px;
-  font-size:16px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  font-weight:900;
-  color:var(--red);
-}
-
 /* =========================
 PREMIUM HEADER
 ========================= */
@@ -76,7 +6,7 @@ PREMIUM HEADER
   top:0;
   z-index:1000;
   background:
-    radial-gradient(circle at top left, rgba(255,255,255,.16), transparent 28%),
+    radial-gradient(circle at top left, rgba(255,255,255,.14), transparent 28%),
     linear-gradient(135deg,#12307a 0%, #2e77ff 45%, #1b50d4 100%);
   border-bottom:1px solid rgba(255,255,255,.14);
   box-shadow:
@@ -84,7 +14,7 @@ PREMIUM HEADER
     0 1px 0 rgba(255,255,255,.06) inset;
   backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
-  transition:box-shadow .28s ease, background .28s ease, transform .28s ease;
+  overflow:hidden;
 }
 
 .site-header::before{
@@ -105,7 +35,7 @@ PREMIUM HEADER
 .site-header-inner{
   position:relative;
   z-index:1;
-  padding:16px 0 14px;
+  padding:18px 0 14px;
   transition:padding .28s ease;
 }
 
@@ -117,13 +47,13 @@ PREMIUM HEADER
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
-  gap:24px;
+  gap:28px;
 }
 
 .site-brand{
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:20px;
   min-width:0;
   flex:1 1 auto;
 }
@@ -139,13 +69,12 @@ PREMIUM HEADER
   width:180px;
   height:180px;
   object-fit:contain;
-  filter:drop-shadow(0 14px 26px rgba(0,0,0,.20));
-  transition:width .28s ease,height .28s ease,transform .22s ease,filter .22s ease;
+  filter:drop-shadow(0 16px 30px rgba(0,0,0,.20));
+  transition:width .28s ease,height .28s ease,transform .22s ease;
 }
 
 .site-brand-logo-link:hover .logo-main{
   transform:scale(1.03);
-  filter:drop-shadow(0 18px 30px rgba(0,0,0,.24));
 }
 
 .site-header.is-shrunk .logo-main{
@@ -155,44 +84,41 @@ PREMIUM HEADER
 
 .site-brand-text{
   min-width:0;
+  max-width:620px;
 }
 
 .site-brand-kicker{
   font-size:12px;
-  letter-spacing:.35em;
+  letter-spacing:.34em;
   text-transform:uppercase;
   font-weight:900;
-  color:#ffffffd1;
+  color:#f3f7ff;
   margin-bottom:8px;
 }
 
 .brand-title{
-  font-size:clamp(36px,4vw,54px);
+  font-size:clamp(34px,4vw,54px);
   line-height:1.02;
   font-weight:900;
   color:#fff;
   text-wrap:balance;
-  text-shadow:0 6px 24px rgba(0,0,0,.35);
+  text-shadow:0 6px 22px rgba(0,0,0,.28);
 }
 
 .brand-subtitle{
   font-size:16px;
   font-weight:700;
   color:#dfeaff;
-  margin-top:7px;
+  margin-top:8px;
 }
 
-/* =========================
-SOCIAL ICONS
-========================= */
 .site-socials{
   display:flex;
   align-items:center;
   justify-content:flex-end;
   gap:12px;
-  flex-wrap:nowrap;
-  margin-top:0;
   flex:0 0 auto;
+  margin-top:6px;
 }
 
 .social-link{
@@ -202,94 +128,69 @@ SOCIAL ICONS
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  text-decoration:none;
-  flex:0 0 auto;
   padding:0;
+  overflow:hidden;
+  position:relative;
+  text-decoration:none;
   box-shadow:
     0 12px 24px rgba(0,0,0,.18),
-    0 0 0 1px rgba(255,255,255,.08) inset;
-  transition:transform .22s ease, box-shadow .22s ease, filter .22s ease, background .22s ease;
-  position:relative;
-  overflow:hidden;
-}
-
-.social-link::after{
-  content:"";
-  position:absolute;
-  inset:-35%;
-  background:radial-gradient(circle, rgba(255,255,255,.20), transparent 58%);
-  opacity:0;
-  transition:opacity .22s ease;
-  pointer-events:none;
+    0 0 0 1px rgba(255,255,255,.10) inset;
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
 }
 
 .social-link:hover{
   transform:translateY(-2px) scale(1.05);
 }
 
-.social-link:hover::after{
-  opacity:1;
-}
-
-.social-link svg{
-  width:22px;
-  height:22px;
-  fill:#fff;
+.social-link img{
+  width:58%;
+  height:58%;
+  object-fit:contain;
   display:block;
-  position:relative;
-  z-index:1;
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+  filter:none !important;
 }
 
 .social-facebook{
-  background:linear-gradient(180deg,#3e7df0,#225fd0);
-}
-
-.social-facebook:hover{
-  box-shadow:
-    0 16px 28px rgba(20,60,180,.32),
-    0 0 20px rgba(80,140,255,.22);
+  background:linear-gradient(180deg,#3f82f5,#245fd2);
 }
 
 .social-instagram{
-  background:linear-gradient(135deg,#f9ce34 0%,#ee2a7b 52%,#6228d7 100%);
-}
-
-.social-instagram:hover{
-  box-shadow:
-    0 16px 28px rgba(194,45,135,.30),
-    0 0 20px rgba(255,120,180,.24);
+  background:linear-gradient(135deg,#f9ce34 0%,#ee2a7b 55%,#6228d7 100%);
 }
 
 .social-tiktok{
-  background:linear-gradient(180deg,#111111,#000000);
-}
-
-.social-tiktok:hover{
-  box-shadow:
-    0 16px 28px rgba(0,0,0,.34),
-    0 0 20px rgba(255,255,255,.12);
+  background:linear-gradient(180deg,#111,#000);
 }
 
 .social-youtube{
-  background:linear-gradient(180deg,#ff3b30,#e10000);
+  background:linear-gradient(180deg,#ff3b30,#df0000);
+}
+
+.social-facebook:hover{
+  box-shadow:0 16px 28px rgba(20,60,180,.32),0 0 20px rgba(80,140,255,.22);
+}
+
+.social-instagram:hover{
+  box-shadow:0 16px 28px rgba(194,45,135,.30),0 0 20px rgba(255,120,180,.24);
+}
+
+.social-tiktok:hover{
+  box-shadow:0 16px 28px rgba(0,0,0,.34),0 0 20px rgba(255,255,255,.10);
 }
 
 .social-youtube:hover{
-  box-shadow:
-    0 16px 28px rgba(225,0,0,.30),
-    0 0 20px rgba(255,90,90,.22);
+  box-shadow:0 16px 28px rgba(225,0,0,.30),0 0 20px rgba(255,90,90,.22);
 }
 
-/* =========================
-NAV
-========================= */
 .site-nav-wrap{
   margin-top:18px;
   overflow-x:auto;
   overflow-y:hidden;
   scrollbar-width:none;
   -ms-overflow-style:none;
-  scroll-behavior:smooth;
 }
 
 .site-nav-wrap::-webkit-scrollbar{
@@ -331,9 +232,6 @@ NAV
     0 0 22px rgba(120,180,255,.14);
 }
 
-/* =========================
-HEADER ACTIONS
-========================= */
 .site-header-actions{
   display:flex;
   align-items:center;
@@ -353,7 +251,7 @@ HEADER ACTIONS
   font-size:16px;
   color:#fff;
   text-decoration:none;
-  transition:transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease;
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
 }
 
 .header-btn:hover{
@@ -861,48 +759,20 @@ RESPONSIVE
   }
 }
 
-@media (max-width:768px){
+@media (max-width:900px){
   .site-header-top{
-    display:grid;
-    grid-template-columns:1fr auto;
-    grid-template-areas:
-      "brand socials"
-      "nav nav"
-      "actions actions";
-    align-items:start;
-    gap:14px 12px;
-  }
-
-  .site-brand{
-    grid-area:brand;
+    flex-direction:column;
     align-items:flex-start;
-    gap:14px;
-    min-width:0;
+    gap:16px;
   }
 
   .site-socials{
-    grid-area:socials;
-    width:auto;
-    justify-content:flex-end;
-    align-items:flex-start;
-    gap:8px;
-    margin-top:4px;
-    flex-wrap:nowrap;
+    align-self:flex-end;
+    margin-top:-72px;
   }
+}
 
-  .site-nav-wrap{
-    grid-area:nav;
-    margin-top:4px;
-  }
-
-  .site-header-actions{
-    grid-area:actions;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin-top:4px;
-  }
-
+@media (max-width:768px){
   .site-header-inner{
     padding:12px 0 12px;
   }
@@ -911,19 +781,24 @@ RESPONSIVE
     padding:8px 0 8px;
   }
 
+  .site-brand{
+    align-items:flex-start;
+    gap:14px;
+  }
+
   .logo-main{
-    width:150px;
-    height:150px;
+    width:130px;
+    height:130px;
   }
 
   .site-header.is-shrunk .logo-main{
-    width:110px;
-    height:110px;
+    width:95px;
+    height:95px;
   }
 
   .site-brand-kicker{
     font-size:10px;
-    letter-spacing:.20em;
+    letter-spacing:.22em;
     margin-bottom:6px;
   }
 
@@ -937,14 +812,19 @@ RESPONSIVE
     margin-top:4px;
   }
 
+  .site-socials{
+    gap:8px;
+    margin-top:-64px;
+  }
+
   .social-link{
     width:40px;
     height:40px;
   }
 
-  .social-link svg{
-    width:18px;
-    height:18px;
+  .social-link img{
+    width:58%;
+    height:58%;
   }
 
   .site-nav{
@@ -956,10 +836,59 @@ RESPONSIVE
     padding:11px 16px;
   }
 
+  .site-header-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
   .header-btn{
     width:100%;
     padding:14px 14px;
     font-size:15px;
+  }
+}
+
+@media (max-width:560px){
+  .site-header-top{
+    gap:14px;
+  }
+
+  .site-brand{
+    gap:12px;
+  }
+
+  .logo-main{
+    width:112px;
+    height:112px;
+  }
+
+  .site-header.is-shrunk .logo-main{
+    width:86px;
+    height:86px;
+  }
+
+  .brand-title{
+    font-size:20px;
+  }
+
+  .brand-subtitle{
+    font-size:11px;
+  }
+
+  .site-socials{
+    align-self:flex-end;
+    margin-top:0;
+    gap:7px;
+  }
+
+  .social-link{
+    width:38px;
+    height:38px;
+  }
+
+  .site-header-actions{
+    grid-template-columns:1fr;
   }
 }
 
@@ -1009,55 +938,6 @@ RESPONSIVE
 
   .lightbox-arrow:hover{
     transform:scale(1.04);
-  }
-}
-
-@media (max-width:560px){
-  .site-header-top{
-    gap:12px 10px;
-  }
-
-  .logo-main{
-    width:135px;
-    height:135px;
-  }
-
-  .site-header.is-shrunk .logo-main{
-    width:98px;
-    height:98px;
-  }
-
-  .brand-title{
-    font-size:21px;
-  }
-
-  .site-socials{
-    gap:7px;
-  }
-
-  .social-link{
-    width:38px;
-    height:38px;
-  }
-
-  .social-link svg{
-    width:17px;
-    height:17px;
-  }
-}
-
-@media (max-width:480px){
-  .site-header-actions{
-    grid-template-columns:1fr;
-  }
-
-  .logo-main{
-    width:128px;
-    height:128px;
-  }
-
-  .brand-title{
-    font-size:20px;
   }
 }
 
