@@ -69,29 +69,34 @@ h3{font-weight:900}
   color:var(--red);
 }
 
-/* Prevent ugly flash before header loads */
+/* Prevent flash before header/footer load */
 #header,
-#footer {
-  opacity: 0;
-  transition: opacity .4s ease;
+#footer{
+  opacity:0;
+  transition:opacity .4s ease;
 }
 
 body.components-loaded #header,
-body.components-loaded #footer {
-  opacity: 1;
+body.components-loaded #footer{
+  opacity:1;
 }
 
 /* =========================
-ELITE HEADER
+ULTRA PREMIUM HEADER
 ========================= */
+#header{
+  min-height:150px;
+}
+
 .site-header{
   position:sticky;
   top:0;
   z-index:1000;
   overflow:hidden;
+  isolation:isolate;
   background:
-    radial-gradient(circle at 10% 15%, rgba(255,255,255,.16), transparent 24%),
-    radial-gradient(circle at 90% 10%, rgba(255,255,255,.10), transparent 20%),
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,.16), transparent 26%),
+    radial-gradient(circle at 88% 12%, rgba(255,255,255,.08), transparent 18%),
     linear-gradient(135deg,#12307a 0%, #2e77ff 45%, #1b50d4 100%);
   border-bottom:1px solid rgba(255,255,255,.16);
   box-shadow:
@@ -111,6 +116,22 @@ ELITE HEADER
     linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,0) 35%),
     radial-gradient(circle at center, rgba(255,255,255,.04), transparent 60%);
   opacity:.9;
+  z-index:0;
+}
+
+.site-header::after{
+  content:"";
+  position:absolute;
+  inset:auto;
+  width:260px;
+  height:260px;
+  right:-80px;
+  top:-100px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(92,170,255,.22), transparent 68%);
+  filter:blur(30px);
+  pointer-events:none;
+  z-index:0;
 }
 
 .site-header.is-shrunk{
@@ -203,11 +224,11 @@ ELITE HEADER
 }
 
 /* =========================
-SOCIAL ICONS - ELITE SVG
+SOCIAL ICONS
 ========================= */
 .site-socials{
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:flex-end;
   gap:10px;
   flex:0 0 auto;
@@ -907,10 +928,12 @@ RESPONSIVE
 }
 
 @media (max-width:768px){
+  #header{
+    min-height:120px;
+  }
+
   .site-header-top{
-    display:flex;
     align-items:flex-start;
-    justify-content:space-between;
     gap:14px;
   }
 
@@ -958,7 +981,6 @@ RESPONSIVE
   .site-socials{
     gap:8px;
     margin-top:2px;
-    flex:0 0 auto;
   }
 
   .social-link{
@@ -996,7 +1018,6 @@ RESPONSIVE
 
 @media (max-width:560px){
   .site-header-top{
-    align-items:flex-start;
     gap:10px;
   }
 
