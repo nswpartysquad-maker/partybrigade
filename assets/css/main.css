@@ -149,8 +149,8 @@ ELITE HEADER
 }
 
 .logo-main{
-  width:290px;
-  height:290px;
+  width:370px;
+  height:370px;
   object-fit:contain;
   filter:
     drop-shadow(0 16px 30px rgba(0,0,0,.25))
