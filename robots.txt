@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://partybrigade.com.au/sitemap.xml
