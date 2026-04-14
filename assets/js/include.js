@@ -1,6 +1,8 @@
 async function loadComponent(id, file) {
   try {
-    const res = await fetch(file, { cache: "force-cache" });
+    const res = await fetch(`${file}?v=${Date.now()}`, {
+      cache: "no-store"
+    });
 
     if (!res.ok) {
       throw new Error(`Failed to load ${file}`);
@@ -13,18 +15,16 @@ async function loadComponent(id, file) {
 
     el.innerHTML = html;
 
-    // ✅ Execute scripts inside loaded HTML (IMPORTANT)
-    el.querySelectorAll("script").forEach(oldScript => {
+    el.querySelectorAll("script").forEach((oldScript) => {
       const newScript = document.createElement("script");
 
-      [...oldScript.attributes].forEach(attr =>
-        newScript.setAttribute(attr.name, attr.value)
-      );
+      [...oldScript.attributes].forEach((attr) => {
+        newScript.setAttribute(attr.name, attr.value);
+      });
 
       newScript.textContent = oldScript.textContent;
       oldScript.replaceWith(newScript);
     });
-
   } catch (err) {
     console.error("Component load error:", err);
   }
@@ -36,6 +36,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadComponent("footer", "/partials/footer.html")
   ]);
 
-  // ✅ Optional: add loaded class for animations
   document.body.classList.add("components-loaded");
 });
