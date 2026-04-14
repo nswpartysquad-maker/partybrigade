@@ -11,15 +11,10 @@
 
   <div id="header"></div>
 
-  <section class="hero-priority">
+  <section class="hero-priority hero-premium">
     <div class="container">
-      <div class="hero-top-photo">
-        <div class="hero-photo-card">
-          <img src="images/sydney-childrens-fire-truck-hero.jpg" alt="Sydney children enjoying NSW Party Brigade fire truck">
-        </div>
-      </div>
+      <div class="hero-premium-grid">
 
-      <div class="hero-priority-grid">
         <div class="hero-copy">
           <div class="tag">🚒 Sydney Children’s Fire Truck Parties</div>
           <h1>Book the real fire truck experience fast.</h1>
@@ -40,6 +35,46 @@
             <div>Ages 0–12</div>
           </div>
         </div>
+
+        <div class="hero-slideshow-card">
+          <div class="hero-slideshow" id="heroSlideshow">
+            <div class="hero-slide is-active">
+              <img src="images/sydney-childrens-fire-truck-hero.jpg" alt="Sydney children enjoying NSW Party Brigade fire truck">
+            </div>
+
+            <div class="hero-slide">
+              <img src="images/nsw-party-brigade-fire-truck-front.jpg" alt="NSW Party Brigade fire truck front view">
+            </div>
+
+            <div class="hero-slide">
+              <img src="images/nsw-party-brigade-fire-hose-fun.jpg" alt="Children enjoying fire hose fun with NSW Party Brigade">
+            </div>
+
+            <div class="hero-slide">
+              <img src="images/sydney-kids-fire-truck-party-photo-3.jpg" alt="Sydney kids enjoying a fire truck party">
+            </div>
+
+            <div class="hero-slide">
+              <img src="images/nsw-party-brigade-fire-truck-side.jpg" alt="NSW Party Brigade fire truck side view">
+            </div>
+
+            <button class="hero-slide-arrow hero-slide-prev" type="button" aria-label="Previous hero photo" onclick="changeHeroSlide(-1)">❮</button>
+            <button class="hero-slide-arrow hero-slide-next" type="button" aria-label="Next hero photo" onclick="changeHeroSlide(1)">❯</button>
+
+            <div class="hero-slide-overlay">
+              <div class="hero-slide-badge">Sydney’s iconic children’s fire truck experience</div>
+            </div>
+          </div>
+
+          <div class="hero-slide-dots" id="heroSlideDots">
+            <button class="hero-dot is-active" type="button" aria-label="Hero slide 1" onclick="goToHeroSlide(0)"></button>
+            <button class="hero-dot" type="button" aria-label="Hero slide 2" onclick="goToHeroSlide(1)"></button>
+            <button class="hero-dot" type="button" aria-label="Hero slide 3" onclick="goToHeroSlide(2)"></button>
+            <button class="hero-dot" type="button" aria-label="Hero slide 4" onclick="goToHeroSlide(3)"></button>
+            <button class="hero-dot" type="button" aria-label="Hero slide 5" onclick="goToHeroSlide(4)"></button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -108,7 +143,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section recognition-section">
     <div class="container">
       <div class="section-head">
         <div class="tag">Recognition</div>
@@ -330,6 +365,47 @@
         closeLightbox();
       }
     });
+
+    const heroSlides = document.querySelectorAll(".hero-slide");
+    const heroDots = document.querySelectorAll(".hero-dot");
+    let heroCurrentSlide = 0;
+    let heroSlideInterval;
+
+    function renderHeroSlide(index) {
+      heroSlides.forEach((slide, i) => {
+        slide.classList.toggle("is-active", i === index);
+      });
+
+      heroDots.forEach((dot, i) => {
+        dot.classList.toggle("is-active", i === index);
+      });
+    }
+
+    function goToHeroSlide(index) {
+      heroCurrentSlide = index;
+      renderHeroSlide(heroCurrentSlide);
+      restartHeroAutoplay();
+    }
+
+    function changeHeroSlide(direction) {
+      heroCurrentSlide = (heroCurrentSlide + direction + heroSlides.length) % heroSlides.length;
+      renderHeroSlide(heroCurrentSlide);
+      restartHeroAutoplay();
+    }
+
+    function startHeroAutoplay() {
+      heroSlideInterval = setInterval(() => {
+        heroCurrentSlide = (heroCurrentSlide + 1) % heroSlides.length;
+        renderHeroSlide(heroCurrentSlide);
+      }, 4200);
+    }
+
+    function restartHeroAutoplay() {
+      clearInterval(heroSlideInterval);
+      startHeroAutoplay();
+    }
+
+    startHeroAutoplay();
   </script>
 
   <script src="assets/js/include.js"></script>
