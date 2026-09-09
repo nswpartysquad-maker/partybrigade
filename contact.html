@@ -63,13 +63,20 @@
       display:block;
     }
 
+    button,
+    input,
+    select,
+    textarea{
+      font-family:inherit;
+    }
+
     .container{
       width:min(var(--max),calc(100% - 32px));
       margin:0 auto;
     }
 
     /* =========================
-    HERO
+       HERO
     ========================= */
 
     .page-hero{
@@ -164,7 +171,7 @@
     }
 
     /* =========================
-    SECTION
+       SECTION
     ========================= */
 
     .section{
@@ -193,7 +200,7 @@
     }
 
     /* =========================
-    CONTACT LAYOUT
+       CONTACT LAYOUT
     ========================= */
 
     .contact-wrap{
@@ -204,8 +211,7 @@
     }
 
     .contact-card{
-      background:
-        linear-gradient(180deg,#ffffff 0%,#fffdfb 100%);
+      background:linear-gradient(180deg,#ffffff 0%,#fffdfb 100%);
       border:1px solid #ead9cf;
       border-radius:30px;
       padding:32px;
@@ -230,7 +236,7 @@
     }
 
     /* =========================
-    FORM
+       FORM
     ========================= */
 
     .form-grid{
@@ -324,7 +330,302 @@
     }
 
     /* =========================
-    EXTRAS
+       EASY TIME BUTTON
+    ========================= */
+
+    .time-picker-button{
+      width:100%;
+      min-height:58px;
+      border:1.5px solid #dfd0c7;
+      border-radius:16px;
+      background:#fff;
+      padding:13px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      cursor:pointer;
+      color:#162033;
+      box-shadow:
+        0 6px 18px rgba(16,36,70,.035),
+        inset 0 1px 0 rgba(255,255,255,.8);
+      transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+    }
+
+    .time-picker-button:hover{
+      border-color:#cdb8ab;
+    }
+
+    .time-picker-button:focus{
+      outline:none;
+      border-color:var(--blue);
+      box-shadow:
+        0 0 0 4px rgba(45,125,255,.11),
+        0 10px 26px rgba(45,125,255,.08);
+    }
+
+    .time-picker-left{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .time-field-icon{
+      width:38px;
+      height:38px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+      background:linear-gradient(180deg,#ff7168,#e53935);
+      color:#fff;
+      box-shadow:0 8px 20px rgba(229,57,53,.18);
+    }
+
+    .time-display{
+      font-size:16px;
+      font-weight:900;
+      color:var(--navy);
+      text-align:left;
+    }
+
+    .time-display.is-placeholder{
+      color:#7d8893;
+      font-weight:700;
+    }
+
+    .time-chevron{
+      font-size:18px;
+      color:var(--navy);
+      flex:0 0 auto;
+    }
+
+    /* =========================
+       CUSTOM TIME MODAL
+    ========================= */
+
+    .time-modal{
+      position:fixed;
+      inset:0;
+      z-index:10000;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      background:rgba(7,17,38,.58);
+      backdrop-filter:blur(5px);
+      -webkit-backdrop-filter:blur(5px);
+    }
+
+    .time-modal.show{
+      display:flex;
+    }
+
+    .time-modal-card{
+      width:min(620px,100%);
+      max-height:calc(100vh - 36px);
+      overflow-y:auto;
+      background:
+        radial-gradient(circle at 100% 0%,rgba(45,125,255,.08),transparent 28%),
+        radial-gradient(circle at 0% 0%,rgba(229,57,53,.09),transparent 26%),
+        #fffdfa;
+      border:1px solid rgba(255,255,255,.85);
+      border-radius:30px;
+      padding:26px;
+      box-shadow:
+        0 35px 90px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.9);
+      animation:timeModalIn .22s ease;
+    }
+
+    @keyframes timeModalIn{
+      from{
+        opacity:0;
+        transform:translateY(18px) scale(.97);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+      }
+    }
+
+    .time-modal-header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:22px;
+    }
+
+    .time-modal-heading{
+      display:flex;
+      align-items:center;
+      gap:13px;
+    }
+
+    .time-modal-icon{
+      width:52px;
+      height:52px;
+      border-radius:999px;
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      background:#fff0ef;
+      color:var(--red);
+      border:1px solid #ffd4d1;
+    }
+
+    .time-modal-header h3{
+      margin:0;
+      color:var(--navy);
+      font-size:28px;
+      line-height:1.05;
+      font-weight:900;
+    }
+
+    .time-modal-header p{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.5;
+    }
+
+    .time-modal-close{
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:999px;
+      background:#f5f5f5;
+      color:#57616c;
+      font-size:25px;
+      cursor:pointer;
+      flex:0 0 auto;
+    }
+
+    .time-selected-preview{
+      background:linear-gradient(135deg,#102446,#123a8f);
+      color:#fff;
+      border-radius:20px;
+      padding:17px 18px;
+      margin-bottom:20px;
+      text-align:center;
+      box-shadow:0 14px 30px rgba(16,36,70,.17);
+    }
+
+    .time-selected-preview small{
+      display:block;
+      color:#cbd8f4;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      margin-bottom:4px;
+    }
+
+    .time-selected-preview strong{
+      display:block;
+      font-size:34px;
+      line-height:1;
+      font-weight:900;
+    }
+
+    .time-choice-label{
+      display:block;
+      margin:0 0 10px;
+      font-size:13px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      color:#647180;
+    }
+
+    .time-choice-section{
+      margin-top:18px;
+    }
+
+    .time-hours{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:9px;
+    }
+
+    .time-minutes{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+    }
+
+    .time-periods{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .time-choice{
+      min-height:52px;
+      border:1.5px solid #e1d5ce;
+      border-radius:15px;
+      background:#fff;
+      color:var(--navy);
+      font-size:17px;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 6px 16px rgba(16,36,70,.035);
+      transition:
+        transform .16s ease,
+        border-color .16s ease,
+        background .16s ease,
+        box-shadow .16s ease;
+    }
+
+    .time-choice:hover{
+      transform:translateY(-1px);
+      border-color:#c8b5a8;
+    }
+
+    .time-choice.is-selected{
+      border-color:var(--red);
+      background:linear-gradient(180deg,#fff5f4,#ffe2df);
+      color:var(--red-dark);
+      box-shadow:
+        0 0 0 3px rgba(229,57,53,.08),
+        0 10px 22px rgba(229,57,53,.10);
+    }
+
+    .time-periods .time-choice{
+      min-height:68px;
+      font-size:22px;
+    }
+
+    .time-set-button{
+      width:100%;
+      min-height:58px;
+      border:none;
+      border-radius:999px;
+      margin-top:24px;
+      background:linear-gradient(180deg,#ff6158,#e53935);
+      color:#fff;
+      font-size:18px;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 16px 32px rgba(229,57,53,.26);
+      transition:transform .18s ease,box-shadow .18s ease;
+    }
+
+    .time-set-button:hover{
+      transform:translateY(-2px);
+      box-shadow:0 20px 40px rgba(229,57,53,.32);
+    }
+
+    /* =========================
+       EXTRAS
     ========================= */
 
     .extras-dropdown{
@@ -432,7 +733,7 @@
     }
 
     /* =========================
-    CAPTCHA
+       CAPTCHA
     ========================= */
 
     .captcha-box{
@@ -476,7 +777,7 @@
     }
 
     /* =========================
-    TERMS
+       TERMS
     ========================= */
 
     .terms-row{
@@ -511,7 +812,7 @@
     }
 
     /* =========================
-    SUBMIT
+       SUBMIT
     ========================= */
 
     .submit-row{
@@ -547,25 +848,10 @@
       overflow:hidden;
     }
 
-    .submit-btn::after{
-      content:"";
-      position:absolute;
-      inset:-40%;
-      background:
-        radial-gradient(circle,rgba(255,255,255,.24) 0%,transparent 55%);
-      opacity:0;
-      transition:opacity .25s ease;
-      pointer-events:none;
-    }
-
     .submit-btn:hover{
       transform:translateY(-2px);
       box-shadow:
         0 18px 36px rgba(229,57,53,.30);
-    }
-
-    .submit-btn:hover::after{
-      opacity:1;
     }
 
     .submit-btn:disabled{
@@ -583,7 +869,7 @@
     }
 
     /* =========================
-    SIDE INFO
+       SIDE INFO
     ========================= */
 
     .side-info{
@@ -657,7 +943,7 @@
     }
 
     /* =========================
-    SUCCESS / ERROR
+       SUCCESS / ERROR
     ========================= */
 
     .success-banner{
@@ -678,30 +964,6 @@
       display:block;
     }
 
-    .success-banner::before,
-    .success-banner::after{
-      content:"";
-      position:absolute;
-      top:-24px;
-      width:110px;
-      height:110px;
-      border-radius:999px;
-      filter:blur(12px);
-      opacity:.28;
-    }
-
-    .success-banner::before{
-      right:14px;
-      background:#ffd84f;
-      animation:flamePulse 2s ease-in-out infinite;
-    }
-
-    .success-banner::after{
-      left:-12px;
-      background:#6ab1ff;
-      animation:flamePulse 2.4s ease-in-out infinite;
-    }
-
     .success-inner{
       position:relative;
       z-index:2;
@@ -720,8 +982,6 @@
       justify-content:center;
       font-size:28px;
       flex:0 0 auto;
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,.18);
     }
 
     .success-text strong{
@@ -765,19 +1025,8 @@
       }
     }
 
-    @keyframes flamePulse{
-      0%,100%{
-        transform:scale(1);
-        opacity:.22;
-      }
-      50%{
-        transform:scale(1.14);
-        opacity:.38;
-      }
-    }
-
     /* =========================
-    RESPONSIVE
+       RESPONSIVE
     ========================= */
 
     @media (max-width:1100px){
@@ -834,31 +1083,42 @@
         padding:20px;
       }
 
-      .form-group label{
-        font-size:15px;
-      }
-
-      .form-group input,
-      .form-group select,
-      .form-group textarea,
-      .extras-summary{
-        font-size:16px;
-      }
-
-      .check-pill{
-        padding:15px;
-      }
-
-      .check-pill span{
-        font-size:15px;
-      }
-
       .submit-btn{
         width:100%;
       }
 
-      .success-inner{
-        align-items:flex-start;
+      .time-modal{
+        padding:10px;
+        align-items:flex-end;
+      }
+
+      .time-modal-card{
+        border-radius:26px 26px 18px 18px;
+        padding:20px 16px;
+        max-height:92vh;
+      }
+
+      .time-modal-header h3{
+        font-size:25px;
+      }
+
+      .time-modal-icon{
+        width:46px;
+        height:46px;
+      }
+
+      .time-hours{
+        grid-template-columns:repeat(4,1fr);
+      }
+
+      .time-choice{
+        min-height:54px;
+        font-size:17px;
+      }
+
+      .time-periods .time-choice{
+        min-height:64px;
+        font-size:21px;
       }
     }
   </style>
@@ -888,7 +1148,7 @@
               <span>🚒 Real fire truck</span>
               <span>📍 Sydney-wide</span>
               <span>📅 Future date booking</span>
-              <span>⏰ Choose preferred time</span>
+              <span>⏰ Easy preferred time</span>
               <span>⚡ Fast reply</span>
             </div>
           </div>
@@ -970,6 +1230,13 @@
                 autocomplete="off"
               >
 
+              <input
+                type="hidden"
+                id="eventTime"
+                name="Preferred Event Time"
+                value=""
+              >
+
               <div class="form-grid">
 
                 <div class="form-group">
@@ -1037,21 +1304,34 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="eventTime">
+                  <label>
                     Preferred Time
                     <span class="required">*</span>
                   </label>
 
-                  <input
-                    type="time"
-                    id="eventTime"
-                    name="Preferred Event Time"
-                    step="900"
-                    required
+                  <button
+                    class="time-picker-button"
+                    id="openTimePicker"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-controls="timeModal"
                   >
+                    <span class="time-picker-left">
+                      <span class="time-field-icon">⏰</span>
+
+                      <span
+                        class="time-display is-placeholder"
+                        id="timeDisplay"
+                      >
+                        Choose preferred time
+                      </span>
+                    </span>
+
+                    <span class="time-chevron">›</span>
+                  </button>
 
                   <div class="helper-text">
-                    Tap to choose your preferred starting time.
+                    Choose the hour, minutes and AM or PM.
                   </div>
                 </div>
 
@@ -1249,7 +1529,6 @@
                       </label>
 
                     </div>
-
                   </details>
 
                   <div class="helper-text">
@@ -1405,8 +1684,8 @@
                   <div>
                     <strong>Date &amp; Time</strong>
                     <span>
-                      Tell us your preferred event date and starting time
-                      so we can check availability faster.
+                      Tell us your preferred date and start time so we can
+                      check availability faster.
                     </span>
                   </div>
                 </div>
@@ -1460,10 +1739,7 @@
 
               <div class="info-list">
 
-                <a
-                  class="info-pill"
-                  href="tel:1300036469"
-                >
+                <a class="info-pill" href="tel:1300036469">
                   <div class="icon">📞</div>
 
                   <div>
@@ -1491,11 +1767,153 @@
           </aside>
 
         </div>
-
       </div>
     </section>
 
   </main>
+
+  <!-- =========================
+       EASY TIME PICKER MODAL
+  ========================= -->
+
+  <div
+    class="time-modal"
+    id="timeModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="timeModalTitle"
+  >
+
+    <div class="time-modal-card">
+
+      <div class="time-modal-header">
+
+        <div class="time-modal-heading">
+
+          <div class="time-modal-icon">
+            ⏰
+          </div>
+
+          <div>
+            <h3 id="timeModalTitle">
+              Select Preferred Time
+            </h3>
+
+            <p>
+              Choose the hour, minutes and AM or PM.
+            </p>
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="time-modal-close"
+          id="closeTimePicker"
+          aria-label="Close time picker"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div class="time-selected-preview">
+        <small>Selected time</small>
+        <strong id="timePreview">11:00 AM</strong>
+      </div>
+
+      <div class="time-choice-section">
+
+        <span class="time-choice-label">
+          1. Choose Hour
+        </span>
+
+        <div class="time-hours">
+
+          <button type="button" class="time-choice hour-choice" data-hour="1">1</button>
+          <button type="button" class="time-choice hour-choice" data-hour="2">2</button>
+          <button type="button" class="time-choice hour-choice" data-hour="3">3</button>
+          <button type="button" class="time-choice hour-choice" data-hour="4">4</button>
+          <button type="button" class="time-choice hour-choice" data-hour="5">5</button>
+          <button type="button" class="time-choice hour-choice" data-hour="6">6</button>
+          <button type="button" class="time-choice hour-choice" data-hour="7">7</button>
+          <button type="button" class="time-choice hour-choice" data-hour="8">8</button>
+          <button type="button" class="time-choice hour-choice" data-hour="9">9</button>
+          <button type="button" class="time-choice hour-choice" data-hour="10">10</button>
+          <button type="button" class="time-choice hour-choice is-selected" data-hour="11">11</button>
+          <button type="button" class="time-choice hour-choice" data-hour="12">12</button>
+
+        </div>
+
+      </div>
+
+      <div class="time-choice-section">
+
+        <span class="time-choice-label">
+          2. Choose Minutes
+        </span>
+
+        <div class="time-minutes">
+
+          <button type="button" class="time-choice minute-choice is-selected" data-minute="00">
+            :00
+          </button>
+
+          <button type="button" class="time-choice minute-choice" data-minute="15">
+            :15
+          </button>
+
+          <button type="button" class="time-choice minute-choice" data-minute="30">
+            :30
+          </button>
+
+          <button type="button" class="time-choice minute-choice" data-minute="45">
+            :45
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="time-choice-section">
+
+        <span class="time-choice-label">
+          3. Choose AM or PM
+        </span>
+
+        <div class="time-periods">
+
+          <button
+            type="button"
+            class="time-choice period-choice is-selected"
+            data-period="AM"
+          >
+            ☀️ AM
+          </button>
+
+          <button
+            type="button"
+            class="time-choice period-choice"
+            data-period="PM"
+          >
+            🌙 PM
+          </button>
+
+        </div>
+
+      </div>
+
+      <button
+        type="button"
+        class="time-set-button"
+        id="setTimeButton"
+      >
+        ✓ Set Preferred Time
+      </button>
+
+    </div>
+
+  </div>
 
   <div id="footer"></div>
 
@@ -1508,10 +1926,8 @@
     const eventTime = document.getElementById("eventTime");
 
     const enquiryForm = document.getElementById("enquiryForm");
-
     const successBanner = document.getElementById("successBanner");
     const formError = document.getElementById("formError");
-
     const submitButton = document.getElementById("submitButton");
 
     const extrasSummary = document.getElementById("extrasSummary");
@@ -1522,25 +1938,215 @@
       );
 
     /* =========================
-    FUTURE DATE ONLY
+       DATE
     ========================= */
 
-    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
 
-    today.setDate(today.getDate() + 1);
+    const tomorrowYear = tomorrow.getFullYear();
+    const tomorrowMonth = String(tomorrow.getMonth() + 1).padStart(2, "0");
+    const tomorrowDay = String(tomorrow.getDate()).padStart(2, "0");
 
     eventDate.min =
-      today.toISOString().split("T")[0];
+      `${tomorrowYear}-${tomorrowMonth}-${tomorrowDay}`;
 
     /* =========================
-    PACKAGE DISPLAY
+       EASY CUSTOM TIME PICKER
+    ========================= */
+
+    const timeModal =
+      document.getElementById("timeModal");
+
+    const openTimePicker =
+      document.getElementById("openTimePicker");
+
+    const closeTimePicker =
+      document.getElementById("closeTimePicker");
+
+    const setTimeButton =
+      document.getElementById("setTimeButton");
+
+    const timeDisplay =
+      document.getElementById("timeDisplay");
+
+    const timePreview =
+      document.getElementById("timePreview");
+
+    const hourChoices =
+      document.querySelectorAll(".hour-choice");
+
+    const minuteChoices =
+      document.querySelectorAll(".minute-choice");
+
+    const periodChoices =
+      document.querySelectorAll(".period-choice");
+
+    let selectedHour = "11";
+    let selectedMinute = "00";
+    let selectedPeriod = "AM";
+
+    function updateTimePreview(){
+
+      timePreview.textContent =
+        `${selectedHour}:${selectedMinute} ${selectedPeriod}`;
+
+    }
+
+    function openTimeModal(){
+
+      timeModal.classList.add("show");
+
+      document.body.style.overflow = "hidden";
+
+      updateTimePreview();
+
+    }
+
+    function closeTimeModal(){
+
+      timeModal.classList.remove("show");
+
+      document.body.style.overflow = "";
+
+    }
+
+    openTimePicker.addEventListener(
+      "click",
+      openTimeModal
+    );
+
+    closeTimePicker.addEventListener(
+      "click",
+      closeTimeModal
+    );
+
+    timeModal.addEventListener(
+      "click",
+      function(event){
+
+        if(event.target === timeModal){
+
+          closeTimeModal();
+
+        }
+
+      }
+    );
+
+    document.addEventListener(
+      "keydown",
+      function(event){
+
+        if(
+          event.key === "Escape" &&
+          timeModal.classList.contains("show")
+        ){
+
+          closeTimeModal();
+
+        }
+
+      }
+    );
+
+    hourChoices.forEach(button => {
+
+      button.addEventListener(
+        "click",
+        function(){
+
+          hourChoices.forEach(item =>
+            item.classList.remove("is-selected")
+          );
+
+          this.classList.add("is-selected");
+
+          selectedHour =
+            this.dataset.hour;
+
+          updateTimePreview();
+
+        }
+      );
+
+    });
+
+    minuteChoices.forEach(button => {
+
+      button.addEventListener(
+        "click",
+        function(){
+
+          minuteChoices.forEach(item =>
+            item.classList.remove("is-selected")
+          );
+
+          this.classList.add("is-selected");
+
+          selectedMinute =
+            this.dataset.minute;
+
+          updateTimePreview();
+
+        }
+      );
+
+    });
+
+    periodChoices.forEach(button => {
+
+      button.addEventListener(
+        "click",
+        function(){
+
+          periodChoices.forEach(item =>
+            item.classList.remove("is-selected")
+          );
+
+          this.classList.add("is-selected");
+
+          selectedPeriod =
+            this.dataset.period;
+
+          updateTimePreview();
+
+        }
+      );
+
+    });
+
+    setTimeButton.addEventListener(
+      "click",
+      function(){
+
+        const friendlyTime =
+          `${selectedHour}:${selectedMinute} ${selectedPeriod}`;
+
+        eventTime.value =
+          friendlyTime;
+
+        timeDisplay.textContent =
+          friendlyTime;
+
+        timeDisplay.classList.remove(
+          "is-placeholder"
+        );
+
+        closeTimeModal();
+
+      }
+    );
+
+    /* =========================
+       PACKAGE DISPLAY
     ========================= */
 
     occasionSelect.addEventListener(
       "change",
-      function () {
+      function(){
 
-        if (this.value === "Kids Birthday") {
+        if(this.value === "Kids Birthday"){
 
           packageWrap.style.display = "flex";
 
@@ -1556,7 +2162,7 @@
     );
 
     /* =========================
-    EXTRAS SUMMARY
+       EXTRAS
     ========================= */
 
     function updateExtrasSummary(){
@@ -1565,12 +2171,12 @@
         Array.from(extrasCheckboxes)
           .filter(input => input.checked);
 
-      if (checked.length === 0){
+      if(checked.length === 0){
 
         extrasSummary.textContent =
           "Select Extras";
 
-      } else if (checked.length === 1){
+      } else if(checked.length === 1){
 
         extrasSummary.textContent =
           checked[0].value;
@@ -1596,7 +2202,7 @@
     updateExtrasSummary();
 
     /* =========================
-    CAPTCHA
+       CAPTCHA
     ========================= */
 
     let captchaA = 0;
@@ -1624,7 +2230,7 @@
     buildCaptcha();
 
     /* =========================
-    ERROR HELPERS
+       ERROR
     ========================= */
 
     function showError(message){
@@ -1649,7 +2255,7 @@
     }
 
     /* =========================
-    FORM SUBMIT
+       FORM SUBMIT
     ========================= */
 
     enquiryForm.addEventListener(
@@ -1663,22 +2269,16 @@
         successBanner.classList.remove("show");
 
         const name =
-          document
-            .getElementById("name")
-            .value
-            .trim();
+          document.getElementById("name")
+            .value.trim();
 
         const phone =
-          document
-            .getElementById("phone")
-            .value
-            .trim();
+          document.getElementById("phone")
+            .value.trim();
 
         const email =
-          document
-            .getElementById("email")
-            .value
-            .trim();
+          document.getElementById("email")
+            .value.trim();
 
         const date =
           eventDate.value;
@@ -1688,18 +2288,12 @@
 
         const captchaInput =
           parseInt(
-            document
-              .getElementById("captchaAnswer")
-              .value,
+            document.getElementById("captchaAnswer").value,
             10
           );
 
         const agreeTerms =
-          document
-            .getElementById("agreeTerms")
-            .checked;
-
-        /* REQUIRED FIELDS */
+          document.getElementById("agreeTerms").checked;
 
         if(
           !name ||
@@ -1717,8 +2311,6 @@
 
         }
 
-        /* EMAIL VALIDATION */
-
         const emailPattern =
           /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -1732,8 +2324,6 @@
 
         }
 
-        /* TERMS */
-
         if(!agreeTerms){
 
           showError(
@@ -1744,8 +2334,6 @@
 
         }
 
-        /* CAPTCHA */
-
         if(captchaInput !== captchaCorrectAnswer){
 
           showError(
@@ -1754,30 +2342,19 @@
 
           buildCaptcha();
 
-          document
-            .getElementById("captchaAnswer")
-            .value = "";
+          document.getElementById("captchaAnswer").value = "";
 
           return;
 
         }
 
-        /* DATE CHECK */
-
         const selectedDate =
-          new Date(
-            date + "T00:00:00"
-          );
+          new Date(date + "T00:00:00");
 
         const minDate =
           new Date();
 
-        minDate.setHours(
-          0,
-          0,
-          0,
-          0
-        );
+        minDate.setHours(0,0,0,0);
 
         minDate.setDate(
           minDate.getDate() + 1
@@ -1821,6 +2398,42 @@
 
             packageWrap.style.display =
               "none";
+
+            eventTime.value = "";
+
+            timeDisplay.textContent =
+              "Choose preferred time";
+
+            timeDisplay.classList.add(
+              "is-placeholder"
+            );
+
+            selectedHour = "11";
+            selectedMinute = "00";
+            selectedPeriod = "AM";
+
+            hourChoices.forEach(item =>
+              item.classList.toggle(
+                "is-selected",
+                item.dataset.hour === "11"
+              )
+            );
+
+            minuteChoices.forEach(item =>
+              item.classList.toggle(
+                "is-selected",
+                item.dataset.minute === "00"
+              )
+            );
+
+            periodChoices.forEach(item =>
+              item.classList.toggle(
+                "is-selected",
+                item.dataset.period === "AM"
+              )
+            );
+
+            updateTimePreview();
 
             buildCaptcha();
 
