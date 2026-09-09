@@ -3,9 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enquire Now | NSW Party Brigade</title>
-  <meta name="description" content="Send your NSW Party Brigade booking enquiry for Sydney children's fire truck parties, older children parties, school events and private bookings." />
+
+  <title>Enquire Now | NSW Party Brigade Sydney Children's Fire Truck</title>
+
+  <meta
+    name="description"
+    content="Send your NSW Party Brigade booking enquiry for Sydney children's fire truck parties, older children parties, school events, school formals and private bookings."
+  />
+
+  <meta name="theme-color" content="#1b50d4" />
+  <link rel="canonical" href="https://partybrigade.com.au/contact.html" />
+
   <link rel="stylesheet" href="assets/css/main.css" />
+
   <style>
     :root{
       --bg:#fff5f0;
@@ -26,23 +36,48 @@
       --max:1240px;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       font-family:Inter,Arial,sans-serif;
       color:var(--text);
       line-height:1.6;
-      background:radial-gradient(circle at top left,#fffdfb 0%,#fff5f0 42%,#ffece3 100%);
+      background:
+        radial-gradient(circle at top left,#fffdfb 0%,#fff5f0 42%,#ffece3 100%);
     }
 
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(var(--max),calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    /* =========================
+    HERO
+    ========================= */
 
     .page-hero{
       padding:28px 0 20px;
-      background:linear-gradient(180deg,#fff8f4 0%,#fff1eb 100%);
+      background:
+        radial-gradient(circle at 15% 15%,rgba(229,57,53,.08),transparent 26%),
+        radial-gradient(circle at 85% 15%,rgba(45,125,255,.08),transparent 24%),
+        linear-gradient(180deg,#fff8f4 0%,#fff1eb 100%);
     }
 
     .hero-card{
@@ -54,7 +89,9 @@
       border:1px solid var(--line);
       border-radius:32px;
       padding:18px;
-      box-shadow:0 24px 60px rgba(0,0,0,.08);
+      box-shadow:
+        0 24px 60px rgba(0,0,0,.08),
+        inset 0 1px 0 rgba(255,255,255,.8);
     }
 
     .hero-image{
@@ -62,6 +99,7 @@
       overflow:hidden;
       min-height:100%;
       box-shadow:0 18px 40px rgba(0,0,0,.08);
+      background:#f3f3f3;
     }
 
     .hero-image img{
@@ -72,17 +110,21 @@
     }
 
     .hero-copy{
-      padding:10px 8px;
+      padding:14px 12px;
     }
 
     .tag{
       display:inline-block;
       margin-bottom:14px;
-      font-size:15px;
-      letter-spacing:.18em;
+      padding:9px 14px;
+      border-radius:999px;
+      font-size:14px;
+      letter-spacing:.16em;
       text-transform:uppercase;
       font-weight:900;
       color:var(--red);
+      background:#fff1ef;
+      border:1px solid #ffd4d1;
     }
 
     h1{
@@ -96,7 +138,7 @@
 
     .lead{
       font-size:20px;
-      line-height:1.85;
+      line-height:1.8;
       color:var(--muted);
       margin-top:18px;
     }
@@ -121,13 +163,17 @@
       box-shadow:0 10px 20px rgba(0,0,0,.04);
     }
 
+    /* =========================
+    SECTION
+    ========================= */
+
     .section{
       padding:72px 0;
     }
 
     .section-head{
       max-width:880px;
-      margin-bottom:28px;
+      margin-bottom:30px;
     }
 
     .section-head h2{
@@ -141,24 +187,31 @@
 
     .section-head p{
       font-size:20px;
-      line-height:1.85;
+      line-height:1.8;
       color:var(--muted);
       margin-top:16px;
     }
 
+    /* =========================
+    CONTACT LAYOUT
+    ========================= */
+
     .contact-wrap{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:20px;
+      grid-template-columns:1.08fr .92fr;
+      gap:22px;
       align-items:start;
     }
 
     .contact-card{
-      background:#fff;
-      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg,#ffffff 0%,#fffdfb 100%);
+      border:1px solid #ead9cf;
       border-radius:30px;
-      padding:28px;
-      box-shadow:0 20px 50px rgba(0,0,0,.08);
+      padding:32px;
+      box-shadow:
+        0 24px 60px rgba(16,36,70,.08),
+        inset 0 1px 0 rgba(255,255,255,.9);
       position:relative;
       overflow:hidden;
     }
@@ -166,26 +219,34 @@
     .contact-card::before{
       content:"";
       position:absolute;
-      top:-80px;
-      right:-80px;
-      width:180px;
-      height:180px;
+      top:-90px;
+      right:-90px;
+      width:220px;
+      height:220px;
       border-radius:999px;
-      background:radial-gradient(circle, rgba(229,57,53,.14) 0%, transparent 68%);
+      background:
+        radial-gradient(circle,rgba(229,57,53,.13) 0%,transparent 68%);
       pointer-events:none;
     }
 
+    /* =========================
+    FORM
+    ========================= */
+
     .form-grid{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:22px 18px;
+      position:relative;
+      z-index:1;
     }
 
     .form-group{
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:9px;
       position:relative;
+      min-width:0;
     }
 
     .form-group-full{
@@ -193,10 +254,11 @@
     }
 
     .form-group label{
-      font-size:14px;
+      font-size:15px;
+      line-height:1.3;
       font-weight:900;
-      color:var(--navy);
-      letter-spacing:.02em;
+      color:#102446;
+      letter-spacing:.01em;
     }
 
     .required{
@@ -207,34 +269,63 @@
     .form-group select,
     .form-group textarea{
       width:100%;
-      border:1px solid #d9c6bb;
+      min-height:58px;
+      border:1.5px solid #dfd0c7;
       background:#fff;
-      border-radius:18px;
-      padding:15px 16px;
+      border-radius:16px;
+      padding:16px 17px;
       font:inherit;
-      color:var(--text);
+      font-size:16px;
+      color:#162033;
       outline:none;
-      transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+      box-shadow:
+        0 6px 18px rgba(16,36,70,.035),
+        inset 0 1px 0 rgba(255,255,255,.8);
+      transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease,
+        background .2s ease;
     }
 
-    .form-group textarea{
-      resize:vertical;
-      min-height:150px;
+    .form-group input::placeholder,
+    .form-group textarea::placeholder{
+      color:#89939d;
+    }
+
+    .form-group input:hover,
+    .form-group select:hover,
+    .form-group textarea:hover{
+      border-color:#cdb8ab;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus{
       border-color:var(--blue);
-      box-shadow:0 0 0 4px rgba(45,125,255,.12);
+      background:#fff;
+      box-shadow:
+        0 0 0 4px rgba(45,125,255,.11),
+        0 10px 26px rgba(45,125,255,.08);
       transform:translateY(-1px);
+    }
+
+    .form-group textarea{
+      min-height:165px;
+      resize:vertical;
+      line-height:1.65;
     }
 
     .helper-text{
       font-size:13px;
-      color:var(--muted);
-      margin-top:4px;
+      line-height:1.5;
+      color:#6f7c87;
+      margin-top:1px;
     }
+
+    /* =========================
+    EXTRAS
+    ========================= */
 
     .extras-dropdown{
       width:100%;
@@ -243,15 +334,23 @@
     .extras-summary{
       list-style:none;
       width:100%;
-      border:1px solid #d9c6bb;
+      min-height:58px;
+      display:flex;
+      align-items:center;
+      border:1.5px solid #dfd0c7;
       background:#fff;
-      border-radius:18px;
+      border-radius:16px;
       padding:15px 48px 15px 16px;
       cursor:pointer;
       position:relative;
-      font:inherit;
+      font-size:16px;
+      font-weight:800;
       color:var(--text);
-      transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+      box-shadow:0 6px 18px rgba(16,36,70,.035);
+      transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
     }
 
     .extras-summary::-webkit-details-marker{
@@ -270,7 +369,9 @@
 
     .extras-dropdown[open] .extras-summary{
       border-color:var(--blue);
-      box-shadow:0 0 0 4px rgba(45,125,255,.12);
+      box-shadow:
+        0 0 0 4px rgba(45,125,255,.11),
+        0 10px 26px rgba(45,125,255,.08);
       transform:translateY(-1px);
     }
 
@@ -279,10 +380,10 @@
     }
 
     .extras-menu{
-      margin-top:8px;
+      margin-top:10px;
       display:grid;
-      grid-template-columns:1fr;
-      gap:12px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
       background:#fff;
       border:1px solid var(--line);
       border-radius:20px;
@@ -292,13 +393,14 @@
 
     .check-pill{
       display:flex;
-      align-items:flex-start;
+      align-items:center;
       gap:12px;
       width:100%;
-      background:#fff8f4;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:14px 16px;
+      min-height:58px;
+      background:#fffaf7;
+      border:1px solid #eadbd2;
+      border-radius:16px;
+      padding:15px 16px;
       cursor:pointer;
       transition:all .2s ease;
     }
@@ -310,40 +412,89 @@
     }
 
     .check-pill input[type="checkbox"]{
-      margin:2px 0 0 0;
-      width:18px;
-      height:18px;
+      margin:0;
+      width:19px;
+      height:19px;
       accent-color:var(--red);
-      flex:0 0 18px;
+      flex:0 0 19px;
     }
 
     .check-pill span{
       display:block;
       flex:1;
       min-width:0;
-      font-size:14px;
-      line-height:1.5;
+      font-size:15px;
+      line-height:1.4;
       color:var(--navy);
       font-weight:800;
       white-space:normal;
-      word-break:break-word;
       overflow-wrap:anywhere;
     }
 
+    /* =========================
+    CAPTCHA
+    ========================= */
+
+    .captcha-box{
+      display:grid;
+      grid-template-columns:1fr 170px;
+      gap:14px;
+      align-items:end;
+      background:
+        linear-gradient(180deg,#fff7f3 0%,#fff0e8 100%);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+    }
+
+    .captcha-question{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      background:#fff;
+      border:1px solid #e7d3c6;
+      border-radius:16px;
+      font-weight:900;
+      color:var(--navy);
+      min-height:52px;
+      margin-top:8px;
+    }
+
+    .captcha-badge{
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:
+        linear-gradient(180deg,#6ab1ff,var(--blue));
+      color:#fff;
+      font-size:18px;
+      box-shadow:0 10px 20px rgba(45,125,255,.18);
+    }
+
+    /* =========================
+    TERMS
+    ========================= */
+
     .terms-row{
       display:flex;
-      align-items:flex-start;
-      gap:12px;
+      align-items:center;
+      gap:13px;
       background:#fff8f4;
       border:1px solid var(--line);
       border-radius:18px;
-      padding:16px;
+      padding:18px;
     }
 
     .terms-row input[type="checkbox"]{
-      margin-top:4px;
-      transform:scale(1.2);
+      margin:0;
+      width:20px;
+      height:20px;
       accent-color:var(--red);
+      flex:0 0 auto;
     }
 
     .terms-row label{
@@ -359,66 +510,39 @@
       text-decoration:underline;
     }
 
-    .captcha-box{
-      display:grid;
-      grid-template-columns:1fr 170px;
-      gap:14px;
-      align-items:end;
-      background:linear-gradient(180deg,#fff6f2 0%,#fff0e8 100%);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:16px;
-    }
-
-    .captcha-question{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 14px;
-      background:#fff;
-      border:1px solid #e7d3c6;
-      border-radius:16px;
-      font-weight:900;
-      color:var(--navy);
-      min-height:52px;
-    }
-
-    .captcha-badge{
-      width:34px;
-      height:34px;
-      border-radius:999px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(180deg,#6ab1ff,var(--blue));
-      color:#fff;
-      font-size:18px;
-      box-shadow:0 10px 20px rgba(45,125,255,.18);
-    }
+    /* =========================
+    SUBMIT
+    ========================= */
 
     .submit-row{
       display:flex;
       align-items:center;
       gap:14px;
       flex-wrap:wrap;
-      margin-top:6px;
+      margin-top:22px;
     }
 
     .submit-btn{
+      min-height:56px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
       border:none;
       border-radius:999px;
-      padding:16px 26px;
+      padding:16px 28px;
       font:inherit;
+      font-size:16px;
       font-weight:900;
       color:#fff;
-      background:linear-gradient(180deg,#ff665e,var(--red));
-      box-shadow:0 14px 30px rgba(229,57,53,.24);
+      background:
+        linear-gradient(180deg,#ff665e,var(--red));
+      box-shadow:
+        0 14px 30px rgba(229,57,53,.24);
       cursor:pointer;
-      transition:transform .2s ease, box-shadow .2s ease;
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
       position:relative;
       overflow:hidden;
     }
@@ -427,7 +551,8 @@
       content:"";
       position:absolute;
       inset:-40%;
-      background:radial-gradient(circle, rgba(255,255,255,.24) 0%, transparent 55%);
+      background:
+        radial-gradient(circle,rgba(255,255,255,.24) 0%,transparent 55%);
       opacity:0;
       transition:opacity .25s ease;
       pointer-events:none;
@@ -435,18 +560,31 @@
 
     .submit-btn:hover{
       transform:translateY(-2px);
-      box-shadow:0 18px 36px rgba(229,57,53,.30);
+      box-shadow:
+        0 18px 36px rgba(229,57,53,.30);
     }
 
     .submit-btn:hover::after{
       opacity:1;
     }
 
+    .submit-btn:disabled{
+      opacity:.65;
+      cursor:not-allowed;
+      transform:none;
+    }
+
     .submit-note{
       font-size:13px;
+      line-height:1.55;
       color:var(--muted);
       font-weight:700;
+      max-width:560px;
     }
+
+    /* =========================
+    SIDE INFO
+    ========================= */
 
     .side-info{
       display:grid;
@@ -497,7 +635,8 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      background:linear-gradient(180deg,#6ab1ff,var(--blue));
+      background:
+        linear-gradient(180deg,#6ab1ff,var(--blue));
       color:#fff;
       font-size:18px;
       flex:0 0 auto;
@@ -517,10 +656,15 @@
       line-height:1.6;
     }
 
+    /* =========================
+    SUCCESS / ERROR
+    ========================= */
+
     .success-banner{
       display:none;
       margin-bottom:18px;
-      background:linear-gradient(135deg,#ff7b6c 0%,#e53935 52%,#ff9d42 100%);
+      background:
+        linear-gradient(135deg,#ff7b6c 0%,#e53935 52%,#ff9d42 100%);
       color:#fff;
       border-radius:24px;
       padding:18px 18px 18px 20px;
@@ -576,7 +720,8 @@
       justify-content:center;
       font-size:28px;
       flex:0 0 auto;
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.18);
     }
 
     .success-text strong{
@@ -595,8 +740,12 @@
 
     .error-message{
       display:none;
-      margin-top:10px;
+      margin-top:14px;
       color:var(--red-dark);
+      background:#fff0ef;
+      border:1px solid #ffc9c7;
+      border-radius:14px;
+      padding:12px 14px;
       font-size:14px;
       font-weight:800;
     }
@@ -606,20 +755,30 @@
     }
 
     @keyframes firePop{
-      0%{opacity:0;transform:translateY(18px) scale(.96)}
-      100%{opacity:1;transform:translateY(0) scale(1)}
+      0%{
+        opacity:0;
+        transform:translateY(18px) scale(.96);
+      }
+      100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+      }
     }
 
     @keyframes flamePulse{
-      0%,100%{transform:scale(1);opacity:.22}
-      50%{transform:scale(1.14);opacity:.38}
-    }
-
-    @media (min-width:801px){
-      .extras-menu{
-        grid-template-columns:repeat(2,1fr);
+      0%,100%{
+        transform:scale(1);
+        opacity:.22;
+      }
+      50%{
+        transform:scale(1.14);
+        opacity:.38;
       }
     }
+
+    /* =========================
+    RESPONSIVE
+    ========================= */
 
     @media (max-width:1100px){
       .hero-card,
@@ -633,9 +792,30 @@
       .captcha-box{
         grid-template-columns:1fr;
       }
+
+      .form-group-full{
+        grid-column:auto;
+      }
+
+      .extras-menu{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
+      .section{
+        padding:54px 0;
+      }
+
+      .hero-card{
+        border-radius:24px;
+        padding:12px;
+      }
+
+      .hero-copy{
+        padding:16px 10px;
+      }
+
       .hero-image img{
         min-height:280px;
       }
@@ -645,9 +825,36 @@
         font-size:18px;
       }
 
-      .contact-card,
+      .contact-card{
+        padding:22px 18px;
+        border-radius:24px;
+      }
+
       .info-box{
         padding:20px;
+      }
+
+      .form-group label{
+        font-size:15px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea,
+      .extras-summary{
+        font-size:16px;
+      }
+
+      .check-pill{
+        padding:15px;
+      }
+
+      .check-pill span{
+        font-size:15px;
+      }
+
+      .submit-btn{
+        width:100%;
       }
 
       .success-inner{
@@ -656,288 +863,639 @@
     }
   </style>
 </head>
+
 <body>
 
   <div id="header"></div>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="hero-card">
-        <div class="hero-copy">
-          <div class="tag">Enquire now</div>
-          <h1>Let’s plan your fire truck event.</h1>
-          <p class="lead">
-            Send your enquiry below for kids birthday parties, older children party’s, school events and private bookings across Sydney.
-          </p>
-          <div class="hero-pills">
-            <span>🚒 Real fire truck</span>
-            <span>📍 Sydney-wide</span>
-            <span>📅 Future date booking</span>
-            <span>⚡ Fast reply</span>
-          </div>
-        </div>
+  <main>
 
-        <div class="hero-image">
-          <img src="images/hero-child-truck.jpg" alt="NSW Party Brigade fire truck enquiry">
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-card">
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div class="tag">Booking enquiry</div>
-        <h2>Send us your details.</h2>
-        <p>
-          Fill in the form below and your enquiry will be sent to <strong>info@enginenumber9.com.au</strong>.
-        </p>
-      </div>
+          <div class="hero-copy">
+            <div class="tag">🚒 Enquire Now</div>
 
-      <div class="contact-wrap">
-        <div class="contact-card">
-          <div class="success-banner" id="successBanner">
-            <div class="success-inner">
-              <div class="success-icon">🔥</div>
-              <div class="success-text">
-                <strong>Enquiry Sent</strong>
-                <span>Your message has been sent successfully. We’ll be in touch as soon as possible.</span>
-              </div>
+            <h1>Let’s plan your fire truck event.</h1>
+
+            <p class="lead">
+              Send your enquiry below for kids birthday parties, older children parties,
+              school events, school formals and private bookings across Sydney.
+            </p>
+
+            <div class="hero-pills">
+              <span>🚒 Real fire truck</span>
+              <span>📍 Sydney-wide</span>
+              <span>📅 Future date booking</span>
+              <span>⏰ Choose preferred time</span>
+              <span>⚡ Fast reply</span>
             </div>
           </div>
 
-          <form id="enquiryForm" action="https://formsubmit.co/ajax/info@enginenumber9.com.au" method="POST" novalidate>
-            <input type="hidden" name="_subject" value="New NSW Party Brigade Enquiry">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="_honey" style="display:none">
+          <div class="hero-image">
+            <img
+              src="images/sydney-childrens-fire-truck-hero.jpg"
+              alt="NSW Party Brigade children's fire truck booking enquiry in Sydney"
+              loading="eager"
+            >
+          </div>
 
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="name">Name <span class="required">*</span></label>
-                <input type="text" id="name" name="Name" required>
-              </div>
+        </div>
+      </div>
+    </section>
 
-              <div class="form-group">
-                <label for="phone">Phone Number <span class="required">*</span></label>
-                <input type="tel" id="phone" name="Phone Number" required>
-              </div>
+    <section class="section">
+      <div class="container">
 
-              <div class="form-group">
-                <label for="email">Email Address <span class="required">*</span></label>
-                <input type="email" id="email" name="Email Address" required>
-              </div>
+        <div class="section-head">
+          <div class="tag">Booking Enquiry</div>
 
-              <div class="form-group">
-                <label for="eventDate">Preferred Event Date <span class="required">*</span></label>
-                <input type="date" id="eventDate" name="Preferred Event Date" required>
-              </div>
+          <h2>Send us your details.</h2>
 
-              <div class="form-group">
-                <label for="occasion">Occasion</label>
-                <select id="occasion" name="Occasion">
-                  <option value="">Select occasion</option>
-                  <option value="Kids Birthday">Kids Birthday</option>
-                  <option value="Older Children Party's">Older Children Party's</option>
-                  <option value="School Event">School Event</option>
-                  <option value="Community Event">Community Event</option>
-                  <option value="School Formal">School Formal</option>
-                  <option value="Private Event">Private Event</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
+          <p>
+            Fill in the form below and your enquiry will be sent to
+            <strong>info@enginenumber9.com.au</strong>.
+          </p>
+        </div>
 
-              <div class="form-group" id="packageWrap" style="display:none;">
-                <label for="package">Package</label>
-                <select id="package" name="Package">
-                  <option value="">Select package</option>
-                  <option>Blue Package</option>
-                  <option>Yellow Package</option>
-                  <option>Orange Package</option>
-                  <option>Red Package</option>
-                </select>
-              </div>
+        <div class="contact-wrap">
 
-              <div class="form-group">
-                <label for="address">Event Address/Suburb</label>
-                <input type="text" id="address" name="Event Address/Suburb">
-              </div>
+          <div class="contact-card">
 
-              <div class="form-group">
-                <label for="childrenCount">Number of Children</label>
-                <input type="number" id="childrenCount" name="Number of Children" min="1">
-              </div>
+            <div class="success-banner" id="successBanner">
+              <div class="success-inner">
+                <div class="success-icon">🔥</div>
 
-              <div class="form-group">
-                <label for="birthdayAge">Birthday Child Age</label>
-                <input type="number" id="birthdayAge" name="Birthday Child Age" min="0" max="17">
-              </div>
-
-              <div class="form-group form-group-full">
-                <label>Most Requested Extras</label>
-
-                <details class="extras-dropdown">
-                  <summary class="extras-summary" id="extrasSummary">Select Extras</summary>
-
-                  <div class="extras-menu">
-                    <label class="check-pill">
-                      <input type="checkbox" name="Most Requested Extras[]" value="FREE Fire Man Dad Surprise">
-                      <span>FREE Fire Man Dad Surprise</span>
-                    </label>
-
-                    <label class="check-pill">
-                      <input type="checkbox" name="Most Requested Extras[]" value="Fire Hose Water Blasting">
-                      <span>Fire Hose Water Blasting</span>
-                    </label>
-
-                    <label class="check-pill">
-                      <input type="checkbox" name="Most Requested Extras[]" value="LED Text Message Display">
-                      <span>LED Text Message Display</span>
-                    </label>
-
-                    <label class="check-pill">
-                      <input type="checkbox" name="Most Requested Extras[]" value="Custom Made Cup">
-                      <span>Custom Made Cup</span>
-                    </label>
-
-                    <label class="check-pill">
-                      <input type="checkbox" name="Most Requested Extras[]" value="Custom Made Shirts">
-                      <span>Custom Made Shirts</span>
-                    </label>
-
-                    <label class="check-pill">
-                      <input type="checkbox" name="Most Requested Extras[]" value="Birthday Essentials">
-                      <span>Birthday Essentials</span>
-                    </label>
-
-                    <label class="check-pill">
-                      <input type="checkbox" name="Most Requested Extras[]" value="Fire Man Dan (Children's Entertainer)">
-                      <span>Fire Man Dan (Children's Entertainer)</span>
-                    </label>
-
-                    <label class="check-pill">
-                      <input type="checkbox" name="Most Requested Extras[]" value="Smoken Fire Truck Show Bag/s">
-                      <span>Smoken Fire Truck Show Bag/s</span>
-                    </label>
-
-                    <label class="check-pill">
-                      <input type="checkbox" name="Most Requested Extras[]" value="Red Carpet Arrival">
-                      <span>Red Carpet Arrival</span>
-                    </label>
-
-                    <label class="check-pill">
-                      <input type="checkbox" name="Most Requested Extras[]" value="Professional Photographer">
-                      <span>Professional Photographer</span>
-                    </label>
-                  </div>
-                </details>
-
-                <div class="helper-text">You can select multiple extras.</div>
-              </div>
-
-              <div class="form-group form-group-full">
-                <label for="message">Extra Details</label>
-                <textarea id="message" name="Extra Details" placeholder="Tell us anything helpful about your event, booking ideas, access, time, age group or requested extras."></textarea>
-              </div>
-
-              <div class="form-group form-group-full">
-                <div class="captcha-box">
-                  <div>
-                    <label for="captchaAnswer">Simple Safety Check <span class="required">*</span></label>
-                    <div class="captcha-question">
-                      <span class="captcha-badge">🛡️</span>
-                      <span id="captchaQuestionText">Loading question...</span>
-                    </div>
-                    <div class="helper-text">Please answer this simple question to help block spam.</div>
-                  </div>
-
-                  <div>
-                    <input type="number" id="captchaAnswer" name="Captcha Answer" placeholder="Your answer" required>
-                  </div>
+                <div class="success-text">
+                  <strong>Enquiry Sent</strong>
+                  <span>
+                    Your message has been sent successfully.
+                    We’ll be in touch as soon as possible.
+                  </span>
                 </div>
               </div>
+            </div>
 
-              <div class="form-group form-group-full">
-                <div class="terms-row">
-                  <input type="checkbox" id="agreeTerms" name="Agree to Terms" required>
-                  <label for="agreeTerms">
-                    I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a>.
+            <form
+              id="enquiryForm"
+              action="https://formsubmit.co/ajax/info@enginenumber9.com.au"
+              method="POST"
+              novalidate
+            >
+
+              <input
+                type="hidden"
+                name="_subject"
+                value="New NSW Party Brigade Enquiry"
+              >
+
+              <input
+                type="hidden"
+                name="_template"
+                value="table"
+              >
+
+              <input
+                type="hidden"
+                name="_captcha"
+                value="false"
+              >
+
+              <input
+                type="text"
+                name="_honey"
+                style="display:none"
+                tabindex="-1"
+                autocomplete="off"
+              >
+
+              <div class="form-grid">
+
+                <div class="form-group">
+                  <label for="name">
+                    Name <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    name="Name"
+                    autocomplete="name"
+                    placeholder="Your name"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">
+                    Phone Number <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="Phone Number"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    placeholder="Your phone number"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="email">
+                    Email Address <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="Email Address"
+                    autocomplete="email"
+                    placeholder="Your email address"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="eventDate">
+                    Preferred Event Date
                     <span class="required">*</span>
                   </label>
+
+                  <input
+                    type="date"
+                    id="eventDate"
+                    name="Preferred Event Date"
+                    required
+                  >
+
+                  <div class="helper-text">
+                    Choose your preferred event date.
+                  </div>
                 </div>
+
+                <div class="form-group">
+                  <label for="eventTime">
+                    Preferred Time
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="time"
+                    id="eventTime"
+                    name="Preferred Event Time"
+                    step="900"
+                    required
+                  >
+
+                  <div class="helper-text">
+                    Tap to choose your preferred starting time.
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="occasion">
+                    Occasion
+                  </label>
+
+                  <select
+                    id="occasion"
+                    name="Occasion"
+                  >
+                    <option value="">Select occasion</option>
+                    <option value="Kids Birthday">Kids Birthday</option>
+                    <option value="Older Children Party">Older Children Party</option>
+                    <option value="School Event">School Event</option>
+                    <option value="Community Event">Community Event</option>
+                    <option value="School Formal">School Formal</option>
+                    <option value="Private Event">Private Event</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div
+                  class="form-group"
+                  id="packageWrap"
+                  style="display:none;"
+                >
+                  <label for="package">
+                    Package
+                  </label>
+
+                  <select
+                    id="package"
+                    name="Package"
+                  >
+                    <option value="">Select package</option>
+                    <option value="Blue Package">Blue Package</option>
+                    <option value="Yellow Package">Yellow Package</option>
+                    <option value="Orange Package">Orange Package</option>
+                    <option value="Red Package">Red Package</option>
+                  </select>
+                </div>
+
+                <div class="form-group form-group-full">
+                  <label for="address">
+                    Event Address / Suburb
+                  </label>
+
+                  <input
+                    type="text"
+                    id="address"
+                    name="Event Address/Suburb"
+                    autocomplete="street-address"
+                    placeholder="Example: Parramatta NSW"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="childrenCount">
+                    Number of Children
+                  </label>
+
+                  <input
+                    type="number"
+                    id="childrenCount"
+                    name="Number of Children"
+                    min="1"
+                    inputmode="numeric"
+                    placeholder="Example: 15"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="birthdayAge">
+                    Birthday Child Age
+                  </label>
+
+                  <input
+                    type="number"
+                    id="birthdayAge"
+                    name="Birthday Child Age"
+                    min="0"
+                    max="17"
+                    inputmode="numeric"
+                    placeholder="Example: 7"
+                  >
+                </div>
+
+                <div class="form-group form-group-full">
+
+                  <label>
+                    Most Requested Extras
+                  </label>
+
+                  <details class="extras-dropdown">
+
+                    <summary
+                      class="extras-summary"
+                      id="extrasSummary"
+                    >
+                      Select Extras
+                    </summary>
+
+                    <div class="extras-menu">
+
+                      <label class="check-pill">
+                        <input
+                          type="checkbox"
+                          name="Most Requested Extras[]"
+                          value="FREE Fire Man Dad Surprise"
+                        >
+                        <span>👨‍🚒 FREE Fire Man Dad Surprise</span>
+                      </label>
+
+                      <label class="check-pill">
+                        <input
+                          type="checkbox"
+                          name="Most Requested Extras[]"
+                          value="Fire Hose Water Blasting"
+                        >
+                        <span>💦 Fire Hose Water Blasting</span>
+                      </label>
+
+                      <label class="check-pill">
+                        <input
+                          type="checkbox"
+                          name="Most Requested Extras[]"
+                          value="PAW Patrol (Kids Entertainer In Costume)"
+                        >
+                        <span>🐾 PAW Patrol (Kids Entertainer In Costume)</span>
+                      </label>
+
+                      <label class="check-pill">
+                        <input
+                          type="checkbox"
+                          name="Most Requested Extras[]"
+                          value="LED Text Message Display"
+                        >
+                        <span>💡 LED Text Message Display</span>
+                      </label>
+
+                      <label class="check-pill">
+                        <input
+                          type="checkbox"
+                          name="Most Requested Extras[]"
+                          value="Custom Made Cup"
+                        >
+                        <span>🥤 Custom Made Cup</span>
+                      </label>
+
+                      <label class="check-pill">
+                        <input
+                          type="checkbox"
+                          name="Most Requested Extras[]"
+                          value="Custom Made Shirts"
+                        >
+                        <span>👕 Custom Made Shirts</span>
+                      </label>
+
+                      <label class="check-pill">
+                        <input
+                          type="checkbox"
+                          name="Most Requested Extras[]"
+                          value="Birthday Essentials"
+                        >
+                        <span>🎂 Birthday Essentials</span>
+                      </label>
+
+                      <label class="check-pill">
+                        <input
+                          type="checkbox"
+                          name="Most Requested Extras[]"
+                          value="Smoken Fire Truck Show Bag/s"
+                        >
+                        <span>🎁 Smoken Fire Truck Show Bag/s</span>
+                      </label>
+
+                      <label class="check-pill">
+                        <input
+                          type="checkbox"
+                          name="Most Requested Extras[]"
+                          value="Red Carpet Arrival"
+                        >
+                        <span>🔴 Red Carpet Arrival</span>
+                      </label>
+
+                      <label class="check-pill">
+                        <input
+                          type="checkbox"
+                          name="Most Requested Extras[]"
+                          value="Professional Photographer"
+                        >
+                        <span>📸 Professional Photographer</span>
+                      </label>
+
+                    </div>
+
+                  </details>
+
+                  <div class="helper-text">
+                    You can select multiple extras.
+                  </div>
+
+                </div>
+
+                <div class="form-group form-group-full">
+
+                  <label for="message">
+                    Extra Details
+                  </label>
+
+                  <textarea
+                    id="message"
+                    name="Extra Details"
+                    placeholder="Tell us anything helpful about your event, booking ideas, access, time, age group or requested extras."
+                  ></textarea>
+
+                </div>
+
+                <div class="form-group form-group-full">
+
+                  <div class="captcha-box">
+
+                    <div>
+
+                      <label for="captchaAnswer">
+                        Simple Safety Check
+                        <span class="required">*</span>
+                      </label>
+
+                      <div class="captcha-question">
+
+                        <span class="captcha-badge">
+                          🛡️
+                        </span>
+
+                        <span id="captchaQuestionText">
+                          Loading question...
+                        </span>
+
+                      </div>
+
+                      <div class="helper-text">
+                        Please answer this simple question to help block spam.
+                      </div>
+
+                    </div>
+
+                    <div>
+
+                      <input
+                        type="number"
+                        id="captchaAnswer"
+                        name="Captcha Answer"
+                        inputmode="numeric"
+                        placeholder="Your answer"
+                        required
+                      >
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="form-group form-group-full">
+
+                  <div class="terms-row">
+
+                    <input
+                      type="checkbox"
+                      id="agreeTerms"
+                      name="Agree to Terms"
+                      value="Yes"
+                      required
+                    >
+
+                    <label for="agreeTerms">
+                      I agree to the
+                      <a
+                        href="terms.html"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        Terms &amp; Conditions
+                      </a>.
+                      <span class="required">*</span>
+                    </label>
+
+                  </div>
+
+                </div>
+
               </div>
+
+              <div class="submit-row">
+
+                <button
+                  type="submit"
+                  class="submit-btn"
+                  id="submitButton"
+                >
+                  🚒 Send Enquiry
+                </button>
+
+                <div class="submit-note">
+                  Required fields: Name, Phone Number, Email Address,
+                  Preferred Event Date, Preferred Time and Agree to
+                  Terms &amp; Conditions.
+                </div>
+
+              </div>
+
+              <div
+                class="error-message"
+                id="formError"
+                role="alert"
+              ></div>
+
+            </form>
+
+          </div>
+
+          <aside class="side-info">
+
+            <div class="info-box">
+
+              <h3>What to include</h3>
+
+              <p>
+                The more details you send, the faster and more accurately
+                we can respond.
+              </p>
+
+              <div class="info-list">
+
+                <div class="info-pill">
+                  <div class="icon">📍</div>
+                  <div>
+                    <strong>Location</strong>
+                    <span>
+                      Your suburb or event address helps us check travel
+                      and availability.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="info-pill">
+                  <div class="icon">📅</div>
+                  <div>
+                    <strong>Date &amp; Time</strong>
+                    <span>
+                      Tell us your preferred event date and starting time
+                      so we can check availability faster.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="info-pill">
+                  <div class="icon">🎉</div>
+                  <div>
+                    <strong>Occasion</strong>
+                    <span>
+                      Let us know if it is a kids birthday, older children
+                      party, school event, school formal or private event.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="info-pill">
+                  <div class="icon">🔥</div>
+                  <div>
+                    <strong>Extras</strong>
+                    <span>
+                      Choose any extras you are interested in so we know
+                      what type of experience you would like.
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
             </div>
 
-            <div class="submit-row">
-              <button type="submit" class="submit-btn">🚒 Send Enquiry</button>
-              <div class="submit-note">Required fields: Name, Phone Number, Email Address, Preferred Event Date and Agree to Terms &amp; Conditions.</div>
+            <div class="info-box">
+
+              <h3>Popular extras</h3>
+
+              <p>
+                Popular requests include Fire Man Dad surprise, fire hose
+                water blasting, PAW Patrol costume entertainment,
+                birthday extras, red carpet arrival and professional photography.
+              </p>
+
             </div>
 
-            <div class="error-message" id="formError"></div>
-          </form>
+            <div class="info-box">
+
+              <h3>Need urgent help?</h3>
+
+              <p>
+                You can also contact us directly for urgent booking
+                questions or availability checks.
+              </p>
+
+              <div class="info-list">
+
+                <a
+                  class="info-pill"
+                  href="tel:1300036469"
+                >
+                  <div class="icon">📞</div>
+
+                  <div>
+                    <strong>1300 036 469</strong>
+                    <span>Direct booking enquiries</span>
+                  </div>
+                </a>
+
+                <a
+                  class="info-pill"
+                  href="mailto:info@enginenumber9.com.au"
+                >
+                  <div class="icon">✉️</div>
+
+                  <div>
+                    <strong>info@enginenumber9.com.au</strong>
+                    <span>Enquiry email address</span>
+                  </div>
+                </a>
+
+              </div>
+
+            </div>
+
+          </aside>
+
         </div>
 
-        <div class="side-info">
-          <div class="info-box">
-            <h3>What to include</h3>
-            <p>The more details you send, the faster and more accurately we can respond.</p>
-
-            <div class="info-list">
-              <div class="info-pill">
-                <div class="icon">📍</div>
-                <div>
-                  <strong>Location</strong>
-                  <span>Your suburb or event address helps us check travel and availability.</span>
-                </div>
-              </div>
-
-              <div class="info-pill">
-                <div class="icon">🎉</div>
-                <div>
-                  <strong>Occasion</strong>
-                  <span>Let us know if it is a kids birthday, older children party’s, school event or private event.</span>
-                </div>
-              </div>
-
-              <div class="info-pill">
-                <div class="icon">🔥</div>
-                <div>
-                  <strong>Extras</strong>
-                  <span>Add your most requested extras so we know what experience you want most.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <h3>Most requested bookings</h3>
-            <p>Popular enquiry types include kids birthday parties, older children party’s, fire hose water blasting, Fire Man Dad surprise and premium arrival extras.</p>
-          </div>
-
-          <div class="info-box">
-            <h3>Need urgent help?</h3>
-            <p>You can also call directly for urgent booking questions or date checks.</p>
-            <div class="info-list">
-              <div class="info-pill">
-                <div class="icon">📞</div>
-                <div>
-                  <strong>1300 036 469</strong>
-                  <span>Direct booking enquiries</span>
-                </div>
-              </div>
-              <div class="info-pill">
-                <div class="icon">✉️</div>
-                <div>
-                  <strong>info@enginenumber9.com.au</strong>
-                  <span>Enquiry email address</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <div id="footer"></div>
 
@@ -945,131 +1503,368 @@
     const occasionSelect = document.getElementById("occasion");
     const packageWrap = document.getElementById("packageWrap");
     const packageSelect = document.getElementById("package");
+
     const eventDate = document.getElementById("eventDate");
+    const eventTime = document.getElementById("eventTime");
+
     const enquiryForm = document.getElementById("enquiryForm");
+
     const successBanner = document.getElementById("successBanner");
     const formError = document.getElementById("formError");
+
+    const submitButton = document.getElementById("submitButton");
+
     const extrasSummary = document.getElementById("extrasSummary");
-    const extrasCheckboxes = document.querySelectorAll('input[name="Most Requested Extras[]"]');
+
+    const extrasCheckboxes =
+      document.querySelectorAll(
+        'input[name="Most Requested Extras[]"]'
+      );
+
+    /* =========================
+    FUTURE DATE ONLY
+    ========================= */
 
     const today = new Date();
+
     today.setDate(today.getDate() + 1);
-    eventDate.min = today.toISOString().split("T")[0];
 
-    occasionSelect.addEventListener("change", function () {
-      if (this.value === "Kids Birthday") {
-        packageWrap.style.display = "flex";
-      } else {
-        packageWrap.style.display = "none";
-        packageSelect.value = "";
-      }
-    });
+    eventDate.min =
+      today.toISOString().split("T")[0];
 
-    function updateExtrasSummary() {
-      const checked = Array.from(extrasCheckboxes).filter(i => i.checked);
-      if (checked.length === 0) {
-        extrasSummary.textContent = "Select Extras";
-      } else if (checked.length === 1) {
-        extrasSummary.textContent = checked[0].value;
-      } else {
-        extrasSummary.textContent = `${checked.length} extras selected`;
+    /* =========================
+    PACKAGE DISPLAY
+    ========================= */
+
+    occasionSelect.addEventListener(
+      "change",
+      function () {
+
+        if (this.value === "Kids Birthday") {
+
+          packageWrap.style.display = "flex";
+
+        } else {
+
+          packageWrap.style.display = "none";
+
+          packageSelect.value = "";
+
+        }
+
       }
+    );
+
+    /* =========================
+    EXTRAS SUMMARY
+    ========================= */
+
+    function updateExtrasSummary(){
+
+      const checked =
+        Array.from(extrasCheckboxes)
+          .filter(input => input.checked);
+
+      if (checked.length === 0){
+
+        extrasSummary.textContent =
+          "Select Extras";
+
+      } else if (checked.length === 1){
+
+        extrasSummary.textContent =
+          checked[0].value;
+
+      } else {
+
+        extrasSummary.textContent =
+          `${checked.length} extras selected`;
+
+      }
+
     }
 
-    extrasCheckboxes.forEach(i => {
-      i.addEventListener("change", updateExtrasSummary);
+    extrasCheckboxes.forEach(input => {
+
+      input.addEventListener(
+        "change",
+        updateExtrasSummary
+      );
+
     });
 
     updateExtrasSummary();
 
+    /* =========================
+    CAPTCHA
+    ========================= */
+
     let captchaA = 0;
     let captchaB = 0;
-    let captchaAnswer = 0;
+    let captchaCorrectAnswer = 0;
 
-    function buildCaptcha() {
-      captchaA = Math.floor(Math.random() * 8) + 2;
-      captchaB = Math.floor(Math.random() * 8) + 1;
-      captchaAnswer = captchaA + captchaB;
-      document.getElementById("captchaQuestionText").textContent = `What is ${captchaA} + ${captchaB}?`;
+    function buildCaptcha(){
+
+      captchaA =
+        Math.floor(Math.random() * 8) + 2;
+
+      captchaB =
+        Math.floor(Math.random() * 8) + 1;
+
+      captchaCorrectAnswer =
+        captchaA + captchaB;
+
+      document
+        .getElementById("captchaQuestionText")
+        .textContent =
+        `What is ${captchaA} + ${captchaB}?`;
+
     }
 
     buildCaptcha();
 
-    function showError(message) {
+    /* =========================
+    ERROR HELPERS
+    ========================= */
+
+    function showError(message){
+
       formError.textContent = message;
+
       formError.classList.add("show");
+
+      formError.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
+
     }
 
-    function clearError() {
+    function clearError(){
+
       formError.textContent = "";
+
       formError.classList.remove("show");
+
     }
 
-    enquiryForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      clearError();
+    /* =========================
+    FORM SUBMIT
+    ========================= */
 
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const date = document.getElementById("eventDate").value;
-      const captchaInput = parseInt(document.getElementById("captchaAnswer").value, 10);
-      const agreeTerms = document.getElementById("agreeTerms").checked;
+    enquiryForm.addEventListener(
+      "submit",
+      async function(e){
 
-      if (!name || !phone || !email || !date) {
-        showError("Please complete all required fields.");
-        return;
-      }
+        e.preventDefault();
 
-      if (!agreeTerms) {
-        showError("Please agree to the Terms & Conditions.");
-        return;
-      }
+        clearError();
 
-      if (captchaInput !== captchaAnswer) {
-        showError("Safety check answer is incorrect. Please try again.");
-        buildCaptcha();
-        document.getElementById("captchaAnswer").value = "";
-        return;
-      }
+        successBanner.classList.remove("show");
 
-      const selectedDate = new Date(date + "T00:00:00");
-      const minDate = new Date();
-      minDate.setHours(0,0,0,0);
-      minDate.setDate(minDate.getDate() + 1);
+        const name =
+          document
+            .getElementById("name")
+            .value
+            .trim();
 
-      if (selectedDate < minDate) {
-        showError("Please choose a future event date.");
-        return;
-      }
+        const phone =
+          document
+            .getElementById("phone")
+            .value
+            .trim();
 
-      const formData = new FormData(enquiryForm);
+        const email =
+          document
+            .getElementById("email")
+            .value
+            .trim();
 
-      try {
-        const response = await fetch(enquiryForm.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            "Accept": "application/json"
-          }
-        });
+        const date =
+          eventDate.value;
 
-        if (response.ok) {
-          enquiryForm.reset();
-          packageWrap.style.display = "none";
-          buildCaptcha();
-          updateExtrasSummary();
-          successBanner.classList.add("show");
-          successBanner.scrollIntoView({ behavior: "smooth", block: "center" });
-        } else {
-          showError("There was a problem sending your enquiry. Please try again.");
+        const time =
+          eventTime.value;
+
+        const captchaInput =
+          parseInt(
+            document
+              .getElementById("captchaAnswer")
+              .value,
+            10
+          );
+
+        const agreeTerms =
+          document
+            .getElementById("agreeTerms")
+            .checked;
+
+        /* REQUIRED FIELDS */
+
+        if(
+          !name ||
+          !phone ||
+          !email ||
+          !date ||
+          !time
+        ){
+
+          showError(
+            "Please complete all required fields, including your preferred event date and preferred time."
+          );
+
+          return;
+
         }
-      } catch (error) {
-        showError("There was a problem sending your enquiry. Please try again.");
+
+        /* EMAIL VALIDATION */
+
+        const emailPattern =
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(!emailPattern.test(email)){
+
+          showError(
+            "Please enter a valid email address."
+          );
+
+          return;
+
+        }
+
+        /* TERMS */
+
+        if(!agreeTerms){
+
+          showError(
+            "Please agree to the Terms & Conditions."
+          );
+
+          return;
+
+        }
+
+        /* CAPTCHA */
+
+        if(captchaInput !== captchaCorrectAnswer){
+
+          showError(
+            "Safety check answer is incorrect. Please try again."
+          );
+
+          buildCaptcha();
+
+          document
+            .getElementById("captchaAnswer")
+            .value = "";
+
+          return;
+
+        }
+
+        /* DATE CHECK */
+
+        const selectedDate =
+          new Date(
+            date + "T00:00:00"
+          );
+
+        const minDate =
+          new Date();
+
+        minDate.setHours(
+          0,
+          0,
+          0,
+          0
+        );
+
+        minDate.setDate(
+          minDate.getDate() + 1
+        );
+
+        if(selectedDate < minDate){
+
+          showError(
+            "Please choose a future event date."
+          );
+
+          return;
+
+        }
+
+        const formData =
+          new FormData(enquiryForm);
+
+        try{
+
+          submitButton.disabled = true;
+
+          submitButton.textContent =
+            "🚒 Sending...";
+
+          const response =
+            await fetch(
+              enquiryForm.action,
+              {
+                method:"POST",
+                body:formData,
+                headers:{
+                  "Accept":"application/json"
+                }
+              }
+            );
+
+          if(response.ok){
+
+            enquiryForm.reset();
+
+            packageWrap.style.display =
+              "none";
+
+            buildCaptcha();
+
+            updateExtrasSummary();
+
+            successBanner.classList.add(
+              "show"
+            );
+
+            successBanner.scrollIntoView({
+              behavior:"smooth",
+              block:"center"
+            });
+
+          } else {
+
+            showError(
+              "There was a problem sending your enquiry. Please try again."
+            );
+
+          }
+
+        } catch(error){
+
+          console.error(error);
+
+          showError(
+            "There was a problem sending your enquiry. Please try again."
+          );
+
+        } finally {
+
+          submitButton.disabled = false;
+
+          submitButton.textContent =
+            "🚒 Send Enquiry";
+
+        }
+
       }
-    });
+    );
   </script>
 
   <script src="assets/js/include.js"></script>
+
 </body>
 </html>
